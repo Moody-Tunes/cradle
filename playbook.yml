@@ -1,0 +1,33 @@
+- name: Configure Application
+  hosts: all
+  become: true
+  become_user: vagrant
+
+  vars:
+    repository_url: https://github.com/Moody-Tunes/moodytunes.git
+    repository_path: /home/vagrant/mtdj
+
+  tasks:
+    - name: Install packages
+      become_user: root
+      apt: 
+        pkg:
+          - git
+          - nginx
+          - python-pip
+          - virtualenv
+        update_cache: true
+        state: present
+
+    - name: Clone repository
+      git:
+        repo: "{{ repository_url }}"
+        dest: "{{ repository_path }}"
+
+    - name: Create virtual environment
+      command: virtualenv {{ repository_path}}/venv --python=/usr/bin/python3 
+
+    - name: Install requirements
+      pip:
+        virtualenv: "{{ repository_path }}/venv"
+        requirements: "{{ repository_path }}/requirements/dev.txt"
