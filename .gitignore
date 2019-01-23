@@ -1,2 +1,6 @@
 # Vagrant Files
 .vagrant/
+
+# Python Files
+venv/
+*.py[cod]
