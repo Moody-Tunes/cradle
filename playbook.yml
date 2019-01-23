@@ -6,6 +6,8 @@
   vars:
     repository_url: https://github.com/Moody-Tunes/moodytunes.git
     repository_path: /home/vagrant/mtdj
+    virtualenv_dir: "/home/vagrant/mtdj_env"
+    virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 
   tasks:
     - name: Install packages
@@ -25,9 +27,17 @@
         dest: "{{ repository_path }}"
 
     - name: Create virtual environment
-      command: virtualenv {{ repository_path}}/venv --python=/usr/bin/python3 
+      command: virtualenv {{ virtualenv_dir }} --python=/usr/bin/python3
 
     - name: Install requirements
       pip:
-        virtualenv: "{{ repository_path }}/venv"
+        virtualenv: "{{ virtualenv_dir }}"
         requirements: "{{ repository_path }}/requirements/dev.txt"
+
+    - name: Setup Django project
+      shell: cd {{ repository_path }} && . {{ virtualenv_source }} && {{ item }}
+      with_items:
+        - python manage.py migrate
+        - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
+      args:
+        executable: /bin/bash
