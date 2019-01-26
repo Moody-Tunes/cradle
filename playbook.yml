@@ -3,13 +3,6 @@
   become: true
   become_user: vagrant
 
-  vars:
-    home_directory: /home/vagrant
-    repository_url: https://github.com/Moody-Tunes/moodytunes.git
-    repository_path: /home/vagrant/moodytunes
-    virtualenv_dir: /home/vagrant/mtdj_env
-    virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
-
   tasks:
     - name: Install packages
       become_user: root
@@ -20,12 +13,7 @@
           - python-pip
           - virtualenv
         update_cache: true
-        state: present
-
-    - name: Upgrade packages to latest version
-      become_user: root
-      apt:
-        upgrade: yes
+        state: latest
 
     - name: Clone repository
       git:
