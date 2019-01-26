@@ -3,56 +3,9 @@
   become: true
   become_user: vagrant
 
-  tasks:
-    - name: Install packages
-      become_user: root
-      apt:
-        pkg: "{{ site_packages }}"
-        state: latest
-        update_cache: true
-
-    - name: Create nginx config file
-      template: src=templates/nginx dest=/etc/nginx/conf.d/{{ app_name }}.conf
-      become_user: root
-      notify:
-        - restart nginx
-
-    - name: Add Github to known hosts
-      lineinfile:
-        path: "{{ home_directory }}/.ssh/known_hosts"
-        create: yes
-        state: present
-        line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
-
-    - name: Clone repository
-      git:
-        repo: "{{ repository_url }}"
-        dest: "{{ repository_path }}"
-
-    - name: Create virtual environment
-      command: virtualenv {{ virtualenv_dir }} --python=/usr/bin/python3
-
-    - name: Install requirements
-      pip:
-        virtualenv: "{{ virtualenv_dir }}"
-        requirements: "{{ repository_path }}/requirements/dev.txt"
-
-    - name: Create environment variables list
-      template: src=templates/env dest="{{ repository_path }}/.env"
-
-    - name: Add startup commands to profile
-      blockinfile:
-        path: "{{ home_directory }}/.profile"
-        block: "{{ startup_commands }}"
-
-    - name: Setup Django project
-      shell: cd {{ repository_path }} && . {{ virtualenv_source }} && {{ item }}
-      with_items:
-        - python manage.py migrate
-        - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
-        - python manage.py collectstatic --noinput
-      args:
-        executable: /bin/bash
-
-  handlers:
-    - include: handlers/main.yml
+  roles:
+    - apt
+    - nginx
+    - git
+    - env
+    - django

@@ -1,0 +1,6 @@
+- name: Install packages
+  become_user: root
+  apt:
+    pkg: "{{ site_packages }}"
+    state: latest
+    update_cache: true
