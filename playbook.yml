@@ -4,9 +4,10 @@
   become_user: vagrant
 
   vars:
+    home_directory: /home/vagrant
     repository_url: https://github.com/Moody-Tunes/moodytunes.git
     repository_path: /home/vagrant/moodytunes
-    virtualenv_dir: "/home/vagrant/mtdj_env"
+    virtualenv_dir: /home/vagrant/mtdj_env
     virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 
   tasks:
@@ -46,3 +47,6 @@
         - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
       args:
         executable: /bin/bash
+
+    - name: Create bash_profile
+      template: src=templates/bash_profile dest={{ home_directory }}/.bash_profile
