@@ -1,2 +1,7 @@
 # Vagrant Files
 .vagrant/
+*.retry
+
+# Python Files
+venv/
+*.py[cod]
