@@ -11,6 +11,12 @@
         state: latest
         update_cache: true
 
+    - name: Create nginx config file
+      template: src=templates/nginx dest=/etc/nginx/conf.d/{{ app_name }}.conf
+      become_user: root
+      notify:
+        - restart nginx
+
     - name: Add Github to known hosts
       lineinfile:
         path: "{{ home_directory }}/.ssh/known_hosts"
@@ -44,3 +50,6 @@
       blockinfile:
         path: "{{ home_directory }}/.profile"
         block: "{{ startup_commands }}"
+
+  handlers:
+    - include: handlers/main.yml

@@ -1,11 +1,15 @@
 # General Site Definitions
 # NOTE: These take the least priority so make sure to only set default/sane values heres
 
+app_name: mtdj
+app_hostname: moodytunes.vm
 home_directory: /home/vagrant
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
+server_ip: 192.168.10.21
+wsgi_server_port: 8000
 site_packages:
   - git
   - nginx
