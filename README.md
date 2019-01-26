@@ -13,5 +13,5 @@ Infastructure definitions for MoodyTunes
 
 ## Installing and booting Virtual Machine
 
-- Bring up virtual machine with Vagrant: `vagrant up`
-
+- Bring up virtual machine with Vagrant: `vagrant up mtdj`
+	- This should download the Ubuntu 18.04 virtualbox (might take a while the first time) and provision the box with the needed site programs, dependencies, and tools needed to run MoodyTunes
