@@ -4,5 +4,7 @@ site_packages:
   - python-pip
   - virtualenv
   - postgresql
+  - libpq-dev
+  - python-psycopg2
   - supervisor
   - redis-server

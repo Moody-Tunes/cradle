@@ -2,3 +2,6 @@ ENV="{{env}}"
 DJANGO_DEBUG={{ app_debug }}
 DJANGO_SECRET_KEY="{{ secret_key }}"
 MTDJ_SITE_HOSTNAME="{{ app_hostname }}"
+MTDJ_DATABASE_NAME="{{ postgres_db_name }}"
+MTDJ_DATABASE_USER="{{ postgresql_db_user }}"
+MTDJ_DATABASE_PASSWORD="{{ postgresql_db_password }}"

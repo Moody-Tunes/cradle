@@ -8,4 +8,5 @@
     - nginx
     - git
     - env
+    - postgres
     - django
