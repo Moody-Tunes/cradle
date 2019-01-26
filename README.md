@@ -15,6 +15,8 @@ Infastructure definitions for MoodyTunes
 
 - Install [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 - Install [vagrant](https://www.vagrantup.com/downloads.html) and add to $PATH
+- Install vagrant plugins
+	- `vagrant plugin install vagrant-hostsupdater`
 - Create and activate a python3 virtual environment: `python3 -m venv venv`
 - Install dependencies: `(venv) pip install -r requirements.txt`
 	- If you can't install ansible because of dependencies, you might need to install libffi-dev
