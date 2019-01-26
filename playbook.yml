@@ -6,14 +6,10 @@
   tasks:
     - name: Install packages
       become_user: root
-      apt: 
-        pkg:
-          - git
-          - nginx
-          - python-pip
-          - virtualenv
-        update_cache: true
+      apt:
+        pkg: "{{ site_packages }}"
         state: latest
+        update_cache: true
 
     - name: Clone repository
       git:
