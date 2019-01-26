@@ -12,9 +12,11 @@
         update_cache: true
 
     - name: Add Github to known hosts
-      shell: ssh-keyscan -t rsa github.com >> {{ home_directory }}/.ssh/known_hosts
-      args:
-        executable: /bin/bash
+      lineinfile:
+        path: "{{ home_directory }}/.ssh/known_hosts"
+        create: yes
+        state: present
+        line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
 
     - name: Clone repository
       git:
