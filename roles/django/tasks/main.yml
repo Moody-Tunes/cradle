@@ -1,5 +1,5 @@
 - name: Setup Django project
-  shell: cd {{ repository_path }} && . {{ virtualenv_source }} && {{ item }}
+  shell: . {{ home_directory }}/.profile && {{ item }}
   with_items:
     - python manage.py migrate
     - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
