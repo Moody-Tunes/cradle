@@ -1,6 +1,5 @@
 - name: Configure Application
   hosts: all
-  strategy: debug
   become: true
   become_user: vagrant
 
@@ -21,6 +20,11 @@
           - virtualenv
         update_cache: true
         state: present
+
+    - name: Upgrade packages to latest version
+      become_user: root
+      apt:
+        upgrade: yes
 
     - name: Clone repository
       git:
