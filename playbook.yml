@@ -11,6 +11,11 @@
         state: latest
         update_cache: true
 
+    - name: Add Github to known hosts
+      shell: ssh-keyscan -t rsa github.com >> {{ home_directory }}/.ssh/known_hosts
+      args:
+        executable: /bin/bash
+
     - name: Clone repository
       git:
         repo: "{{ repository_url }}"
