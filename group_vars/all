@@ -2,7 +2,7 @@
 # NOTE: These take the least priority so make sure to only set default/sane values heres
 
 home_directory: /home/vagrant
-repository_url: https://github.com/Moody-Tunes/moodytunes.git
+repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"

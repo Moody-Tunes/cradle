@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-18.04"
   config.vm.define "mtdj"
 
+
   # Configure private network definitions
   config.vm.network "private_network", ip: "192.168.10.21"
   config.vm.hostname = "moodytunes.vm"
@@ -14,6 +15,8 @@ Vagrant.configure("2") do |config|
   # ensure that all Vagrant machines will use the same SSH key pair.
   # See https://github.com/hashicorp/vagrant/issues/5005
   config.ssh.insert_key = false
+
+  config.ssh.forward_agent = true
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
