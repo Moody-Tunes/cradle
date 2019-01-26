@@ -10,8 +10,8 @@ Infastructure definitions for MoodyTunes
 
 - Clone this repository and the moodytunes repository
 
-`git clone https://github.com/Moody-Tunes/cradle.git`
-`git clone https://github.com/Moody-Tunes/moodytunes.git`
+`git clone git@github.com:Moody-Tunes/cradle.git`
+`git clone git@github.com:Moody-Tunes/moodytunes.git`
 
 - Install [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 - Install [vagrant](https://www.vagrantup.com/downloads.html) and add to $PATH
