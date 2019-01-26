@@ -6,6 +6,11 @@
     virtualenv: "{{ virtualenv_dir }}"
     requirements: "{{ repository_path }}/requirements/dev.txt"
 
+- name: Configure logging path
+  become_user: root
+
+  command: mkdir -p {{ logging_dir }} && chown vagrant {{ logging_dir }}
+
 - name: Create environment variables list
   template: src=templates/env dest="{{ repository_path }}/.env"
 

@@ -4,6 +4,7 @@ env: dev
 postgres_db_name: mtdj_database
 postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
 postgresql_db_user: postgres
+logging_dir: /var/log/mtdj
 
 startup_commands: |
   . ~/mtdj_env/bin/activate
