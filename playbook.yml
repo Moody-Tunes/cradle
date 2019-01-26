@@ -37,6 +37,14 @@
         virtualenv: "{{ virtualenv_dir }}"
         requirements: "{{ repository_path }}/requirements/dev.txt"
 
+    - name: Create environment variables list
+      template: src=templates/env dest="{{ repository_path }}/.env"
+
+    - name: Add startup commands to profile
+      blockinfile:
+        path: "{{ home_directory }}/.profile"
+        block: "{{ startup_commands }}"
+
     - name: Setup Django project
       shell: cd {{ repository_path }} && . {{ virtualenv_source }} && {{ item }}
       with_items:
@@ -45,11 +53,6 @@
         - python manage.py collectstatic --noinput
       args:
         executable: /bin/bash
-
-    - name: Add startup commands to profile
-      blockinfile:
-        path: "{{ home_directory }}/.profile"
-        block: "{{ startup_commands }}"
 
   handlers:
     - include: handlers/main.yml

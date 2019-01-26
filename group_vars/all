@@ -3,11 +3,13 @@
 
 app_name: mtdj
 app_hostname: moodytunes.vm
+app_debug: True
 home_directory: /home/vagrant
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
+secret_key: zgt(m7!mg^!ln011u3rvgg^9a1rv+ebff&!*t@ntf@k-iipm^9
 server_ip: 192.168.10.21
 wsgi_server_port: 8000
 site_packages:
@@ -21,3 +23,4 @@ site_packages:
 startup_commands: |
   . ~/mtdj_env/bin/activate
   cd ~/moodytunes/
+  export MTDJ_ENV_FILE="{{ repository_path }}/.env"
