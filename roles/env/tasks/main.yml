@@ -1,0 +1,15 @@
+- name: Create virtual environment
+  command: virtualenv {{ virtualenv_dir }} --python=/usr/bin/python3
+
+- name: Install requirements
+  pip:
+    virtualenv: "{{ virtualenv_dir }}"
+    requirements: "{{ repository_path }}/requirements/dev.txt"
+
+- name: Create environment variables list
+  template: src=templates/env dest="{{ repository_path }}/.env"
+
+- name: Add startup commands to profile
+  blockinfile:
+    path: "{{ home_directory }}/.profile"
+    block: "{{ startup_commands }}"

@@ -1,0 +1,8 @@
+app_debug: True
+secret_key: zgt(m7!mg^!ln011u3rvgg^9a1rv+ebff&!*t@ntf@k-iipm^9
+env: dev
+
+startup_commands: |
+  . ~/mtdj_env/bin/activate
+  cd ~/moodytunes/
+  export MTDJ_ENV_FILE="{{ repository_path }}/.env"

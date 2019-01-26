@@ -8,16 +8,3 @@ repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
-server_ip: 192.168.10.21
-wsgi_server_port: 8000
-site_packages:
-  - git
-  - nginx
-  - python-pip
-  - virtualenv
-  - postgresql
-  - supervisor
-  - redis-server
-startup_commands: |
-  . ~/mtdj_env/bin/activate
-  cd ~/moodytunes/

@@ -1,0 +1,11 @@
+- name: Add Github to known hosts
+  lineinfile:
+    path: "{{ home_directory }}/.ssh/known_hosts"
+    create: yes
+    state: present
+    line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+
+- name: Clone repository
+  git:
+    repo: "{{ repository_url }}"
+    dest: "{{ repository_path }}"

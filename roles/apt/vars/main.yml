@@ -1,0 +1,8 @@
+site_packages:
+  - git
+  - nginx
+  - python-pip
+  - virtualenv
+  - postgresql
+  - supervisor
+  - redis-server

@@ -1,0 +1,11 @@
+- name: Configure Application
+  hosts: all
+  become: true
+  become_user: vagrant
+
+  roles:
+    - apt
+    - nginx
+    - git
+    - env
+    - django
