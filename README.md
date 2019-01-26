@@ -26,3 +26,9 @@ Infastructure definitions for MoodyTunes
 
 - Bring up virtual machine with Vagrant: `vagrant up mtdj`
 	- This should download the Ubuntu 18.04 virtualbox (might take a while the first time) and provision the box with the needed site programs, dependencies, and tools needed to run MoodyTunes
+
+- The site is available through the hostname `moodytunes.vm`.
+	- This is accomplished by `vagrant-hostmanager` adding the IP address for the virtual machine to your /etc/hosts file
+
+- Now you can ssh into your virtual machine through `vagrant ssh mtdj`
+	- You can also you straight ssh by doing `ssh vagrant@moodytunes.vm` when prompted for a password enter the default Vagrant password (which is `vagrant`)
