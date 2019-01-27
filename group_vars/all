@@ -4,6 +4,7 @@
 app_name: mtdj
 app_hostname: moodytunes.vm
 home_directory: /home/vagrant
+default_user: vagrant
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env

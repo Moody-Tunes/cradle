@@ -1,7 +1,7 @@
 - name: Configure Application
   hosts: all
   become: true
-  become_user: vagrant
+  become_user: "{{ default_user }}"
 
   roles:
     - apt

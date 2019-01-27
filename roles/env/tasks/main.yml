@@ -9,7 +9,10 @@
 - name: Configure logging path
   become_user: root
 
-  command: mkdir -p {{ logging_dir }} && chown vagrant {{ logging_dir }}
+  command: "{{ item }}"
+  with_items:
+    - mkdir -p {{ logging_dir }}
+    - chown {{ default_user }} {{ logging_dir }}
 
 - name: Create environment variables list
   template: src=templates/env dest="{{ repository_path }}/.env"
