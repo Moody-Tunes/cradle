@@ -6,6 +6,14 @@
     virtualenv: "{{ virtualenv_dir }}"
     requirements: "{{ repository_path }}/requirements/dev.txt"
 
+- name: Configure logging path
+  become_user: root
+
+  command: "{{ item }}"
+  with_items:
+    - mkdir -p {{ logging_dir }}
+    - chown {{ default_user }} {{ logging_dir }}
+
 - name: Create environment variables list
   template: src=templates/env dest="{{ repository_path }}/.env"
 
