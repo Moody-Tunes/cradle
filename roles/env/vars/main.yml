@@ -6,6 +6,8 @@ postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
 postgresql_db_user: postgres
 logging_dir: /var/log/mtdj
 
+requirements_file: "{{ repository_path }}/requirements/dev.txt"
+
 startup_commands: |
   . ~/mtdj_env/bin/activate
   cd ~/moodytunes/

@@ -4,7 +4,7 @@
 - name: Install requirements
   pip:
     virtualenv: "{{ virtualenv_dir }}"
-    requirements: "{{ repository_path }}/requirements/dev.txt"
+    requirements: "{{ requirements_file }}"
 
 - name: Configure logging path
   become_user: root
