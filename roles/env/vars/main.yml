@@ -5,6 +5,11 @@ postgres_db_name: mtdj_database
 postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
 postgresql_db_user: postgres
 logging_dir: /var/log/mtdj
+cache_location: redis://127.0.0.1:6379/1
+cache_backend: django_redis.cache.RedisCache
+cache_client: django_redis.client.DefaultClient
+
+requirements_file: "{{ repository_path }}/requirements/dev.txt"
 
 startup_commands: |
   . ~/mtdj_env/bin/activate
