@@ -20,6 +20,7 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "ansible" do |ansible|
+    ansible.inventory_path = "hosts"
     ansible.verbose = "v"
     ansible.playbook = "site.yml"
   end
