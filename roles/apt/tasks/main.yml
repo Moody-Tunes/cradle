@@ -4,3 +4,9 @@
     pkg: "{{ site_packages }}"
     state: latest
     update_cache: true
+
+- name: Update system packages
+  become_user: root
+
+  apt:
+    upgrade: safe
