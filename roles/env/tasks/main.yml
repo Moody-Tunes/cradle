@@ -9,10 +9,10 @@
 - name: Configure logging path
   become_user: root
 
-  command: "{{ item }}"
-  with_items:
-    - mkdir -p {{ logging_dir }}
-    - chown {{ default_user }} {{ logging_dir }}
+  file:
+    path: "{{ logging_dir }}"
+    owner: "{{ default_user }}"
+    state: directory
 
 - name: Create environment variables list
   template: src=templates/env dest="{{ repository_path }}/.env"

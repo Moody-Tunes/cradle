@@ -11,3 +11,8 @@ site_packages:
   - libpq-dev
   - python-psycopg2
   - redis-server
+
+startup_commands: |
+  . {{ virtualenv_source }}
+  cd {{ repository_path }}
+  export {{ env_file_var }}="{{ repository_path }}/.env"
