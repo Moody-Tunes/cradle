@@ -1,5 +1,7 @@
+# Environment playbook is running against
+playbook_env: local
+
 default_user: vagrant
-environment: local  # TODO: Configure to point to different environments
 home_directory: /home/vagrant
 python_path: /usr/bin/python3.6
 

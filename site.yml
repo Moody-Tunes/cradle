@@ -4,7 +4,7 @@
   become_user: "{{ default_user }}"
 
   vars_files:
-    - vars/mtdj/{{ environment }}
+    - vars/mtdj/{{ playbook_env }}
 
   roles:
     - apt
