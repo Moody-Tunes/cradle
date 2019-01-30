@@ -1,4 +1,4 @@
 startup_commands: |
   . {{ virtualenv_source }}
   cd {{ repository_path }}
-  export MTDJ_ENV_FILE="{{ repository_path }}/.env"
+  export {{ env_file_var }}="{{ repository_path }}/.env"
