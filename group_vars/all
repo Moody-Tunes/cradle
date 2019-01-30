@@ -1,5 +1,4 @@
-# General Site Definitions
-# NOTE: These take the least priority so make sure to only set default/sane values heres
+env: local  # TODO: Configure to point to different environments
 
 app_name: mtdj
 app_hostname: moodytunes.vm
