@@ -1,9 +1,8 @@
 - name: Setup Django project
   shell: . {{ home_directory }}/.profile && {{ item }}
+
   with_items:
-    - python manage.py migrate
-    - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
-    - python manage.py collectstatic --noinput
+    - "{{ django_commands }}"
 
 - name: Clear compiled python files
   shell: cd {{ repository_path }} && find . -name *.pyc -delete

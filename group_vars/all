@@ -4,6 +4,7 @@
 playbook_env: local
 
 default_user: vagrant
+django_command: "{{ ansible_env.VIRTUAL_ENV | default('python manage.py') }}"
 home_directory: /home/vagrant
 python_path: /usr/bin/python3.6
 
