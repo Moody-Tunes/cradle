@@ -9,3 +9,6 @@ logging_dir: /var/log/mtdj
 cache_location: redis://127.0.0.1:6379/1
 cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
+requirements_file: "{{ repository_path }}/requirements/dev.txt"
+server_ip: 192.168.10.21
+wsgi_server_port: 8000
