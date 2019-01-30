@@ -1,7 +1,7 @@
 ENV="{{env}}"
 DJANGO_DEBUG={{ app_debug }}
 DJANGO_APP_LOG_DIR="{{ logging_dir }}"
-DJANGO_SECRET_KEY="{{ secret_key }}"
+DJANGO_SECRET_KEY="{{ django_secret_key }}"
 MTDJ_SITE_HOSTNAME="{{ app_hostname }}"
 MTDJ_DATABASE_NAME="{{ postgres_db_name }}"
 MTDJ_DATABASE_USER="{{ postgresql_db_user }}"

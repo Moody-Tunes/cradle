@@ -1,7 +1,10 @@
-- name: Configure Application
-  hosts: all
+- name: Configure mtdj
+  hosts: mtdj
   become: true
   become_user: "{{ default_user }}"
+
+  vars_files:
+    - vars/mtdj/{{ environment }}
 
   roles:
     - apt
