@@ -1,6 +1,7 @@
+default_user: vagrant
 environment: local  # TODO: Configure to point to different environments
 home_directory: /home/vagrant
-default_user: vagrant
+python_path: /usr/bin/python3.6
 
 site_packages:
   - git

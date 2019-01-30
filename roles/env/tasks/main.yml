@@ -1,5 +1,5 @@
 - name: Create virtual environment
-  command: virtualenv {{ virtualenv_dir }} --python=/usr/bin/python3
+  command: virtualenv {{ virtualenv_dir }} --python={{ python_path }}
 
 - name: Install requirements
   pip:
