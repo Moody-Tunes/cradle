@@ -7,4 +7,4 @@ virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 
 django_commands_extend:
-  - "{{ django_command }} loaddata apps/tunes/fixtures/Initial_Songs.json"
+  - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
