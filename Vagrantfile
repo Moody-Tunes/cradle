@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
     ansible.inventory_path = "hosts"
     ansible.verbose = "v"
     ansible.playbook = "site.yml"
+    ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
   end
 
   # Share an additional folder to the guest VM. The first argument is
