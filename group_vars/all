@@ -1,4 +1,4 @@
-env: local  # TODO: Configure to point to different environments
+environment: local  # TODO: Configure to point to different environments
 
 app_name: mtdj
 app_hostname: moodytunes.vm
