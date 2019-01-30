@@ -9,6 +9,8 @@
     template: 'template0'
     state: present
 
+  notify: restart postgresql
+
 - name: Ensure postgres user has access to the database
   become_user: postgres
   
@@ -19,6 +21,8 @@
     priv: ALL
     state: present
 
+  notify: restart postgresql
+
 - name: Ensure user does not have unnecessary privileges
   become_user: postgres
   
@@ -27,7 +31,4 @@
     role_attr_flags: NOSUPERUSER,NOCREATEDB
     state: present
 
-- name: Restart postgresql
-  become_user: root
-  
-  service: name=postgresql state=restarted
+  notify: restart postgresql

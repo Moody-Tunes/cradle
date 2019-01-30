@@ -1,7 +1,8 @@
 - name: Create nginx config file
-  template: src=templates/nginx dest=/etc/nginx/conf.d/{{ app_name }}.conf
   become_user: root
 
-- name: Restart nginx
-  service: name=nginx state=restarted enabled=yes
-  become_user: root
+  template:
+    src: templates/nginx
+    dest: /etc/nginx/conf.d/{{ app_name }}.conf
+
+  notify: restart nginx
