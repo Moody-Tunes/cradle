@@ -1,10 +1,10 @@
-- name: Configure mtdj
-  hosts: mtdj
+- name: Configure Application
+  hosts: all
   become: true
   become_user: "{{ default_user }}"
 
   vars_files:
-    - vars/mtdj/{{ environment }}
+    - vars/{{ app_name }}/{{ playbook_env }}
 
   roles:
     - apt
@@ -12,4 +12,5 @@
     - git
     - env
     - postgres
+    - gunicorn
     - django

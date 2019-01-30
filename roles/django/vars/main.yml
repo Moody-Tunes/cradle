@@ -1,0 +1,5 @@
+base_commands:
+  - python manage.py migrate
+  - python manage.py collectstatic --noinput
+
+django_commands: "{{ base_commands }} + {{ django_commands_extend | default([]) }}"

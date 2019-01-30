@@ -1,0 +1,31 @@
+- name: Create gunicorn.d directory
+  become_user: root
+
+  file:
+    path: /etc/gunicorn.d
+    state: directory
+
+- name: Create gunicorn config file
+  become_user: root
+
+  template:
+    src: templates/gunicorn.py
+    dest: /etc/gunicorn.d/gunicorn.py
+
+- name: Create gunicorn systemd file
+  become_user: root
+
+  template:
+    src: templates/gunicorn.service
+    dest: /etc/systemd/system/gunicorn.service
+
+- name: Start gunicorn daemon on non local environments
+  become_user: root
+
+  service:
+    name: gunicorn
+    state: restarted
+
+  when: playbook_env != 'local'
+
+  notify: restart nginx
