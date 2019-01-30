@@ -12,4 +12,5 @@
     - git
     - env
     - postgres
+    - gunicorn
     - django
