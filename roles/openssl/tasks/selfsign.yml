@@ -1,0 +1,29 @@
+- name: Generate an OpenSSL private key
+  become_user: root
+
+  openssl_privatekey:
+    path: "{{ privatekey_path }}"
+
+- name: Ensure directory exists for local self-signed TLS certs
+  become_user: root
+
+  file:
+    path: "{{ ssl_path }}/csr"
+    state: directory
+    mode: 0755
+
+- name: Generate an OpenSSL Certificate Signing Request
+  become_user: root
+  
+  openssl_csr:
+    path: "{{ csr_path }}"
+    privatekey_path: "{{ privatekey_path }}"
+     
+- name: Generate self signed certificate
+  become_user: root
+
+  openssl_certificate:
+    path: "{{ cert_path }}"
+    privatekey_path: "{{ privatekey_path }}"
+    csr_path: "{{ csr_path }}"
+    provider: selfsigned

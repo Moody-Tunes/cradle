@@ -1,0 +1,21 @@
+- name: Enable ufw firewall
+  become_user: root
+
+  ufw:
+    state: enabled
+
+- name: Enable OpenSSH
+  become_user: root
+
+  ufw:
+    name: OpenSSH
+    rule: allow
+    state: enabled
+
+- name: Enable nginx
+  become_user: root
+
+  ufw:
+    name: Nginx Full
+    rule: allow
+    state: enabled

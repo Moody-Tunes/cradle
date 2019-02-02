@@ -4,10 +4,13 @@
   become_user: "{{ default_user }}"
 
   vars_files:
+    - vars/system/{{ playbook_env }}
     - vars/{{ app_name }}/{{ playbook_env }}
 
   roles:
     - apt
+    - ufw
+    - openssl
     - nginx
     - git
     - env

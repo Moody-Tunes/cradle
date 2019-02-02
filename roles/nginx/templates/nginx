@@ -3,8 +3,14 @@ upstream app_server {
 }
 
 server {
-    listen 80;
+    listen 443 ssl;
     server_name {{ app_hostname }};
+
+    ssl_certificate {{ cert_path }};
+    ssl_certificate_key {{ privatekey_path }};
+    ssl_ciphers EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH;
+    ssl_protocols TLSv1.1 TLSv1.2;
+
     access_log /var/log/nginx/{{ app_name }}-access.log;
     error_log /var/log/nginx/{{ app_name }}-error.log info;
 
@@ -20,9 +26,22 @@ server {
         proxy_set_header Host $http_host;
         proxy_redirect off;
 
-        if (!-f $request_filename) {
-            proxy_pass http://app_server;
-            break;
-        }
+        proxy_pass http://app_server;
     }
+}
+
+server {
+    listen 80;
+    server_name {{ app_hostname }};
+
+    if ($host = www.{{ app_hostname }}) {
+        return 301 https://$host$request_uri;
+    }
+
+
+    if ($host = {{ app_hostname }}) {
+        return 301 https://$host$request_uri;
+    }
+
+    return 404;
 }

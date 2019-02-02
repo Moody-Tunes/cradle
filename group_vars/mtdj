@@ -1,10 +1,6 @@
 app_name: mtdj
-app_hostname: moodytunes.vm
 env_file_var: MTDJ_ENV_FILE
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
-
-django_commands_extend:
-  - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
