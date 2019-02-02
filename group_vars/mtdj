@@ -1,5 +1,4 @@
 app_name: mtdj
-app_hostname: moodytunes.vm
 env_file_var: MTDJ_ENV_FILE
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes

@@ -3,3 +3,4 @@ ssl_path: /etc/ssl
 cert_path: "{{ ssl_path }}/certs/ansible.com.crt"
 privatekey_path: "{{ ssl_path }}/private/ansible.com.pem"
 csr_path: "{{ ssl_path }}/csr/ansible.com.csr"
+ssl_config_path: /etc/nginx/self-signed.conf
