@@ -9,6 +9,7 @@
 
   roles:
     - apt
+    - ufw
     - openssl
     - nginx
     - git
