@@ -1,11 +1,3 @@
-- name: Ensure nginx is running
-  become_user: root
-  no_log: true
-
-  service:
-    name: nginx
-    state: started
-
 - name: Create nginx config file
   become_user: root
 
