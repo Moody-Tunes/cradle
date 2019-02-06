@@ -1,0 +1,26 @@
+[Unit]
+Description=Celery Service for {{ app_name }}
+After=network.target
+
+[Service]
+Type=forking
+User={{ default_user }}
+Environment={{ env_file_var }}={{ repository_path }}/.env
+WorkingDirectory={{ repository_path }}
+ExecStart={{ virtualenv_dir }}/bin/celery multi start worker1 \
+-A mtdj.celery \
+--pidfile={{ celery_pid_file }} \
+--loglevel={{ celery_log_level }} \
+--logfile={{ celeryd_log_file }}
+
+ExecStop={{ virtualenv_dir }}/bin/celery multi stopwait worker1 \
+--pidfile={{ celery_pid_file }}
+
+ExecReload={{ virtualenv_dir }}/bin/celery multi restart worker1 \
+-A mtdj.celery \
+--pidfile={{ celery_pid_file }} \
+--loglevel={{ celery_log_level }} \
+--logfile={{ celeryd_log_file }}
+
+[Install]
+WantedBy=multi-user.target

@@ -5,7 +5,6 @@ cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
 django_secret_key: zgt(m7!mg^!ln011u3rvgg^9a1rv+ebff&!*t@ntf@k-iipm^9
 env: dev
-logging_dir: /var/log/mtdj
 postgres_db_name: mtdj_database
 postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
 postgresql_db_user: postgres

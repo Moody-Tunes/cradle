@@ -1,13 +1,6 @@
-- name: Create celery group
+- name: Create celery systemd file
   become_user: root
 
-  group:
-    name: celery
-
-- name: Create celery user
-  become_user: root
-
-  user:
-    name: celery
-    group: celery
-    system: yes
+  template:
+    src: templates/celery.service
+    dest: /etc/systemd/system/celery.service
