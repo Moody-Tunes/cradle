@@ -1,6 +1,11 @@
 app_name: mtdj
 env_file_var: MTDJ_ENV_FILE
+logging_dir: /var/log/mtdj
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
+celery_pid_file: /tmp/%n.pid
+celery_beat_pid_file: /tmp/beat.pid
+celery_log_level: INFO
+celery_log_file: "{{ logging_dir }}/celery_app.log"

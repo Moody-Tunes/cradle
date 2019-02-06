@@ -1,0 +1,18 @@
+[Unit]
+Description=Celery Beat Service for {{ app_name }}
+After=network.target
+
+[Service]
+Type=forking
+User={{ default_user }}
+Environment={{ env_file_var }}={{ repository_path }}/.env
+WorkingDirectory={{ repository_path }}
+ExecStart={{ virtualenv_dir }}/bin/celery multi start beat \
+-A mtdj.celery \
+--scheduler=django_celery_beat.schedulers:DatabaseScheduler \
+--pidfile={{ celery_beat_pid_file }} \
+--loglevel={{ celery_log_level }} \
+--logfile={{ celery_log_file }}
+
+[Install]
+WantedBy=multi-user.target

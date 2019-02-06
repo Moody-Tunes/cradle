@@ -16,4 +16,5 @@
     - env
     - postgres
     - gunicorn
+    - celery
     - django
