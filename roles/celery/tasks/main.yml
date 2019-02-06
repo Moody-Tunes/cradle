@@ -1,0 +1,13 @@
+- name: Create celery group
+  become_user: root
+
+  group:
+    name: celery
+
+- name: Create celery user
+  become_user: root
+
+  user:
+    name: celery
+    group: celery
+    system: yes
