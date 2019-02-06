@@ -11,7 +11,7 @@ ExecStart={{ virtualenv_dir }}/bin/celery multi start worker1 \
 -A mtdj.celery \
 --pidfile={{ celery_pid_file }} \
 --loglevel={{ celery_log_level }} \
---logfile={{ celeryd_log_file }}
+--logfile={{ celery_log_file }}
 
 ExecStop={{ virtualenv_dir }}/bin/celery multi stopwait worker1 \
 --pidfile={{ celery_pid_file }}
@@ -20,7 +20,7 @@ ExecReload={{ virtualenv_dir }}/bin/celery multi restart worker1 \
 -A mtdj.celery \
 --pidfile={{ celery_pid_file }} \
 --loglevel={{ celery_log_level }} \
---logfile={{ celeryd_log_file }}
+--logfile={{ celery_log_file }}
 
 [Install]
 WantedBy=multi-user.target

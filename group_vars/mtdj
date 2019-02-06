@@ -7,4 +7,4 @@ virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 celery_pid_file: /tmp/%n.pid
 celery_log_level: INFO
-celeryd_log_file: "{{ logging_dir }}/celery_app.log"
+celery_log_file: "{{ logging_dir }}/celery_app.log"

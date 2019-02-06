@@ -4,3 +4,10 @@
   template:
     src: templates/celery.service
     dest: /etc/systemd/system/celery.service
+
+- name: Create celery-beat systemd file
+  become_user: root
+
+  template:
+    src: templates/celery_beat.service
+    dest: /etc/systemd/system/celery_beat.service
