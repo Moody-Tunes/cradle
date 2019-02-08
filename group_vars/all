@@ -11,6 +11,7 @@ site_packages:
   - git
   - nginx
   - python-pip
+  - python3-dev
   - virtualenv
   - postgresql
   - libpq-dev
