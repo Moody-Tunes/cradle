@@ -18,6 +18,8 @@ site_packages:
   - python-psycopg2
   - python-openssl
   - redis-server
+  - nodejs
+  - npm
 
 startup_commands: |
   . {{ virtualenv_source }}

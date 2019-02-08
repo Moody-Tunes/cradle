@@ -17,4 +17,5 @@
     - postgres
     - gunicorn
     - celery
+    - node
     - django
