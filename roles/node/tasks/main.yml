@@ -1,0 +1,6 @@
+- name: Install node dependencies
+  
+  shell: cd {{ repository_path }} && npm install {{ item }}
+  
+  with_items:
+    - "{{ node_packages }}"

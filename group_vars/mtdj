@@ -9,3 +9,6 @@ celery_pid_file: /tmp/%n.pid
 celery_beat_pid_file: /tmp/beat.pid
 celery_log_level: INFO
 celery_log_file: "{{ logging_dir }}/celery_app.log"
+
+node_packages:
+  - less
