@@ -9,11 +9,11 @@
 
   roles:
     - apt
+    - system
     - ufw
     - openssl
     - nginx
     - git
-    - system
     - env
     - postgres
     - gunicorn
