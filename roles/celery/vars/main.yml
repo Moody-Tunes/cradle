@@ -1,0 +1,5 @@
+celery_logging_directory: "/var/log/celery"
+celery_pid_file: /tmp/%n.pid
+celery_beat_pid_file: /tmp/beat.pid
+celery_log_level: INFO
+celery_log_file: "{{ celery_logging_directory }}/celery_app.log"
