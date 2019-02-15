@@ -1,0 +1,6 @@
+- name: Create system group
+  become_user: root
+
+  group:
+    name: "{{ system_group }}"
+    system: yes

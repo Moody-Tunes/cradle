@@ -7,6 +7,9 @@ default_user: vagrant
 home_directory: /home/vagrant
 python_path: /usr/bin/python3.6
 
+system_group: workers
+gunicorn_user: gunicorn
+
 site_packages:
   - git
   - nginx
