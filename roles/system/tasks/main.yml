@@ -1,0 +1,38 @@
+- name: Create system group
+  become_user: root
+
+  group:
+    name: "{{ system_group }}"
+    system: yes
+
+- name: Create celery user
+  become_user: root
+
+  user:
+    name: "{{ celery_user }}"
+    groups: "{{ system_group }}"
+    create_home: no
+
+- name: Create celery logging directory
+  become_user: root
+
+  file:
+    path: "{{ celery_logging_directory }}"
+    owner: "{{ celery_user }}"
+    state: directory
+
+- name: Create gunicorn user
+  become_user: root
+
+  user:
+    name: "{{ gunicorn_user }}"
+    groups: "{{ system_group }}"
+    create_home: no
+
+- name: Create gunicorn logging directory
+  become_user: root
+
+  file:
+    path: "{{ gunicorn_logging_directory }}"
+    owner: "{{ gunicorn_user }}"
+    state: directory

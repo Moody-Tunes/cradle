@@ -7,6 +7,18 @@ default_user: vagrant
 home_directory: /home/vagrant
 python_path: /usr/bin/python3.6
 
+system_group: workers
+celery_user: celery
+gunicorn_user: gunicorn
+
+gunicorn_logging_directory: /var/log/gunicorn
+
+celery_logging_directory: /var/log/celery
+celery_pid_file: /tmp/%n.pid
+celery_beat_pid_file: /tmp/beat.pid
+celery_log_level: INFO
+celery_log_file: "{{ celery_logging_directory }}/celery_app.log"
+
 site_packages:
   - git
   - nginx
