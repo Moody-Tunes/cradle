@@ -18,6 +18,7 @@
   openssl_csr:
     path: "{{ csr_path }}"
     privatekey_path: "{{ privatekey_path }}"
+    common_name: www.{{ app_hostname }}
      
 - name: Generate self signed certificate
   become_user: root
