@@ -18,6 +18,12 @@ server {
 
     location /static {
             autoindex on;
+
+            # Set security headers on static files
+            add_header X-Content-Type-Options nosniff;
+            add_header X-XSS-Protection mode=block;
+            add_header X-Frame-Options SAMEORIGIN;
+
             alias {{ repository_path }}/_static/;
     }
 
