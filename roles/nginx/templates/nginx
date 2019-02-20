@@ -17,7 +17,14 @@ server {
     keepalive_timeout 5;
 
     location /static {
-            autoindex on;
+            expires 1y;
+            add_header Cache-Control public;
+
+            # Set security headers on static files
+            add_header X-Content-Type-Options nosniff;
+            add_header X-XSS-Protection mode=block;
+            add_header X-Frame-Options SAMEORIGIN;
+
             alias {{ repository_path }}/_static/;
     }
 
