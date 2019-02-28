@@ -8,4 +8,4 @@ virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 
 node_packages:
   - less
-  - yuglify
+  - uglify-js@github:mishoo/UglifyJS2#harmony
