@@ -45,6 +45,6 @@
 
 - name: Add systemd aliases file
 
-  copy:
+  template:
     src: templates/systemctl-aliases
     dest: "{{ home_directory }}/.systemctl-aliases"
