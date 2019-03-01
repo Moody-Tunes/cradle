@@ -15,9 +15,6 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_ecdh_curve secp521r1:secp384r1;
 
-    access_log /var/log/nginx/{{ app_name }}-access.log;
-    error_log /var/log/nginx/{{ app_name }}-error.log info;
-
     keepalive_timeout 5;
 
     location /static {
