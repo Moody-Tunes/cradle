@@ -42,3 +42,9 @@
   copy:
     src: templates/systemctl-complete
     dest: "{{ home_directory }}/.systemctl-complete.bash"
+
+- name: Add systemd aliases file
+
+  copy:
+    src: templates/systemctl-aliases
+    dest: "{{ home_directory }}/.systemctl-aliases"

@@ -36,5 +36,6 @@ site_packages:
 startup_commands: |
   . {{ virtualenv_source }}
   . {{ home_directory }}/.systemctl-complete.bash
+  . {{ home_directory }}/.systemctl-aliases
   cd {{ repository_path }}
   export {{ env_file_var }}="{{ repository_path }}/.env"

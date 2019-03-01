@@ -1,0 +1,40 @@
+# Aliases for systemctl
+
+## systemctl specific commands
+alias daemon-reload="sudo systemctl daemon-reload"
+alias daemon-status="sudo systemctl status"
+
+## systemctl worker commands
+alias daemon-restart-all="sudo systemctl restart gunicorn celery celery_beat"
+alias daemon-start-all="sudo systemctl start gunicorn celery celery_beat" 
+alias daemon-stop-all="sudo systemctl stop gunicorn celery celery_beat"
+
+## nginx commands
+alias daemon-start-nginx="sudo systemctl start nginx"
+alias daemon-status-nginx="sudo systemctl status nginx"
+alias daemon-stop-nginx="sudo systemctl stop nginx"
+alias daemon-restart-nginx="sudo systemctl restart nginx"
+
+## redis commands
+alias daemon-start-redis="sudo systemctl start redis"
+alias daemon-status-redis="sudo systemctl status redis"
+alias daemon-stop-redis="sudo systemctl stop redis"
+alias daemon-restart-redis="sudo systemctl restart redis"
+
+## gunicorn commands
+alias daemon-start-gunicorn="sudo systemctl start gunicorn"
+alias daemon-status-gunicorn="sudo systemctl status gunicorn"
+alias daemon-stop-gunicorn="sudo systemctl stop gunicorn"
+alias daemon-restart-gunicorn="sudo systemctl restart gunicorn"
+
+## celery commands
+alias daemon-start-celery="sudo systemctl start celery"
+alias daemon-status-celery="sudo systemctl status celery"
+alias daemon-stop-celery="sudo systemctl stop celery"
+alias daemon-restart-celery="sudo systemctl restart celery"
+
+## celery_beat commands
+alias daemon-start-celery_beat="sudo systemctl start celery_beat"
+alias daemon-status-celery_beat="sudo systemctl status celery_beat"
+alias daemon-stop-celery_beat="sudo systemctl stop celery_beat"
+alias daemon-restart-celery_beat="sudo systemctl restart celery_beat"
