@@ -36,3 +36,9 @@
     path: "{{ gunicorn_logging_directory }}"
     owner: "{{ gunicorn_user }}"
     state: directory
+
+- name: Add systemd auto complete source file
+  
+  copy:
+    src: templates/systemctl-complete
+    dest: "{{ home_directory }}/.systemctl-complete.bash"
