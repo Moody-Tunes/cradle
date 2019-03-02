@@ -34,7 +34,5 @@ site_packages:
   - npm
 
 startup_commands: |
-  . {{ virtualenv_source }}
   . {{ home_directory }}/.systemctl-complete.bash
-  cd {{ repository_path }}
-  export {{ env_file_var }}="{{ repository_path }}/.env"
+  . {{ home_directory }}/.application-startup

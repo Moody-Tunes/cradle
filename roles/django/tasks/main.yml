@@ -1,5 +1,5 @@
 - name: Setup Django project
-  shell: . {{ home_directory }}/.profile && {{ item }}
+  shell: . {{ home_directory }}/.application-startup && {{ item }}
 
   with_items:
     - "{{ django_commands }}"

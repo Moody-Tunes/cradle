@@ -13,6 +13,14 @@
     groups: "{{ system_group }}"
     create_home: no
 
+- name: Configure logging path
+  become_user: root
+
+  file:
+    path: "{{ logging_dir }}"
+    owner: "{{ default_user }}"
+    state: directory
+
 - name: Create celery logging directory
   become_user: root
 
@@ -37,8 +45,26 @@
     owner: "{{ gunicorn_user }}"
     state: directory
 
+- name: Create environment variables list
+
+  template:
+    src: templates/env
+    dest: "{{ repository_path }}/.env"
+
+- name: Add application startup script
+
+  template:
+    src: templates/application-startup
+    dest: "{{ home_directory }}/.application-startup"
+
 - name: Add systemd auto complete source file
   
   copy:
     src: templates/systemctl-complete
     dest: "{{ home_directory }}/.systemctl-complete.bash"
+
+- name: Add startup commands to profile
+
+  blockinfile:
+    path: "{{ home_directory }}/.profile"
+    block: "{{ startup_commands }}"
