@@ -10,11 +10,6 @@ python_path: /usr/bin/python3.6
 system_group: workers
 celery_user: celery
 gunicorn_user: gunicorn
-all_daemon_processes: "gunicorn celery celery_beat"
-daemon_processes:
-  - gunicorn
-  - celery
-  - celery_beat
 
 gunicorn_logging_directory: /var/log/gunicorn
 
