@@ -20,6 +20,7 @@ celery_log_level: INFO
 celery_log_file: "{{ celery_logging_directory }}/celery_app.log"
 
 site_packages:
+  - bash-completion
   - git
   - nginx
   - python-pip
