@@ -1,23 +1,15 @@
 - name: Create virtual environment
+
   command: virtualenv {{ virtualenv_dir }} --python={{ python_path }}
 
 - name: Install requirements
+
   pip:
     virtualenv: "{{ virtualenv_dir }}"
     requirements: "{{ requirements_file }}"
 
-- name: Configure logging path
-  become_user: root
-
-  file:
-    path: "{{ logging_dir }}"
-    owner: "{{ default_user }}"
-    state: directory
-
 - name: Create environment variables list
-  template: src=templates/env dest="{{ repository_path }}/.env"
 
-- name: Add startup commands to profile
-  blockinfile:
-    path: "{{ home_directory }}/.profile"
-    block: "{{ startup_commands }}"
+  template:
+    src: templates/env
+    dest: "{{ repository_path }}/.env"

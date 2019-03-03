@@ -1,13 +1,8 @@
 ENV="{{env}}"
-DJANGO_DEBUG={{ app_debug }}
+DJANGO_DEBUG="{{ app_debug }}"
 DJANGO_APP_LOG_DIR="{{ logging_dir }}"
 DJANGO_SECRET_KEY="{{ django_secret_key }}"
-MTDJ_SITE_HOSTNAME="{{ app_hostname }}"
-MTDJ_DATABASE_NAME="{{ postgres_db_name }}"
-MTDJ_DATABASE_USER="{{ postgresql_db_user }}"
-MTDJ_DATABASE_PASSWORD="{{ postgresql_db_password }}"
-MTDJ_CACHE_BACKEND="{{ cache_backend }}"
-MTDJ_CACHE_LOCATION="{{ cache_location }}"
-MTDJ_CACHE_CLIENT="{{ cache_client }}"
-MTDJ_CELERY_TASK_ALWAYS_EAGER="{{ celery_always_eager }}"
-MTDJ_CELERY_BROKER_URL="{{ celery_broker_url }}"
+
+{% for key, value in environment_extend.items() %}
+{{ key }}="{{ value }}"
+{% endfor %}

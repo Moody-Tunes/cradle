@@ -20,6 +20,7 @@ celery_log_level: INFO
 celery_log_file: "{{ celery_logging_directory }}/celery_app.log"
 
 site_packages:
+  - bash-completion
   - git
   - nginx
   - python-pip
@@ -34,6 +35,5 @@ site_packages:
   - npm
 
 startup_commands: |
-  . {{ virtualenv_source }}
-  cd {{ repository_path }}
-  export {{ env_file_var }}="{{ repository_path }}/.env"
+  . {{ home_directory }}/.systemctl-complete.bash
+  . {{ home_directory }}/.application-startup
