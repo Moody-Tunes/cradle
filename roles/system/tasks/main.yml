@@ -45,12 +45,6 @@
     owner: "{{ gunicorn_user }}"
     state: directory
 
-- name: Create environment variables list
-
-  template:
-    src: templates/env
-    dest: "{{ repository_path }}/.env"
-
 - name: Add application startup script
 
   template:
