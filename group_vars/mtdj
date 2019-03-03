@@ -6,6 +6,17 @@ repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 
+environment_extend:
+  MTDJ_SITE_HOSTNAME: "{{ app_hostname }}"
+  MTDJ_DATABASE_NAME: "{{ postgres_db_name }}"
+  MTDJ_DATABASE_USER: "{{ postgresql_db_user }}"
+  MTDJ_DATABASE_PASSWORD: "{{ postgresql_db_password }}"
+  MTDJ_CACHE_BACKEND: "{{ cache_backend }}"
+  MTDJ_CACHE_LOCATION: "{{ cache_location }}"
+  MTDJ_CACHE_CLIENT: "{{ cache_client }}"
+  MTDJ_CELERY_TASK_ALWAYS_EAGER: "{{ celery_always_eager }}"
+  MTDJ_CELERY_BROKER_URL: "{{ celery_broker_url }}"
+
 node_packages:
   - less
   - uglify-js@github:mishoo/UglifyJS2#harmony
