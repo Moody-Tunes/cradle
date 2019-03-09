@@ -11,4 +11,3 @@
   git:
     dest: "{{ repository_path }}"
     repo: "{{ repository_url }}"
-    version: master
