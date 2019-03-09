@@ -71,3 +71,5 @@
     dest: /etc/systemd/system/smtp.service
 
   when: playbook_env == 'local'
+
+  notify: restart smtp
