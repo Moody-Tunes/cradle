@@ -16,6 +16,8 @@ environment_extend:
   MTDJ_CACHE_CLIENT: "{{ cache_client }}"
   MTDJ_CELERY_TASK_ALWAYS_EAGER: "{{ celery_always_eager }}"
   MTDJ_CELERY_BROKER_URL: "{{ celery_broker_url }}"
+  MTDJ_EMAIL_HOST: "{{ email_host }}"
+  MTDJ_EMAIL_PORT: "{{ email_port }}"
 
 node_packages:
   - less
