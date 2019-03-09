@@ -7,10 +7,10 @@ virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 
 environment_extend:
-  DJANGO_EMAIL_BACKEND: "{{ email_backend }}"
-  DJANGO_EMAIL_HOST: "{{ email_host }}"
-  DJANGO_EMAIL_PORT: "{{ email_port }}"
-  DJANGO_EMAIL_USE_TLS: "{{ email_use_tls }}"
+  DJANGO_EMAIL_BACKEND: "{{ email_backend | default(None) }}"
+  DJANGO_EMAIL_HOST: "{{ email_host | default(None) }}"
+  DJANGO_EMAIL_PORT: "{{ email_port | default(None) }}"
+  DJANGO_EMAIL_USE_TLS: "{{ email_use_tls | default(None) }}"
   MTDJ_SITE_HOSTNAME: "{{ app_hostname }}"
   MTDJ_DATABASE_NAME: "{{ postgres_db_name }}"
   MTDJ_DATABASE_USER: "{{ postgresql_db_user }}"

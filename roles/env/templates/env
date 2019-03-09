@@ -4,5 +4,7 @@ DJANGO_APP_LOG_DIR="{{ logging_dir }}"
 DJANGO_SECRET_KEY="{{ django_secret_key }}"
 
 {% for key, value in environment_extend.items() %}
+{% if value %}
 {{ key }}="{{ value }}"
+{% endif %}
 {% endfor %}
