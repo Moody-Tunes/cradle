@@ -1,7 +1,0 @@
-- name: restart smtp
-  become_user: root
-  no_log: true
-
-  service:
-    name: smtp
-    state: restarted
