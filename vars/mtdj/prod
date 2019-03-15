@@ -1,0 +1,11 @@
+app_debug: False
+app_hostname: moodytunes.vm
+cache_location: redis://127.0.0.1:6379/1
+cache_backend: django_redis.cache.RedisCache
+cache_client: django_redis.client.DefaultClient
+celery_always_eager: False
+celery_broker_url: redis://127.0.0.1:6379/1
+env: dev
+postgres_db_name: mtdj_database
+postgresql_db_user: postgres
+requirements_file: "{{ repository_path }}/requirements/common.txt"
