@@ -11,7 +11,7 @@ _systemctl_complete()
   if [ $COMP_CWORD -eq 1 ]; then
     COMPREPLY=( $(compgen -W "daemon-reload restart start stop status" -- $cur) )
   elif [ $COMP_CWORD -eq 2 ]; then
-    COMPREPLY=( $(compgen -W "celery celery_beat nginx gunicorn smtp" -- $cur) )
+    COMPREPLY=( $(compgen -W "celery celery_beat nginx gunicorn" -- $cur) )
   fi
 
   return 0
