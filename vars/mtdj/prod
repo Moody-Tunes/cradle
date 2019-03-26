@@ -5,7 +5,12 @@ cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
 celery_always_eager: False
 celery_broker_url: redis://127.0.0.1:6379/1
-env: dev
+env: prod
+email_backend: django.core.mail.backends.smtp.EmailBackend
+email_host: smtp.sendgrid.net
+email_user: moodytunes
+email_port: 587
+email_use_tls: True
 postgres_db_name: mtdj_database
 postgresql_db_user: postgres
 requirements_file: "{{ repository_path }}/requirements/common.txt"
