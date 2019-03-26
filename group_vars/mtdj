@@ -7,6 +7,7 @@ virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 
 environment_extend:
+  DJANGO_ALLOWED_HOSTS: "{{ allowed_hosts }} | default(None) }}"
   DJANGO_EMAIL_BACKEND: "{{ email_backend | default(None) }}"
   DJANGO_EMAIL_HOST: "{{ email_host | default(None) }}"
   DJANGO_EMAIL_PORT: "{{ email_port | default(None) }}"
