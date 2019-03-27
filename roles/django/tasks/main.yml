@@ -4,5 +4,12 @@
   with_items:
     - "{{ django_commands }}"
 
+- name: Make static directory world readable/writeable
+  file:
+    path: "{{ home_directory }}/_static"
+    state: directory
+    recurse: yes
+    mode: 0666
+
 - name: Clear compiled python files
   shell: cd {{ repository_path }} && find . -name *.pyc -delete
