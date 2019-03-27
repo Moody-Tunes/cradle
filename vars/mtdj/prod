@@ -3,7 +3,7 @@ allowed_hosts:
  - www.moodytunes.us
 
 app_debug: False
-app_hostname: moodytunes.vm
+app_hostname: moodytunes.us
 cache_location: redis://127.0.0.1:6379/1
 cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
