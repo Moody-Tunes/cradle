@@ -12,9 +12,6 @@ Vagrant.configure("2") do |config|
 
   config.ssh.forward_agent = true
 
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
   config.vm.provision "ansible" do |ansible|
     ansible.inventory_path = "hosts"
     ansible.playbook = "site.yml"
@@ -22,8 +19,8 @@ Vagrant.configure("2") do |config|
   end
 
   # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder.
+  # the path on the host to the actual folder. The second argument is the path
+  # on the guest to mount the folder.
   # For our purposes, we assume that cradle and moodytunes live in the same
   # directory, so we can simply find the host directory by traversing one level up
   config.vm.synced_folder "../moodytunes", "/home/vagrant/moodytunes"
