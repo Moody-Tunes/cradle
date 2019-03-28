@@ -49,14 +49,14 @@ server {
 
 server {
     listen 80;
-    server_name {{ app_hostname }};
+    server_name {{ app_hostname }} www.{{ app_hostname }};
 
     if ($request_method !~ ^(GET|POST|DELETE|HEAD)$) {
         return 405;
     }
 
     if ($host = www.{{ app_hostname }}) {
-        return 301 https://$host$request_uri;
+        return 301 https://{{ app_hostname }}$request_uri;
     }
 
 
