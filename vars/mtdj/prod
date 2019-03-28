@@ -14,7 +14,7 @@ env: prod
 email_backend: django.core.mail.backends.smtp.EmailBackend
 email_host: smtp.sendgrid.net
 email_user: moodytunes
-email_password: "{{ vaulted_email_vaulted }}"
+email_password: "{{ vaulted_email_password }}"
 email_port: 587
 email_use_tls: True
 postgres_db_name: mtdj_database
