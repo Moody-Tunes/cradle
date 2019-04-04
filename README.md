@@ -32,3 +32,9 @@ Infastructure definitions for MoodyTunes
 
 - Now you can ssh into your virtual machine through `vagrant ssh mtdj`
 	- You can also you straight ssh by doing `ssh vagrant@moodytunes.vm` when prompted for a password enter the default Vagrant password (which is `vagrant`)
+
+
+## Specifying Environment To Run Against
+
+By default, vagrant will target the host defined in the inventory/local file. This will boot up a local instance of
+mtdj, so if you're a developer you shouldn't have to worry about it. If you happen to be provisioning an instance outside of a local environment you can specify the inventory to use with the `-i` option to ansible.

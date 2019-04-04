@@ -13,8 +13,8 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
 
   config.vm.provision "ansible" do |ansible|
-    ansible.inventory_path = "hosts"
     ansible.playbook = "site.yml"
+    ansible.inventory_path = "inventory/local"
     ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
   end
 
