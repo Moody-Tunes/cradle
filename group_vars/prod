@@ -1,3 +1,5 @@
+playbook_env: prod
+
 allowed_hosts:
  - moodytunes.us
  - www.moodytunes.us
