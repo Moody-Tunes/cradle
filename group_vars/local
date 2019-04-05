@@ -8,7 +8,6 @@ csr_path: "{{ ssl_path }}/csr/ansible.com.csr"
 ssl_config_path: "{{ ssl_path }}/self-signed.conf"
 
 app_debug: True
-app_hostname: moodytunes.vm
 cache_location: redis://127.0.0.1:6379/1
 cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
