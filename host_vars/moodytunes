@@ -6,6 +6,10 @@ repository_url: git@github.com:Moody-Tunes/moodytunes.git
 repository_path: /home/vagrant/moodytunes
 virtualenv_dir: /home/vagrant/mtdj_env
 virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
+cache_backend: django_redis.cache.RedisCache
+cache_client: django_redis.client.DefaultClient
+postgres_db_name: mtdj_database
+postgresql_db_user: postgres
 
 environment_extend:
   DJANGO_ALLOWED_HOSTS: "{{ allowed_hosts | default(None) }}"
