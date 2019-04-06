@@ -1,11 +1,7 @@
-# Environment playbook is running against
-# Override this by setting `playbook_env` from the command line when running ansible
-# ANSIBLE_ARGS='--extra-vars "playbook_env=prod"' vagrant provision $HOST
-playbook_env: local
-
 default_user: vagrant
 home_directory: /home/vagrant
 python_path: /usr/bin/python3.6
+ansible_python_interpreter: /usr/bin/python3
 
 system_group: workers
 celery_user: celery
@@ -28,7 +24,7 @@ site_packages:
   - virtualenv
   - postgresql
   - libpq-dev
-  - python-psycopg2
+  - python3-psycopg2
   - python-openssl
   - redis-server
   - nodejs

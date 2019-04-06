@@ -1,0 +1,13 @@
+moodytunes
+
+[mtdj_local]
+moodytunes
+
+[mtdj_local:vars]
+ansible_host=192.168.10.21
+ansible_connection=ssh
+ansible_ssh_private_key_file=.vagrant/machines/mtdj/virtualbox/private_key
+ansible_user=vagrant
+
+[local:children]
+mtdj_local

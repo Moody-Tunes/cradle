@@ -32,3 +32,10 @@ Infastructure definitions for MoodyTunes
 
 - Now you can ssh into your virtual machine through `vagrant ssh mtdj`
 	- You can also you straight ssh by doing `ssh vagrant@moodytunes.vm` when prompted for a password enter the default Vagrant password (which is `vagrant`)
+
+
+## Specifying Provisioning Inventory
+
+By default, ansible will use the inventory file defined in the inventory/local file. This will set ansible to provision a local instance of moodytunes, so if you're a developer you shouldn't have to worry about it. If you happen to be provisioning an instance outside of a local environment you can specify the inventory file to use with the `-i` option to ansible.
+
+`ansible-playbook -i inventory/prod site.yml`
