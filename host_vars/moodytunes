@@ -28,6 +28,8 @@ environment_extend:
   MTDJ_CACHE_CLIENT: "{{ cache_client }}"
   MTDJ_CELERY_TASK_ALWAYS_EAGER: "{{ celery_always_eager }}"
   MTDJ_CELERY_BROKER_URL: "{{ celery_broker_url }}"
+  MTDJ_SPOTIFY_CLIENT_ID: "{{ spotify_client_id | default(None) }}"
+  MTDJ_SPOTIFY_SECRET_KEY: "{{ spotify_secret_key | default(None) }}"
 
 node_packages:
   - less

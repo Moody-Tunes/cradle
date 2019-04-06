@@ -16,3 +16,5 @@ email_port: 587
 email_use_tls: True
 postgresql_db_password: "{{ vaulted_postgresql_db_password }}"
 requirements_file: "{{ repository_path }}/requirements/common.txt"
+spotify_client_id: "{{ vaulted_spotify_client_id }}"
+spotify_secret_key: "{{ vaulted_spotify_secret_key }}"
