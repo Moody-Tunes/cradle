@@ -24,17 +24,18 @@ Infastructure definitions for MoodyTunes
 
 ## Installing and booting Virtual Machine
 
-- Bring up virtual machine with Vagrant: `vagrant up moodytunes`
+- Bring up virtual machine with Vagrant: `vagrant up mtdj`
 	- This should download the Ubuntu 18.04 virtualbox (might take a while the first time) and provision the box with the needed site programs, dependencies, and tools needed to run MoodyTunes
 
 - The site is available through the hostname `moodytunes.vm`.
 	- This is accomplished by `vagrant-hostmanager` adding the IP address for the virtual machine to your /etc/hosts file
 
-- Now you can ssh into your virtual machine through `vagrant ssh moodytunes`
+- Now you can ssh into your virtual machine through `vagrant ssh mtdj`
 	- You can also you straight ssh by doing `ssh vagrant@moodytunes.vm` when prompted for a password enter the default Vagrant password (which is `vagrant`)
 
 
 ## Specifying Environment To Run Against
 
-By default, vagrant will target the host defined in the inventory/local file. This will boot up a local instance of
-moodytunes, so if you're a developer you shouldn't have to worry about it. If you happen to be provisioning an instance outside of a local environment you can specify the inventory to use with the `-i` option to ansible.
+By default, Vagrant will target the host defined in the inventory/local file. This will set ansible to provision a local instance of moodytunes, so if you're a developer you shouldn't have to worry about it. If you happen to be provisioning an instance outside of a local environment you can specify the inventory file to use with the `-i` option to ansible.
+
+`ansible-playbook -i inventory/prod site.yml`
