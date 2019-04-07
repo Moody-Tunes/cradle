@@ -9,6 +9,11 @@ Vagrant.configure("2") do |config|
     vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
 
+  config.trigger.after :up do |trigger|
+    trigger.info = "Adding Vagrant managed machines SSH config to ~/.ssh/vagrant_config"
+    trigger.run = {path: "scripts/vagrant_ssh_config.sh"}
+  end
+
   config.vm.define "mtdj" do |mtdj|
     # Configure private network definitions
     mtdj.vm.network "private_network", ip: "192.168.10.21"
