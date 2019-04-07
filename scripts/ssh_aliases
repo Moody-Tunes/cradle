@@ -1,0 +1,2 @@
+# Aliases for easy SSH into Vagrant managed machines
+alias MTDJ='ssh -F ~/.ssh/vagrant_config mtdj'
