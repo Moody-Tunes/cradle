@@ -4,4 +4,5 @@
 # To use this config file, specify the path of the file with -F to ssh
 # ssh -F ~/.ssh/vagrant_config mtdj
 
-vagrant ssh-config > ~/.ssh/vagrant_config
+# mtdj
+vagrant ssh-config --host moodytunes.vm mtdj > ~/.ssh/vagrant_config

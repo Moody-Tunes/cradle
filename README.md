@@ -32,7 +32,7 @@ Infastructure definitions for MoodyTunes
 
 - Now you can ssh into your virtual machine and run the application
 	- We add a config file in your `.ssh/` directory with the hosts managed by Vagrant called `vagrant_config`
-	- You can use this file in ssh by passing it on the command line as an argument `ssh -F ~/.ssh/vagrant_config` mtdj
+	- You can use this file in ssh by passing it on the command line as an argument `ssh -F ~/.ssh/vagrant_config moodytunes.vm`
 	- We also offer some aliases for making this command easier to use in `scripts/ssh_aliases`. You can add these aliases to your `~/.bash_aliases` file to use them in your development: `cat scripts/bash_aliases >> ~/.bash_aliases`
 
 ## Specifying Provisioning Inventory
