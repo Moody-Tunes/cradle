@@ -5,10 +5,13 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox"
   config.vm.box = "ubuntu/bionic64"
 
+  # Disable logging for virtual machine
   config.vm.provider "virtualbox" do |vb|
     vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
 
+  # Create ssh config file for Vagrant managed machines and add to
+  # host ~/.ssh directory
   config.trigger.after :up do |trigger|
     trigger.info = "Adding Vagrant managed machines SSH config to ~/.ssh/vagrant_config"
     trigger.run = {path: "scripts/vagrant_ssh_config.sh"}
