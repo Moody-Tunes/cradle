@@ -21,6 +21,26 @@
     owner: "{{ default_user }}"
     state: directory
 
+- name: Create application log file
+  become_user: root
+
+  file:
+    path: "{{ logging_dir }}/application.log"
+    owner: "{{ default_user }}"
+    group: "{{ system_group }}"
+    state: touch
+    mode: 0660
+
+- name: Create application error file
+  become_user: root
+
+  file:
+    path: "{{ logging_dir }}/error.log"
+    owner: "{{ default_user }}"
+    group: "{{ system_group }}"
+    state: touch
+    mode: 0660
+
 - name: Create celery logging directory
   become_user: root
 
