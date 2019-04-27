@@ -6,7 +6,6 @@ After=network.target
 User={{ gunicorn_user }}
 WorkingDirectory={{ repository_path }}
 Environment={{ env_file_var }}={{ repository_path }}/.env
-Environment=DJANGO_APP_LOG_DIR={{ gunicorn_logging_directory }}
 ExecStart={{ virtualenv_dir }}/bin/gunicorn \
 --name={{ app_name }} \
 --pythonpath={{ virtualenv_dir}}/bin/python \
