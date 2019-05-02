@@ -1,7 +1,7 @@
-prod-moodytunes-1 ansible_host=134.209.211.57
+moodytunes ansible_host=134.209.211.57
 
 [mtdj_prod]
-prod-moodytunes-1
+moodytunes
 
 [mtdj_prod:vars]
 ansible_connection=ssh
