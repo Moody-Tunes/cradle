@@ -9,8 +9,6 @@ Environment={{ env_file_var }}={{ repository_path }}/.env
 ExecStart={{ virtualenv_dir }}/bin/gunicorn \
 --name={{ app_name }} \
 --pythonpath={{ virtualenv_dir}}/bin/python \
---access-logfile={{ gunicorn_logging_directory }}/access.log \
---error-logfile={{ gunicorn_logging_directory }}/error.log \
 --bind 127.0.0.1:{{ wsgi_server_port }} \
 --config /etc/gunicorn.d/gunicorn.py \
 {{ app_name }}.wsgi:application
