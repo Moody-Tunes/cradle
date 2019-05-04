@@ -13,22 +13,6 @@
     groups: "{{ system_group }}"
     create_home: no
 
-- name: Configure logging path
-  become_user: root
-
-  file:
-    path: "{{ logging_dir }}"
-    owner: "{{ default_user }}"
-    state: directory
-
-- name: Create celery logging directory
-  become_user: root
-
-  file:
-    path: "{{ celery_logging_directory }}"
-    owner: "{{ celery_user }}"
-    state: directory
-
 - name: Create gunicorn user
   become_user: root
 
@@ -37,13 +21,15 @@
     groups: "{{ system_group }}"
     create_home: no
 
-- name: Create gunicorn logging directory
+- name: Configure logging path
   become_user: root
 
   file:
-    path: "{{ gunicorn_logging_directory }}"
-    owner: "{{ gunicorn_user }}"
+    path: "{{ logging_dir }}"
+    owner: "{{ default_user }}"
+    group: "{{ system_group }}"
     state: directory
+    mode: u=rwx,g=rwx,o=rx,g+s
 
 - name: Add application startup script
 
