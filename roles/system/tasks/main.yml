@@ -27,7 +27,9 @@
   file:
     path: "{{ logging_dir }}"
     owner: "{{ default_user }}"
+    group: "{{ system_group }}"
     state: directory
+    mode: 0770
 
 - name: Create application log file
   become_user: root
