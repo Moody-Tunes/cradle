@@ -11,6 +11,8 @@ ExecStart={{ virtualenv_dir }}/bin/gunicorn \
 --pythonpath={{ virtualenv_dir}}/bin/python \
 --bind 127.0.0.1:{{ wsgi_server_port }} \
 --config /etc/gunicorn.d/gunicorn.py \
+--access-logfile=- \
+--error-logfile=- \
 {{ app_name }}.wsgi:application
 
 [Install]
