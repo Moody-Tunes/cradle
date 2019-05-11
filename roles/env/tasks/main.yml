@@ -1,6 +1,15 @@
-- name: Create virtual environment
+- name: Check if virtualenv exists
+
+  stat:
+    path: "{{ virtualenv_dir }}"
+
+  register: stat_result
+
+- name: Create virtual environment if it does not exist
 
   command: virtualenv {{ virtualenv_dir }} --python={{ python_path }}
+
+  when: stat_result.stat.exists == False
 
 - name: Install requirements
 
