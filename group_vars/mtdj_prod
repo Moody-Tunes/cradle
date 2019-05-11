@@ -2,6 +2,9 @@ app_hostname: moodytunes.us
 allowed_hosts: moodytunes.us, www.moodytunes.us
 webmaster_email: ndibari@fordham.edu
 
+spotify_categories: hiphop, rock, chill, party, mood
+spotify_max_songs_from_category: 40
+
 # LetsEncrypt certificate variables
 ssl_path: /etc/letsencrypt/live
 cert_path: "{{ ssl_path }}/moodytunes.us/fullchain.pem"
