@@ -2,6 +2,14 @@ allowed_hosts:
  - moodytunes.us
  - www.moodytunes.us
 
+# LetsEncrypt certificate variables
+ssl_path: /etc/letsencrypt/live
+cert_path: "{{ ssl_path }}/moodytunes.us/fullchain.pem"
+privatekey_path: "{{ ssl_path }}/moodytunes.us/privkey.pem"
+
+server_ip: 134.209.211.57
+wsgi_server_port: 8000
+
 app_debug: False
 cache_location: redis://127.0.0.1:6379/1
 celery_always_eager: False
