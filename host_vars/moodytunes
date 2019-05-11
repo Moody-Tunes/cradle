@@ -27,6 +27,7 @@ environment_extend:
   MTDJ_CELERY_BROKER_URL: "{{ celery_broker_url }}"
   MTDJ_SPOTIFY_CLIENT_ID: "{{ spotify_client_id | default(None) }}"
   MTDJ_SPOTIFY_SECRET_KEY: "{{ spotify_secret_key | default(None) }}"
+  MTDJ_WEBMASTER_EMAIL: "{{ webmaster_email | default(None) }}"
 
 node_packages:
   - less

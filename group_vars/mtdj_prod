@@ -1,5 +1,6 @@
 app_hostname: moodytunes.us
 allowed_hosts: moodytunes.us, www.moodytunes.us
+webmaster_email: ndibari@fordham.edu
 
 # LetsEncrypt certificate variables
 ssl_path: /etc/letsencrypt/live
