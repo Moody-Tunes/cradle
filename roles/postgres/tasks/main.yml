@@ -11,7 +11,7 @@
 
   notify: restart postgresql
 
-- name: Ensure postgres user has access to the database
+- name: Create application user has access to the database
   become_user: postgres
   
   postgresql_user:

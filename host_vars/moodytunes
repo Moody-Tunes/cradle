@@ -7,7 +7,7 @@ virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
 postgres_db_name: mtdj_database
-postgresql_db_user: postgres
+postgresql_db_user: mtdj
 
 environment_extend:
   DJANGO_ALLOWED_HOSTS: "{{ allowed_hosts | default(None) }}"
