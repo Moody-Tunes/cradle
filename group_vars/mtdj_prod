@@ -1,5 +1,7 @@
 app_hostname: moodytunes.us
 allowed_hosts: moodytunes.us, www.moodytunes.us
+admins_list: "Nicholas DiBari, ndibari@fordham.edu; Ops, moody.tunes.infrastructure@gmail.com"
+
 webmaster_email: ndibari@fordham.edu
 system_email: moody.tunes.infrastructure@gmail.com
 

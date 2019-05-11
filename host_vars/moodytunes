@@ -10,6 +10,7 @@ postgresql_db_user: mtdj
 
 environment_extend:
   DJANGO_ALLOWED_HOSTS: "{{ allowed_hosts | default(None) }}"
+  DJANGO_ADMINS: "{{ admins_list | default(None) }}"
   DJANGO_EMAIL_BACKEND: "{{ email_backend | default(None) }}"
   DJANGO_EMAIL_HOST: "{{ email_host | default(None) }}"
   DJANGO_EMAIL_PORT: "{{ email_port | default(None) }}"
