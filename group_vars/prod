@@ -1,3 +1,5 @@
 playbook_env: prod
 default_user: ansible
 home_directory: /home/ansible
+repository_path: /home/ansible/moodytunes
+virtualenv_dir: /home/ansible/mtdj_env

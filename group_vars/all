@@ -2,6 +2,8 @@ default_user: vagrant
 home_directory: /home/vagrant
 python_path: /usr/bin/python3.6
 ansible_python_interpreter: /usr/bin/python3
+repository_path: /home/vagrant/moodytunes
+virtualenv_dir: /home/vagrant/mtdj_env
 
 system_group: workers
 celery_user: celery
