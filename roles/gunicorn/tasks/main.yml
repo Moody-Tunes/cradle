@@ -18,14 +18,3 @@
   template:
     src: templates/gunicorn.service
     dest: /etc/systemd/system/gunicorn.service
-
-- name: Start gunicorn daemon on non local environments
-  become_user: root
-
-  service:
-    name: gunicorn
-    state: restarted
-
-  when: playbook_env != 'local'
-
-  notify: restart nginx

@@ -11,21 +11,3 @@
   template:
     src: templates/celery_beat.service
     dest: /etc/systemd/system/celery_beat.service
-
-- name: Start celery daemon on non local environments
-  become_user: root
-
-  service:
-    name: celery
-    state: restarted
-
-  when: playbook_env != 'local'
-
-- name: Start celery_beat daemon on non local environments
-  become_user: root
-
-  service:
-    name: celery_beat
-    state: restarted
-
-  when: playbook_env != 'local'
