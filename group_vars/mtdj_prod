@@ -1,3 +1,5 @@
+app_hostname: moodytunes.us
+
 allowed_hosts:
  - moodytunes.us
  - www.moodytunes.us
