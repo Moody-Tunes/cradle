@@ -30,6 +30,7 @@ environment_extend:
   MTDJ_SPOTIFY_CATEGORIES: "{{ spotify_categories |default(None) }}"
   MTDJ_SPOTIFY_MAX_SONGS_FROM_CATEGORY: "{{ spotify_max_songs_from_category | default(None) }}"
   MTDJ_WEBMASTER_EMAIL: "{{ webmaster_email | default(None) }}"
+  MTDJ_SYSTEM_EMAIL_ADDRESS: "{{ system_email | default(None) }}"
 
 node_packages:
   - less

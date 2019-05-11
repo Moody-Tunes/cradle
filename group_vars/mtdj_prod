@@ -1,6 +1,7 @@
 app_hostname: moodytunes.us
 allowed_hosts: moodytunes.us, www.moodytunes.us
 webmaster_email: ndibari@fordham.edu
+system_email: moody.tunes.infrastructure@gmail.com
 
 spotify_categories: hiphop, rock, chill, party, mood
 spotify_max_songs_from_category: 40
