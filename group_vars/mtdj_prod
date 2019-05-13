@@ -13,7 +13,6 @@ cert_path: "{{ ssl_path }}/moodytunes.us/fullchain.pem"
 privatekey_path: "{{ ssl_path }}/moodytunes.us/privkey.pem"
 
 server_ip: 134.209.211.57
-wsgi_server_port: 8000
 
 app_debug: False
 celery_always_eager: False
