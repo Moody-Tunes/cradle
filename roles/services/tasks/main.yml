@@ -1,0 +1,28 @@
+- name: Start gunicorn daemon on non local environments
+  become_user: root
+
+  service:
+    name: gunicorn
+    state: restarted
+
+  when: playbook_env != 'local'
+
+  notify: restart nginx
+
+- name: Start celery daemon on non local environments
+  become_user: root
+
+  service:
+    name: celery
+    state: restarted
+
+  when: playbook_env != 'local'
+
+- name: Start celery_beat daemon on non local environments
+  become_user: root
+
+  service:
+    name: celery_beat
+    state: restarted
+
+  when: playbook_env != 'local'

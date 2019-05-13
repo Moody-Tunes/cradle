@@ -6,3 +6,6 @@
 # Python Files
 venv/
 *.py[cod]
+
+# Ansible Files
+.vault_password

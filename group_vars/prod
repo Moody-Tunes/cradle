@@ -1,3 +1,2 @@
 playbook_env: prod
 default_user: ansible
-home_directory: /home/ansible
