@@ -16,9 +16,7 @@ server_ip: 134.209.211.57
 wsgi_server_port: 8000
 
 app_debug: False
-cache_location: redis://127.0.0.1:6379/1
 celery_always_eager: False
-celery_broker_url: redis://127.0.0.1:6379/1
 django_secret_key: !vault |
     $ANSIBLE_VAULT;1.1;AES256
     65643166653438313564306633336132386663633434363735633565636539336238663363613535
