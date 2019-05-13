@@ -1,4 +1,6 @@
 app_name: mtdj
+repository_path: /home/{{ default_user }}/moodytunes
+virtualenv_dir: /home/{{ default_user }}/mtdj_env
 env_file_var: MTDJ_ENV_FILE
 logging_dir: /var/log/mtdj
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
