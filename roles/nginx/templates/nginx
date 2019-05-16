@@ -6,7 +6,12 @@ upstream app_server {
 
 server {
     listen 443 ssl;
-    server_name {{ app_hostname }};
+    server_name {{ app_hostname }} www.{{ app_hostname }};
+
+    # Deny invalid Host headers
+    if ($host !~* ^({{ app_hostname }}|www.{{ app_hostname }})$) {
+        return 444;
+    }
 
     if ($request_method !~ ^(GET|POST|DELETE|HEAD)$) {
         return 405;
@@ -58,7 +63,6 @@ server {
     if ($host = www.{{ app_hostname }}) {
         return 301 https://{{ app_hostname }}$request_uri;
     }
-
 
     if ($host = {{ app_hostname }}) {
         return 301 https://$host$request_uri;
