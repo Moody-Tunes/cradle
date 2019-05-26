@@ -6,6 +6,7 @@ env: dev
 postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
 requirements_file: "{{ repository_path }}/requirements/dev.txt"
 server_ip: 192.168.10.21
+encrypted_fields_key: cN7wJtpSaaPAxREILzI679UYbLwiVfh5FOTu0IEyB7s=
 
 django_commands_extend:
   - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
