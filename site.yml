@@ -18,4 +18,5 @@
     - celery
     - node
     - django
+    - users
     - services

@@ -1,0 +1,13 @@
+- name: Create users group
+  become_user: root
+
+  group:
+    name: "{{ user_group }}"
+
+- name: Create defined users
+  become_user: root
+
+  user:
+    name: ndibari
+    group: "{{ user_group }}"
+    shell: /bin/bash
