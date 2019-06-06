@@ -1,0 +1,8 @@
+users:
+  - name: test
+    password: "$5$EsGwJ1oFnt$an/.5stMobUit7WG9LBYQhjlfBvtYZmufCqUriOZnWB"
+    shell: /bin/bash
+    groups:
+      - "{{ user_group }}"
+      - "{{ system_group }}"
+      - sudo

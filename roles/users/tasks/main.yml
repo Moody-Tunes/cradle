@@ -8,6 +8,10 @@
   become_user: root
 
   user:
-    name: ndibari
-    group: "{{ user_group }}"
-    shell: /bin/bash
+    name: "{{ item.name }}"
+    shell: "{{ item.shell }}"
+    password: "{{ item.password }}"
+    groups: "{{ item.groups }}"
+
+  with_items:
+    - "{{ users }}"
