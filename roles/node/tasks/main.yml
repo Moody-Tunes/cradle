@@ -1,4 +1,5 @@
 - name: Install node dependencies
 
   npm:
+    executable: /usr/bin/npm
     path: "{{ repository_path }}"
