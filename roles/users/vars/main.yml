@@ -1,8 +1,0 @@
-users:
-  - name: test
-    shell: /bin/bash
-    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG1cMn2qHQesJ4YnNTGcmLm98k3Pzs0NCGHrrmELSchYH6KrUZvDO1ojzTputOrXKGNYor6k288nvm6tagF+18dh4qy/WpgV76MyVMO5pkuRNvxlc1xc9zuizxRx0STAj6vmip5Yh7CqGlInisoHGcVBYvhPk3bX+fDMePWO2jNooZyQGxRm9/5Y9EfQNqKQi/g0ujlqn4gTYtNpYSUw9u+A6HKaLYJgYydzl4yMaEwumxZr2fLhOfaEXblTlw1J9ZVbvrcbCQrJcQMv5FHqK8mmV/O9noJB2KaBDFn6pL5Vhpc54lIx6IZ+LDkkjXhkRJP2bec43dqhNbbi5HEkId nick@ndibari-linux
-    groups:
-      - "{{ user_group }}"
-      - "{{ system_group }}"
-      - sudo
