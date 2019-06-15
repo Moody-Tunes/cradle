@@ -10,8 +10,18 @@
   user:
     name: "{{ item.name }}"
     shell: "{{ item.shell }}"
-    password: "{{ item.password }}"
     groups: "{{ item.groups }}"
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add user SSH keys
+  become_user: root
+
+  authorized_key:
+    user: "{{ item.name }}"
+    state: present
+    key: "{{ item.key }}"
 
   with_items:
     - "{{ users }}"
