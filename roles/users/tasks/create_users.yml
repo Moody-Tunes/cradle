@@ -11,6 +11,7 @@
     name: "{{ item.name }}"
     shell: "{{ item.shell }}"
     groups: "{{ item.groups }}"
+    home: "{{ item.home }}"
 
   with_items:
     - "{{ users }}"
