@@ -26,3 +26,33 @@
 
   with_items:
     - "{{ users }}"
+
+- name: Add application startup script to user home directories
+  become_user: root
+
+  template:
+    src: bash_templates/application-startup
+    dest: "{{ item.home }}/.application-startup"
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add systemd auto complete source file to user home directories
+  become_user: root
+
+  template:
+    src: bash_templates/systemctl-complete
+    dest: "{{ item.home }}/.systemctl-complete.bash"
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add startup commands to profile
+  become_user: root
+
+  blockinfile:
+    path: "{{ item.home }}/.profile"
+    block: "{{ startup_commands }}"
+
+  with_items:
+  - "{{ users }}"
