@@ -1,5 +1,4 @@
 - name: Create personal users on prod hosts
-  become_user: root
 
   include_tasks: create_users.yml
   when: playbook_env == 'prod'

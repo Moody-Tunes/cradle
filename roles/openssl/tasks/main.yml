@@ -1,7 +1,6 @@
 ---
 
 - name: Create self signed cert for local development
-  become_user: root
 
   include_tasks: selfsign.yml
   when: playbook_env == 'local'
