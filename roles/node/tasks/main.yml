@@ -1,7 +1,6 @@
 - name: Install node dependencies
-  become_user: root
 
-  shell: cd {{ repository_path }} && npm install -g {{ item }}
-  
-  with_items:
-    - "{{ node_packages }}"
+  npm:
+    executable: /usr/bin/npm
+    path: "{{ repository_path }}"
+    production: "{{ node_use_development }}"

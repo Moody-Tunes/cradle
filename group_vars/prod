@@ -1,3 +1,4 @@
 playbook_env: prod
 default_user: ansible
 git_version: master
+node_use_development: no

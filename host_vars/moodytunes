@@ -40,7 +40,3 @@ environment_extend:
   MTDJ_WEBMASTER_EMAIL: "{{ webmaster_email | default(None) }}"
   MTDJ_SYSTEM_EMAIL_ADDRESS: "{{ system_email | default(None) }}"
   MTDJ_ENCRYPTED_FIELDS_KEY: "{{ encrypted_fields_key }}"
-
-node_packages:
-  - less
-  - uglify-js@github:mishoo/UglifyJS2#harmony
