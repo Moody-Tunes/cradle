@@ -21,7 +21,7 @@ users:
     shell: /bin/bash
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDer3FHcg3Gg63hQV04/vhVqz2Pa023tvx9/e8O+bPHyszCe6KKlXlEpYOLg50FFc+PNEqYgS2/mcNHX1WLJdmJ7QBHnTn8X0yLtB0b1nVhUx7TxJHTKuKC7T1cfLjzCA0Gun7qsKSUwZtPhWrVkOXS6Khx6a10BGiqcrzncGXY3FRv3UIDl14Htuqes57pBN5gEasvdIGJ3jvkJ1C1NCYMlbC8LBTvTKkHx4RMLgYQAxwkImgHjEBcXdcwYub9Q5AZLI+Ra6ZkbtaX2tyFAt+Sr4CG/WOa+KdR0OKF3S1+sVXedjernSr0L2R5n/6dEx9eCnHg9nUjsIyPOt0pHOkB nick@ndibari-linux
     groups:
-      - "{{ user_group }}"
+      - "{{ staff_group }}"
       - "{{ system_group }}"
 
 environment_extend:

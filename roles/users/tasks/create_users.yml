@@ -1,8 +1,8 @@
-- name: Create users group
+- name: Create staff users group
   become_user: root
 
   group:
-    name: "{{ user_group }}"
+    name: "{{ staff_group }}"
 
 - name: Create defined users
   become_user: root

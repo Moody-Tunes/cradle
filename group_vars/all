@@ -3,7 +3,7 @@ python_path: /usr/bin/python3.6
 ansible_python_interpreter: /usr/bin/python3
 
 system_group: workers
-user_group: staff
+staff_group: staff
 celery_user: celery
 gunicorn_user: gunicorn
 
