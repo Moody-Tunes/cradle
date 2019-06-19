@@ -19,7 +19,7 @@ users:
   - name: ndibari
     home: /home/ndibari
     shell: /bin/bash
-    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC1mFMQSe16tV0aowU6hJ+FGlTXP6xBG0kLm+Jx83HwBJgYAsEiV2Vjaq8qCN34kTZSuNXyBFDRdpPbjgNg8bQHjEGIz1Q4Hgk7eHWkJo8slaowK45W4Ru4P1e2+4oVAgJL1+s3RsMDq2gvJR0H/rEM0fJ3XmV3AcNHj/8uBWuyqEQzCKDDsfr+0/CHiHhp/qRID2vhSNhA0UCoDUtt+5B6iJRSLYodbyWRAbZ9Wx1kZAW/LSwe0kMpCQ6nIO+R2nOWW9GUcAPUTav5JIX1gYrUdNeF/DGWdxzMsJXNVyvPvmNnjBd7DhGjVIIqLqoLtxYgrMH6Y7Jkit3ck664XiLfgUioJ0MTtqIpna0I4I7lCIqCn6akINPAfPtvRjgBIB7y9WVrTdotdtaqS7Awakeq1tls1ZI6MIR+Tz+cuJIzWbstcHuZn+PIars2cjh8t9cx6PMdM4YZSZShjiLy8kcHwhwn5wC1Qil92UXtoaUXUZLphUGvwogQRbsEduImtY23SnN6gRqohXYB3WoQ+LJ5G1gFPuS0KO1bU3jl1KPKPPQ/u0YPr8jypTNG1ipvGPiMJzvY+b+fTpeJtMG4PYFvUnN2r6UQ+PI7bOsIOb3SGauqa1uiZnbhRxu+Yasuv1SnviZUL/bRLn2bVWIU8h2+ptIYKZjNS4WeCQdoRjs7ZQ== ndibari@fordham.edu
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDer3FHcg3Gg63hQV04/vhVqz2Pa023tvx9/e8O+bPHyszCe6KKlXlEpYOLg50FFc+PNEqYgS2/mcNHX1WLJdmJ7QBHnTn8X0yLtB0b1nVhUx7TxJHTKuKC7T1cfLjzCA0Gun7qsKSUwZtPhWrVkOXS6Khx6a10BGiqcrzncGXY3FRv3UIDl14Htuqes57pBN5gEasvdIGJ3jvkJ1C1NCYMlbC8LBTvTKkHx4RMLgYQAxwkImgHjEBcXdcwYub9Q5AZLI+Ra6ZkbtaX2tyFAt+Sr4CG/WOa+KdR0OKF3S1+sVXedjernSr0L2R5n/6dEx9eCnHg9nUjsIyPOt0pHOkB nick@ndibari-linux
     groups:
       - "{{ user_group }}"
       - "{{ system_group }}"
