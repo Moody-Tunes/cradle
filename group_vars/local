@@ -1,6 +1,7 @@
 playbook_env: local
 default_user: vagrant
 git_version: HEAD
+node_use_development: yes
 
 # TLS Certificate generation variables
 ssl_path: /etc/ssl

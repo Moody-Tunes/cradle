@@ -3,3 +3,4 @@
   npm:
     executable: /usr/bin/npm
     path: "{{ repository_path }}"
+    production: "{{ node_use_development }}"
