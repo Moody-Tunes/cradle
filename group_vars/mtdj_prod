@@ -6,6 +6,7 @@ webmaster_email: ndibari@fordham.edu
 
 spotify_categories: hiphop, rock, chill, party, mood
 spotify_max_songs_from_category: 40
+spotify_redirect_uri: https://moodytunes.us/moodytunes/spotify/callback/
 
 # LetsEncrypt certificate variables
 ssl_path: /etc/letsencrypt/live
