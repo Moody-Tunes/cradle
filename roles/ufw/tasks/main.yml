@@ -1,3 +1,5 @@
+---
+
 - name: Enable ufw firewall
   become_user: root
 

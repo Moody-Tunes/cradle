@@ -1,3 +1,5 @@
+---
+
 - name: Create self signed cert for local development
   become_user: root
 

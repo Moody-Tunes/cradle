@@ -1,9 +1,11 @@
+---
+
 - name: Create system group
   become_user: root
 
   group:
     name: "{{ system_group }}"
-    system: yes
+    system: true
 
 - name: Create celery user
   become_user: root
@@ -11,7 +13,7 @@
   user:
     name: "{{ celery_user }}"
     groups: "{{ system_group }}"
-    create_home: no
+    create_home: false
 
 - name: Create gunicorn user
   become_user: root
@@ -19,7 +21,7 @@
   user:
     name: "{{ gunicorn_user }}"
     groups: "{{ system_group }}"
-    create_home: no
+    create_home: false
 
 - name: Configure logging path
   become_user: root
@@ -38,7 +40,7 @@
     dest: "{{ home_directory }}/.application-startup"
 
 - name: Add systemd auto complete source file
-  
+
   copy:
     src: templates/systemctl-complete
     dest: "{{ home_directory }}/.systemctl-complete.bash"

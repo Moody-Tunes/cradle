@@ -1,3 +1,5 @@
+---
+
 - name: Setup Django project
   shell: . {{ home_directory }}/.application-startup && {{ item }}
 
