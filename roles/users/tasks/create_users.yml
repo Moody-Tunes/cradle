@@ -1,3 +1,5 @@
+---
+
 - name: Create staff users group
   become_user: root
 
@@ -55,4 +57,4 @@
     block: "{{ startup_commands }}"
 
   with_items:
-  - "{{ users }}"
+    - "{{ users }}"
