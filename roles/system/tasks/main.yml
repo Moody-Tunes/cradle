@@ -1,3 +1,5 @@
+---
+
 - name: Create system group
   become_user: root
 
@@ -38,7 +40,7 @@
     dest: "{{ home_directory }}/.application-startup"
 
 - name: Add systemd auto complete source file
-  
+
   copy:
     src: templates/systemctl-complete
     dest: "{{ home_directory }}/.systemctl-complete.bash"

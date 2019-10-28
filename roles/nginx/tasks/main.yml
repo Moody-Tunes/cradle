@@ -1,3 +1,5 @@
+---
+
 - name: Create nginx config file
   become_user: root
 

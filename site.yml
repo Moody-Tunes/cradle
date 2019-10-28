@@ -1,3 +1,5 @@
+---
+
 - name: Configure Application
   hosts: all
   become: true
