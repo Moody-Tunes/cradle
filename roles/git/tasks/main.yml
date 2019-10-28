@@ -4,7 +4,7 @@
 
   lineinfile:
     path: "{{ home_directory }}/.ssh/known_hosts"
-    create: yes
+    create: true
     state: present
     line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
 
