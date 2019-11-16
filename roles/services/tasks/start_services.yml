@@ -1,0 +1,24 @@
+---
+
+- name: Start gunicorn service
+  become_user: root
+
+  service:
+    name: gunicorn
+    state: restarted
+
+  notify: restart nginx
+
+- name: Start celery service
+  become_user: root
+
+  service:
+    name: celery
+    state: restarted
+
+- name: Start celery_beat service
+  become_user: root
+
+  service:
+    name: celery_beat
+    state: restarted

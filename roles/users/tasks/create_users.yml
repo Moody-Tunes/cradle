@@ -1,0 +1,60 @@
+---
+
+- name: Create staff users group
+  become_user: root
+
+  group:
+    name: "{{ staff_group }}"
+
+- name: Create defined users
+  become_user: root
+
+  user:
+    name: "{{ item.name }}"
+    shell: "{{ item.shell }}"
+    groups: "{{ item.groups }}"
+    home: "{{ item.home }}"
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add user SSH keys
+  become_user: root
+
+  authorized_key:
+    user: "{{ item.name }}"
+    state: present
+    key: "{{ item.key }}"
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add application startup script to user home directories
+  become_user: root
+
+  template:
+    src: bash_templates/application-startup
+    dest: "{{ item.home }}/.application-startup"
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add systemd auto complete source file to user home directories
+  become_user: root
+
+  template:
+    src: bash_templates/systemctl-complete
+    dest: "{{ item.home }}/.systemctl-complete.bash"
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add startup commands to profile
+  become_user: root
+
+  blockinfile:
+    path: "{{ item.home }}/.profile"
+    block: "{{ startup_commands }}"
+
+  with_items:
+    - "{{ users }}"

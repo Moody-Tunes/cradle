@@ -15,6 +15,15 @@ postgres_db_name: mtdj_database
 postgresql_db_user: mtdj
 wsgi_server_port: 8000
 
+users:
+  - name: ndibari
+    home: /home/ndibari
+    shell: /bin/bash
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcnNVnojyWtVPc9ialyyS1GaErze1+OaHBIiSZrc861qioEqrLRWLD37lAzpVaF4ogMrj4ghVWD0jPqWVIjmFE6Dd6N2D3pxulUfCd3syieXQtylwcrkGw95pgdHnGzYcwISODOJpAIUQR1yNlhCOAh9/oP6uOdi2d7ptUA3lvBzuGQ9GmM4QHlhpq5uKhtn/1bxyJ2WRz/ciyG957etcw8nSLVhIa539hq8JA1pB5ilGd45X1OE4th6zdlMehRMEeI9Tff/rlifZuQB61PuZYMC1v8RQ3ONEc8HDeUo8656CNTp1O4qYoAgpku+Bo1aiNqwLFcCMTyJagdhq41Lan nick@ndibari-linux
+    groups:
+      - "{{ staff_group }}"
+      - "{{ system_group }}"
+
 environment_extend:
   DJANGO_ALLOWED_HOSTS: "{{ allowed_hosts | default(None) }}"
   DJANGO_ADMINS: "{{ admins_list | default(None) }}"

@@ -8,6 +8,7 @@
   roles:
     - apt
     - system
+    - users
     - ufw
     - openssl
     - nginx

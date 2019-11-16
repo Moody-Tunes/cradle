@@ -36,13 +36,13 @@
 - name: Add application startup script
 
   template:
-    src: templates/application-startup
+    src: bash_templates/application-startup
     dest: "{{ home_directory }}/.application-startup"
 
 - name: Add systemd auto complete source file
 
-  copy:
-    src: templates/systemctl-complete
+  template:
+    src: bash_templates/systemctl-complete
     dest: "{{ home_directory }}/.systemctl-complete.bash"
 
 - name: Add startup commands to profile
