@@ -19,7 +19,7 @@ users:
   - name: ndibari
     home: /home/ndibari
     shell: /bin/bash
-    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDer3FHcg3Gg63hQV04/vhVqz2Pa023tvx9/e8O+bPHyszCe6KKlXlEpYOLg50FFc+PNEqYgS2/mcNHX1WLJdmJ7QBHnTn8X0yLtB0b1nVhUx7TxJHTKuKC7T1cfLjzCA0Gun7qsKSUwZtPhWrVkOXS6Khx6a10BGiqcrzncGXY3FRv3UIDl14Htuqes57pBN5gEasvdIGJ3jvkJ1C1NCYMlbC8LBTvTKkHx4RMLgYQAxwkImgHjEBcXdcwYub9Q5AZLI+Ra6ZkbtaX2tyFAt+Sr4CG/WOa+KdR0OKF3S1+sVXedjernSr0L2R5n/6dEx9eCnHg9nUjsIyPOt0pHOkB nick@ndibari-linux
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcnNVnojyWtVPc9ialyyS1GaErze1+OaHBIiSZrc861qioEqrLRWLD37lAzpVaF4ogMrj4ghVWD0jPqWVIjmFE6Dd6N2D3pxulUfCd3syieXQtylwcrkGw95pgdHnGzYcwISODOJpAIUQR1yNlhCOAh9/oP6uOdi2d7ptUA3lvBzuGQ9GmM4QHlhpq5uKhtn/1bxyJ2WRz/ciyG957etcw8nSLVhIa539hq8JA1pB5ilGd45X1OE4th6zdlMehRMEeI9Tff/rlifZuQB61PuZYMC1v8RQ3ONEc8HDeUo8656CNTp1O4qYoAgpku+Bo1aiNqwLFcCMTyJagdhq41Lan nick@ndibari-linux
     groups:
       - "{{ staff_group }}"
       - "{{ system_group }}"
