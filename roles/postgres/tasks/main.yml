@@ -13,7 +13,7 @@
 
   notify: restart postgresql
 
-- name: Create application user has access to the database
+- name: Create application database user to access the database
   become_user: postgres
 
   postgresql_user:
@@ -33,4 +33,15 @@
     role_attr_flags: NOSUPERUSER,NOCREATEDB
     state: present
 
+  notify: restart postgresql
+
+- name: Grant user permission to create test database on local
+  become_user: postgres
+
+  postgresql_user:
+    name: "{{ postgresql_db_user }}"
+    role_attr_flags: CREATEDB
+    state: present
+
+  when: playbook_env == 'local'
   notify: restart postgresql
