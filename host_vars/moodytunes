@@ -19,7 +19,7 @@ users:
   - name: ndibari
     home: /home/ndibari
     shell: /bin/bash
-    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcnNVnojyWtVPc9ialyyS1GaErze1+OaHBIiSZrc861qioEqrLRWLD37lAzpVaF4ogMrj4ghVWD0jPqWVIjmFE6Dd6N2D3pxulUfCd3syieXQtylwcrkGw95pgdHnGzYcwISODOJpAIUQR1yNlhCOAh9/oP6uOdi2d7ptUA3lvBzuGQ9GmM4QHlhpq5uKhtn/1bxyJ2WRz/ciyG957etcw8nSLVhIa539hq8JA1pB5ilGd45X1OE4th6zdlMehRMEeI9Tff/rlifZuQB61PuZYMC1v8RQ3ONEc8HDeUo8656CNTp1O4qYoAgpku+Bo1aiNqwLFcCMTyJagdhq41Lan nick@ndibari-linux
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCigJs9sw3MCYJkopmchKqt7mkG5qwORN3nsVg2mcW34Ak8bEPXYD7NNoZTHcJFBl4VtvmDBhFEyQmR806QQErwkoWOLTSGNvBCzMlKNnKGHeCYly3nJjiiarDcfPDhEWQIKp2sRhtTlYn2KDdB3OMSdAWZlSIQfL64uLD6WiBkSf/gWxtl205ub+XoBltOzl60nwQjxOumH3px9MSUs6yhdL70MiXhzENJyzzEhKwJhpJh8isdPiQvjpuVE6Fq7Ln6JOcsPmgVhYvYCt/SFMieRhKZnDP/k95aqvY9twA6brp3w+G9efqAnV+cXaUTCtUBRLRosnuG+ON7xmlHsSx ndibari@crown-jewl
     groups:
       - "{{ staff_group }}"
       - "{{ system_group }}"
