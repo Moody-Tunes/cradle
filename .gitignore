@@ -3,6 +3,9 @@
 *.retry
 *.log
 
+# Pycharm Files
+.idea/
+
 # Python Files
 venv/
 *.py[cod]
