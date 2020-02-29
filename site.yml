@@ -8,6 +8,7 @@
   roles:
     - apt
     - system
+    - logrotate
     - users
     - ufw
     - openssl

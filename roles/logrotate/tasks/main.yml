@@ -1,0 +1,8 @@
+---
+
+- name: Configure application logfiles logrotate config
+  become_user: root
+
+  template:
+    src: templates/application.conf
+    dest: /etc/logrotate.d/application
