@@ -28,7 +28,7 @@ Infastructure definitions for MoodyTunes
 	- This should download the Ubuntu 18.04 virtualbox (might take a while the first time) and provision the box with the needed site programs, dependencies, and tools needed to run MoodyTunes
 
 - The site is available through the hostname `moodytunes.vm`.
-	- This is accomplished by `vagrant-hostmanager` adding the IP address for the virtual machine to your /etc/hosts file
+	- This is accomplished by `vagrant-hostsupdater` adding the IP address for the virtual machine to your /etc/hosts file
 
 - Now you can ssh into your virtual machine and run the application
 	- We add a config file in your `.ssh/` directory with the hosts managed by Vagrant called `vagrant_config`
