@@ -22,6 +22,13 @@ Vagrant.configure("2") do |config|
     mtdj.vm.network "private_network", ip: "192.168.10.21"
     mtdj.vm.hostname = "moodytunes.vm"
 
+    # Set up subdomains and www. prefixed domain names as aliases to host
+    config.hostsupdater.aliases = [
+      "admin.moodytunes.vm",
+      "www.moodytunes.vm",
+      "www.admin.moodytunes.vm"
+    ]
+
     mtdj.ssh.forward_agent = true
 
     mtdj.vm.provision "ansible" do |ansible|
