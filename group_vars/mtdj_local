@@ -1,3 +1,4 @@
+allowed_hosts: moodytunes.vm, www.moodytunes.vm, admin.moodytunes.vm, www.admin.moodytunes.vm
 app_debug: True
 app_hostname: moodytunes.vm
 celery_always_eager: True

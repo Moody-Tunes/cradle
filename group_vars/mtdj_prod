@@ -1,5 +1,5 @@
 app_hostname: moodytunes.us
-allowed_hosts: moodytunes.us, www.moodytunes.us, admin.moodytunes.us
+allowed_hosts: moodytunes.us, www.moodytunes.us, admin.moodytunes.us, www.admin.moodytunes.us
 admins_list: "Nicholas DiBari, ndibari@fordham.edu; Ops, moody.tunes.infrastructure@gmail.com"
 
 compress_offline: true  # We don't want to compress files during request/response loop in prod
