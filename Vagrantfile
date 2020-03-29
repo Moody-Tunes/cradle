@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Create ssh config file for Vagrant managed machines and add to
-  # host ~/.ssh directory
+  # local ~/.ssh directory
   config.trigger.after :up do |trigger|
     trigger.info = "Adding Vagrant managed machines SSH config to ~/.ssh/vagrant_config"
     trigger.run = {path: "scripts/vagrant_ssh_config.sh"}
@@ -21,6 +21,13 @@ Vagrant.configure("2") do |config|
     # Configure private network definitions
     mtdj.vm.network "private_network", ip: "192.168.10.21"
     mtdj.vm.hostname = "moodytunes.vm"
+
+    # Set up subdomains and www. prefixed domain names as aliases to host
+    config.hostsupdater.aliases = [
+      "admin.moodytunes.vm",
+      "www.moodytunes.vm",
+      "www.admin.moodytunes.vm"
+    ]
 
     mtdj.ssh.forward_agent = true
 
