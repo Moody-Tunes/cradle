@@ -14,6 +14,15 @@
     shell: "{{ item.shell }}"
     groups: "{{ item.groups }}"
     home: "{{ item.home }}"
+    update_password: on_create
+
+  with_items:
+    - "{{ users }}"
+
+- name: Unlock password and set to empty
+  become_user: root
+
+  command: passwd -d "{{ item.name }}"
 
   with_items:
     - "{{ users }}"

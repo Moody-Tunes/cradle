@@ -23,6 +23,7 @@ users:
     groups:
       - "{{ staff_group }}"
       - "{{ system_group }}"
+      - sudo
 
 environment_extend:
   DJANGO_ALLOWED_HOSTS: "{{ allowed_hosts | default(None) }}"
