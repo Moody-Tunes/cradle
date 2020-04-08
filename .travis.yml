@@ -9,4 +9,4 @@ install:
 
 script:
   - yamllint -c .yaml_lint_config .
-  - ansible-lint
+  - ansible-lint site.yml
