@@ -5,7 +5,8 @@ python:
   - "3.6"
 
 install:
-  pip install yamllint==1.18.0
+  pip install yamllint==1.18.0 ansible-lint==4.2.0
 
 script:
   - yamllint -c .yaml_lint_config .
+  - ansible-lint
