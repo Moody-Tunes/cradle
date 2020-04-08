@@ -11,7 +11,7 @@
 
   command: virtualenv {{ virtualenv_dir }} --python={{ python_path }}
 
-  when: stat_result.stat.exists == False
+  when: not stat_result.stat.exists
 
 - name: Install requirements
 

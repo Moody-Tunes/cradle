@@ -1,6 +1,7 @@
 ---
 
 - name: Ensure database is created
+  become: true
   become_user: postgres
 
   postgresql_db:
@@ -14,6 +15,7 @@
   notify: restart postgresql
 
 - name: Create application database user to access the database
+  become: true
   become_user: postgres
 
   postgresql_user:
@@ -26,6 +28,7 @@
   notify: restart postgresql
 
 - name: Ensure user does not have unnecessary privileges
+  become: true
   become_user: postgres
 
   postgresql_user:
@@ -36,6 +39,7 @@
   notify: restart postgresql
 
 - name: Grant user permission to create test database on local
+  become: true
   become_user: postgres
 
   postgresql_user:

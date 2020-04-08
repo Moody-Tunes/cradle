@@ -1,10 +1,10 @@
 ---
 
 - name: Setup Django project
-  shell: . {{ home_directory }}/.application-startup && {{ item }}
+  shell: . {{ home_directory }}/.application-startup && {{ item }}  # noqa: 301
 
   with_items:
     - "{{ django_commands }}"
 
 - name: Clear compiled python files
-  shell: cd {{ repository_path }} && find . -name *.pyc -delete
+  shell: cd {{ repository_path }} && find . -name *.pyc -delete  # noqa: 301
