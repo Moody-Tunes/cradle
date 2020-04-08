@@ -1,6 +1,7 @@
 ---
 
 - name: Create system group
+  become: true
   become_user: root
 
   group:
@@ -8,6 +9,7 @@
     system: true
 
 - name: Create celery user
+  become: true
   become_user: root
 
   user:
@@ -16,6 +18,7 @@
     create_home: false
 
 - name: Create gunicorn user
+  become: true
   become_user: root
 
   user:
@@ -24,6 +27,7 @@
     create_home: false
 
 - name: Configure logging path
+  become: true
   become_user: root
 
   file:

@@ -1,6 +1,7 @@
 ---
 
 - name: restart nginx
+  become: yes
   become_user: root
   no_log: true
 

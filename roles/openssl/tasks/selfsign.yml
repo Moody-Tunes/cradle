@@ -1,12 +1,14 @@
 ---
 
 - name: Generate an OpenSSL private key
+  become: yes
   become_user: root
 
   openssl_privatekey:
     path: "{{ privatekey_path }}"
 
 - name: Ensure directory exists for local self-signed TLS certs
+  become: yes
   become_user: root
 
   file:
@@ -15,6 +17,7 @@
     mode: 0755
 
 - name: Generate an OpenSSL Certificate Signing Request
+  become: yes
   become_user: root
 
   openssl_csr:
@@ -23,6 +26,7 @@
     common_name: www.{{ app_hostname }}
 
 - name: Generate self signed certificate
+  become: yes
   become_user: root
 
   openssl_certificate:

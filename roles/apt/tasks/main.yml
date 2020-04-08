@@ -1,6 +1,7 @@
 ---
 
 - name: Install packages
+  become: yes
   become_user: root
 
   apt:
@@ -9,6 +10,7 @@
     update_cache: true
 
 - name: Update system packages
+  become: yes
   become_user: root
 
   apt:

@@ -1,12 +1,14 @@
 ---
 
 - name: Enable ufw firewall
+  become: yes
   become_user: root
 
   ufw:
     state: enabled
 
 - name: Enable OpenSSH
+  become: yes
   become_user: root
 
   ufw:
@@ -15,6 +17,7 @@
     state: enabled
 
 - name: Enable nginx
+  become: yes
   become_user: root
 
   ufw:

@@ -1,6 +1,7 @@
 ---
 
 - name: Start gunicorn service
+  become: yes
   become_user: root
 
   service:
@@ -10,6 +11,7 @@
   notify: restart nginx
 
 - name: Start celery service
+  become: yes
   become_user: root
 
   service:
@@ -17,6 +19,7 @@
     state: restarted
 
 - name: Start celery_beat service
+  become: yes
   become_user: root
 
   service:
