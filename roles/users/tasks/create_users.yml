@@ -1,14 +1,14 @@
 ---
 
 - name: Create staff users group
-  become: yes
+  become: true
   become_user: root
 
   group:
     name: "{{ staff_group }}"
 
 - name: Create defined users
-  become: yes
+  become: true
   become_user: root
 
   user:
@@ -23,7 +23,7 @@
     - "{{ users }}"
 
 - name: Add user SSH keys
-  become: yes
+  become: true
   become_user: root
 
   authorized_key:
@@ -35,7 +35,7 @@
     - "{{ users }}"
 
 - name: Add application startup script to user home directories
-  become: yes
+  become: true
   become_user: root
 
   template:
@@ -46,7 +46,7 @@
     - "{{ users }}"
 
 - name: Add systemd auto complete source file to user home directories
-  become: yes
+  become: true
   become_user: root
 
   template:
@@ -57,7 +57,7 @@
     - "{{ users }}"
 
 - name: Add startup commands to profile
-  become: yes
+  become: true
   become_user: root
 
   blockinfile:

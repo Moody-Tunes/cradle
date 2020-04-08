@@ -1,7 +1,7 @@
 ---
 
 - name: Create nginx config file
-  become: yes
+  become: true
   become_user: root
 
   template:
