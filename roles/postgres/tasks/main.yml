@@ -49,3 +49,15 @@
 
   when: playbook_env == 'local'
   notify: restart postgresql
+
+- name: Allow connections from all hosts on local
+  become: true
+  become_user: root
+
+  lineinfile:
+    path: /etc/postgresql/10/main/postgresql.conf
+    regexp: '^#listen_addresses'
+    line: listen_addreses = '*'
+
+  when: playbook_env == 'local'
+  notify: restart postgresql
