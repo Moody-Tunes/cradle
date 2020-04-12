@@ -24,3 +24,15 @@
     name: Nginx Full
     rule: allow
     state: enabled
+
+- name: Enable postgres on local
+  become: true
+  become_user: root
+
+  ufw:
+    rule: allow
+    port: 5432
+    proto: tcp
+    state: enabled
+
+  when: playbook_env == 'local'
