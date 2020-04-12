@@ -61,3 +61,14 @@
 
   when: playbook_env == 'local'
   notify: restart postgresql
+
+- name: Allow access to all databases on local
+  become: true
+  become_user: root
+
+  lineinfile:
+    path: /etc/postgresql/10/main/pg_hba.conf
+    line: host all all all md5
+
+  when: playbook_env == 'local'
+  notify: restart postgresql
