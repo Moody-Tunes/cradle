@@ -6,6 +6,7 @@
     path: "{{ home_directory }}/.ssh/known_hosts"
     create: true
     state: present
+    regexp: "^github\\.com"
     line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
 
 - name: Clone repository
