@@ -1,13 +1,13 @@
 ---
 
-- name: Create celery PID directory
+- name: Add tmpfiles.d config for celery PID directory
   become: true
   become_user: root
 
-  file:
-    path: "{{ celery_pid_directory }}"
-    state: directory
-    owner: "{{ celery_user }}"
+  lineinfile:
+    path: /usr/lib/tmpfiles.d/celery.conf
+    create: yes
+    line: d {{ celery_pid_directory }} 755 celery root - -
 
 - name: Create celery systemd file
   become: true
