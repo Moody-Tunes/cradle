@@ -7,12 +7,3 @@
   template:
     src: templates/application.conf
     dest: /etc/logrotate.d/application
-
-- name: Add cron job to run logrotate
-  become: true
-  become_user: root
-
-  cron:
-    name: Run logrotate
-    job: /usr/sbinlogrotate /etc/logrotate.conf
-    special_time: monthly
