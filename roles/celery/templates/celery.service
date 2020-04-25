@@ -9,7 +9,7 @@ Environment={{ env_file_var }}={{ repository_path }}/.env
 WorkingDirectory={{ repository_path }}
 ExecStart={{ virtualenv_dir }}/bin/celery multi start worker1 \
 -A mtdj.celery \
---autoscale=10,1 \
+--autoscale=7,1 \
 --pidfile={{ celery_pid_file }} \
 --loglevel=INFO \
 --logfile={{ logging_dir }}/celery.log
