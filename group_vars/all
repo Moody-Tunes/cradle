@@ -7,8 +7,9 @@ staff_group: staff
 celery_user: celery
 gunicorn_user: gunicorn
 
-celery_pid_file: /tmp/%n.pid
-celery_beat_pid_file: /tmp/beat.pid
+celery_pid_directory: /var/run/celery
+celery_pid_file: "{{ celery_pid_directory}}/%n.pid"
+celery_beat_pid_file: "{{ celery_pid_directory }}/beat.pid"
 
 site_packages:
   - bash-completion

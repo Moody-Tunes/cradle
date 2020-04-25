@@ -1,5 +1,12 @@
 ---
 
+- name: Reload systemd units
+  become: true
+  become_user: root
+
+  systemd:
+    daemon-reload: true
+
 - name: Start gunicorn service
   become: true
   become_user: root
