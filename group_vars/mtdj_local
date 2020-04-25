@@ -2,7 +2,6 @@ allowed_hosts: moodytunes.vm, www.moodytunes.vm, admin.moodytunes.vm, www.admin.
 app_debug: True
 app_hostname: moodytunes.vm
 celery_always_eager: True
-celery_worker_count: 1
 django_secret_key: zgt(m7!mg^!ln011u3rvgg^9a1rv+ebff&!*t@ntf@k-iipm^9
 env: dev
 postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck

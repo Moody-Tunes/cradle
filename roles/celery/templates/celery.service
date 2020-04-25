@@ -7,9 +7,9 @@ Type=forking
 User={{ celery_user }}
 Environment={{ env_file_var }}={{ repository_path }}/.env
 WorkingDirectory={{ repository_path }}
-ExecStart={{ virtualenv_dir }}/bin/celery multi start {{ celery_worker_count }} \
+ExecStart={{ virtualenv_dir }}/bin/celery multi start worker1 \
 -A mtdj.celery \
--c 3 \
+--autoscale=10,1 \
 --pidfile={{ celery_pid_file }} \
 --loglevel=INFO \
 --logfile={{ logging_dir }}/celery.log
