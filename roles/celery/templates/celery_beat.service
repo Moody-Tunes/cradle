@@ -7,7 +7,7 @@ Type=forking
 User={{ celery_user }}
 Environment={{ env_file_var }}={{ repository_path }}/.env
 WorkingDirectory={{ repository_path }}
-ExecStart={{ virtualenv_dir }}/bin/celery multi start worker1 \
+ExecStart={{ virtualenv_dir }}/bin/celery multi start celery-beat \
 -A mtdj.celery \
 --beat \
 --scheduler=django_celery_beat.schedulers:DatabaseScheduler \
