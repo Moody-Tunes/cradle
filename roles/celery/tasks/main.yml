@@ -9,6 +9,15 @@
     create: yes
     line: d {{ celery_pid_directory }} 755 celery root - -
 
+- name: Create celery PID directory if it does not exist
+  become: true
+  become_user: root
+
+  file:
+    path: "{{ celery_pid_directory }}"
+    state: directory
+    owner: "{{ celery_user }}"
+
 - name: Create celery systemd file
   become: true
   become_user: root
