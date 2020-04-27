@@ -3,13 +3,12 @@ Description=Celery Beat Service for {{ app_name }}
 After=network.target
 
 [Service]
-Type=forking
+Type=simple
 User={{ celery_user }}
 Environment={{ env_file_var }}={{ repository_path }}/.env
 WorkingDirectory={{ repository_path }}
-ExecStart={{ virtualenv_dir }}/bin/celery multi start celery-beat \
+ExecStart={{ virtualenv_dir }}/bin/celery beat \
 -A mtdj.celery \
---beat \
 --scheduler=django_celery_beat.schedulers:DatabaseScheduler \
 --pidfile={{ celery_beat_pid_file }} \
 --loglevel=INFO \
