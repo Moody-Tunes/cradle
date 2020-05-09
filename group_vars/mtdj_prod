@@ -6,7 +6,7 @@ compress_offline: true  # We don't want to compress files during request/respons
 
 webmaster_email: ndibari@fordham.edu
 
-spotify_categories: hiphop, rock, chill, party, mood, sleep, indie_alt, edm_dance,
+spotify_categories: hiphop, rock, chill, party, mood, sleep, indie_alt, edm_dance
 spotify_max_songs_from_category: 40
 spotify_redirect_uri: https://moodytunes.us/moodytunes/spotify/callback/
 
