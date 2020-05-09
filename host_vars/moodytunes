@@ -5,14 +5,15 @@ postgresql_db_host: 127.0.0.1
 
 repository_path: "{{ application_directory }}/moodytunes"
 virtualenv_dir: "{{ application_directory }}/mtdj_env"
+database_backup_path: /var/mtdj/backups
 env_file_var: MTDJ_ENV_FILE
 logging_dir: /var/log/mtdj
-repository_url: git@github.com:Moody-Tunes/moodytunes.git
-virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
 postgres_db_name: mtdj_database
 postgresql_db_user: mtdj
+repository_url: git@github.com:Moody-Tunes/moodytunes.git
+virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
 wsgi_server_port: 8000
 
 users:
@@ -34,21 +35,22 @@ environment_extend:
   DJANGO_EMAIL_USER: "{{ email_user | default(None) }}"
   DJANGO_EMAIL_PASSWORD: "{{ email_password | default(None) }}"
   DJANGO_EMAIL_USE_TLS: "{{ email_use_tls | default(None) }}"
-  MTDJ_SITE_HOSTNAME: "{{ app_hostname }}"
-  MTDJ_DATABASE_NAME: "{{ postgres_db_name }}"
-  MTDJ_DATABASE_USER: "{{ postgresql_db_user }}"
-  MTDJ_DATABASE_PASSWORD: "{{ postgresql_db_password }}"
   MTDJ_CACHE_BACKEND: "{{ cache_backend }}"
-  MTDJ_CACHE_LOCATION: "{{ cache_location }}"
   MTDJ_CACHE_CLIENT: "{{ cache_client }}"
-  MTDJ_CELERY_TASK_ALWAYS_EAGER: "{{ celery_always_eager }}"
+  MTDJ_CACHE_LOCATION: "{{ cache_location }}"
   MTDJ_CELERY_BROKER_URL: "{{ celery_broker_url }}"
+  MTDJ_CELERY_TASK_ALWAYS_EAGER: "{{ celery_always_eager }}"
   MTDJ_COMPRESS_OFFLINE: "{{ compress_offline | default(None) }}"
-  MTDJ_SPOTIFY_CLIENT_ID: "{{ spotify_client_id | default(None) }}"
-  MTDJ_SPOTIFY_SECRET_KEY: "{{ spotify_secret_key | default(None) }}"
+  MTDJ_DATABASE_BACKUPS_PATH: "{{ database_backup_path }}"
+  MTDJ_DATABASE_NAME: "{{ postgres_db_name }}"
+  MTDJ_DATABASE_PASSWORD: "{{ postgresql_db_password }}"
+  MTDJ_DATABASE_USER: "{{ postgresql_db_user }}"
+  MTDJ_ENCRYPTED_FIELDS_KEY: "{{ encrypted_fields_key }}"
+  MTDJ_SITE_HOSTNAME: "{{ app_hostname }}"
   MTDJ_SPOTIFY_CATEGORIES: "{{ spotify_categories |default(None) }}"
+  MTDJ_SPOTIFY_CLIENT_ID: "{{ spotify_client_id | default(None) }}"
   MTDJ_SPOTIFY_MAX_SONGS_FROM_CATEGORY: "{{ spotify_max_songs_from_category | default(None) }}"
   MTDJ_SPOTIFY_REDIRECT_URI: "{{ spotify_redirect_uri | default(None) }}"
-  MTDJ_WEBMASTER_EMAIL: "{{ webmaster_email | default(None) }}"
+  MTDJ_SPOTIFY_SECRET_KEY: "{{ spotify_secret_key | default(None) }}"
   MTDJ_SYSTEM_EMAIL_ADDRESS: "{{ system_email | default(None) }}"
-  MTDJ_ENCRYPTED_FIELDS_KEY: "{{ encrypted_fields_key }}"
+  MTDJ_WEBMASTER_EMAIL: "{{ webmaster_email | default(None) }}"

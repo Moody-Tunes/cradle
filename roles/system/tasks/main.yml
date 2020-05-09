@@ -57,6 +57,17 @@
     state: directory
     mode: u=rwx,g=rwx,o=rx,g+s
 
+- name: Configure database backup path
+  become: true
+  become_user: root
+
+  file:
+    path: "{{ database_backup_path }}"
+    owner: "{{ default_user }}"
+    group: "{{ system_group }}"
+    state: directory
+    mode: u=rwx,g=rwx,o=rx,g+s
+
 - name: Add application startup script
 
   template:
