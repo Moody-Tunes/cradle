@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
     # on the guest to mount the folder.
     # For our purposes, we assume that cradle and moodytunes live in the same
     # directory, so we can simply find the host directory by traversing one level up
-    mtdj.vm.synced_folder "../moodytunes", "/home/vagrant/moodytunes"
+    mtdj.vm.synced_folder "../moodytunes", "/srv/mtdj/moodytunes"
   end
 
 end
