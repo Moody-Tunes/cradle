@@ -53,7 +53,7 @@
     owner: "{{ mtdj_user }}"
     group: "{{ system_group }}"
     state: directory
-    mode: u=rwx,g=rwx
+    mode: u=rwx,g=rwx,g+s
 
 - name: Configure logging path
   become: true
