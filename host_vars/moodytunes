@@ -3,8 +3,8 @@ cache_location: redis://127.0.0.1:6379/1
 celery_broker_url: redis://127.0.0.1:6379/1
 postgresql_db_host: 127.0.0.1
 
-repository_path: /home/{{ provisioning_user }}/moodytunes
-virtualenv_dir: /home/{{ provisioning_user }}/mtdj_env
+repository_path: "{{ application_directory }}/moodytunes"
+virtualenv_dir: "{{ application_directory }}/mtdj_env"
 env_file_var: MTDJ_ENV_FILE
 logging_dir: /var/log/mtdj
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
