@@ -55,17 +55,6 @@
     state: directory
     mode: u=rwx,g=rwx,o=rx
 
-- name: Create application source directory
-  become: true
-  become_user: root
-
-  file:
-    path: "{{ repository_path }}"
-    owner: "{{ mtdj_user }}"
-    group: "{{ system_group }}"
-    state: directory
-    mode: u=rwx,g=rwx,o=rx
-
 - name: Configure logging path
   become: true
   become_user: root

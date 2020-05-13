@@ -3,4 +3,4 @@
 - name: Start services on non-local environments
 
   include_tasks: start_services.yml
-  when: playbook_env != 'local'
+  #when: playbook_env != 'local'
