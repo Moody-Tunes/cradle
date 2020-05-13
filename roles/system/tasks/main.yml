@@ -44,12 +44,23 @@
     groups: "{{ system_group }}"
     create_home: false
 
-- name: Create application directory
+- name: Create application parent directory
   become: true
   become_user: root
 
   file:
     path: "{{ application_directory }}"
+    owner: "{{ mtdj_user }}"
+    group: "{{ system_group }}"
+    state: directory
+    mode: u=rwx,g=rwx,o=rx
+
+- name: Create application source directory
+  become: true
+  become_user: root
+
+  file:
+    path: "{{ repository_path }}"
     owner: "{{ mtdj_user }}"
     group: "{{ system_group }}"
     state: directory
