@@ -8,6 +8,15 @@
     name: "{{ system_group }}"
     system: true
 
+- name: Add provisioning user to system group
+  become: true
+  become_user: root
+
+  user:
+    name: "{{ provisioning_user }}"
+    groups: "{{ system_group }}"
+    append: yes
+
 - name: Create mtdj user
   become: true
   become_user: root
