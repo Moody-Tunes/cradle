@@ -10,8 +10,6 @@
     line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
 
 - name: Clone repository
-  become: true
-  become_user: "{{ mtdj_user }}"
 
   git:
     dest: "{{ repository_path }}"
