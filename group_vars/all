@@ -1,4 +1,4 @@
-home_directory: /home/{{ default_user }}
+home_directory: /home/{{ provisioning_user }}
 python_path: /usr/bin/python3.6
 ansible_python_interpreter: /usr/bin/python3
 

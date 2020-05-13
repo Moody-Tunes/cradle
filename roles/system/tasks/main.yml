@@ -41,7 +41,7 @@
 
   file:
     path: "{{ logging_dir }}"
-    owner: "{{ default_user }}"
+    owner: "{{ provisioning_user }}"
     group: "{{ system_group }}"
     state: directory
     mode: u=rwx,g=rwx,o=rx,g+s

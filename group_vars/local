@@ -1,5 +1,5 @@
 playbook_env: local
-default_user: vagrant
+provisioning_user: vagrant
 git_version: HEAD
 node_use_development: yes
 
