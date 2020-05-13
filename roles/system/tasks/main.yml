@@ -8,6 +8,15 @@
     name: "{{ system_group }}"
     system: true
 
+- name: Create mtdj user
+  become: true
+  become_user: root
+
+  user:
+    name: "{{ mtdj_user }}"
+    groups: "{{ system_group }}"
+    create_home: false
+
 - name: Create celery user
   become: true
   become_user: root
