@@ -15,8 +15,6 @@ ssl_path: /etc/letsencrypt/live
 cert_path: "{{ ssl_path }}/moodytunes.us/fullchain.pem"
 privatekey_path: "{{ ssl_path }}/moodytunes.us/privkey.pem"
 
-server_ip: 134.209.211.57
-
 app_debug: False
 celery_always_eager: False
 encrypted_fields_key: !vault |
