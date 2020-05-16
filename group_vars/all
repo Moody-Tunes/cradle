@@ -1,9 +1,13 @@
-home_directory: /home/{{ default_user }}
+home_directory: /home/{{ provisioning_user }}
+application_directory: /srv/mtdj
+
 python_path: /usr/bin/python3.6
 ansible_python_interpreter: /usr/bin/python3
 
 system_group: workers
 staff_group: staff
+
+mtdj_user: mtdj
 celery_user: celery
 gunicorn_user: gunicorn
 

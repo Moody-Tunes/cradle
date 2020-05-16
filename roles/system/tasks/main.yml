@@ -8,6 +8,24 @@
     name: "{{ system_group }}"
     system: true
 
+- name: Add provisioning user to system group
+  become: true
+  become_user: root
+
+  user:
+    name: "{{ provisioning_user }}"
+    groups: "{{ system_group }}"
+    append: yes
+
+- name: Create mtdj user
+  become: true
+  become_user: root
+
+  user:
+    name: "{{ mtdj_user }}"
+    groups: "{{ system_group }}"
+    create_home: false
+
 - name: Create celery user
   become: true
   become_user: root
@@ -26,13 +44,24 @@
     groups: "{{ system_group }}"
     create_home: false
 
+- name: Create application parent directory
+  become: true
+  become_user: root
+
+  file:
+    path: "{{ application_directory }}"
+    owner: "{{ mtdj_user }}"
+    group: "{{ system_group }}"
+    state: directory
+    mode: u=rwx,g=rwx,g+s
+
 - name: Configure logging path
   become: true
   become_user: root
 
   file:
     path: "{{ logging_dir }}"
-    owner: "{{ default_user }}"
+    owner: "{{ provisioning_user }}"
     group: "{{ system_group }}"
     state: directory
     mode: u=rwx,g=rwx,o=rx,g+s

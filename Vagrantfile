@@ -38,12 +38,19 @@ Vagrant.configure("2") do |config|
       ansible.limit = "moodytunes"
     end
 
-    # Share an additional folder to the guest VM. The first argument is
-    # the path on the host to the actual folder. The second argument is the path
-    # on the guest to mount the folder.
-    # For our purposes, we assume that cradle and moodytunes live in the same
-    # directory, so we can simply find the host directory by traversing one level up
-    mtdj.vm.synced_folder "../moodytunes", "/home/vagrant/moodytunes"
+    # Share an additional directory to the VM. This will sync changes made on the
+    # host machine to the VM automatically, so you can edit code on your host
+    # without having to fuss about on your VM.
+    #
+    # The first argument is the path to the host directory to sync, the second
+    # is the path on the VM to mount the directory. We assume that cradle
+    # and moodytunes are stored on the same host folder following the install guide,
+    # so we can look one level up to find the moodytunes directory on the host machine.
+    #
+    # NOTE: The guest sync folder MUST correspond to the `repository_path` variable set
+    # in ansible to ensure that the changes made locally are synced to the correct
+    # directory on the VM.
+    mtdj.vm.synced_folder "../moodytunes", "/srv/mtdj/moodytunes"
   end
 
 end

@@ -3,7 +3,7 @@
 - name: Configure Application
   hosts: all
   become: true
-  become_user: "{{ default_user }}"
+  become_user: "{{ provisioning_user }}"
 
   roles:
     - apt
