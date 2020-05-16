@@ -7,7 +7,6 @@ ansible_python_interpreter: /usr/bin/python3
 system_group: workers
 staff_group: staff
 
-mtdj_user: mtdj
 celery_user: celery
 gunicorn_user: gunicorn
 
