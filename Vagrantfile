@@ -2,12 +2,12 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.provider "virtualbox"
   config.vm.box = "ubuntu/bionic64"
 
-  # Disable logging for virtual machine
   config.vm.provider "virtualbox" do |vb|
-    vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+    vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ] # Disable logging for virtual machine
+    vb.memory = 2048
+    vb.cpus = 4
   end
 
   # Create ssh config file for Vagrant managed machines and add to
