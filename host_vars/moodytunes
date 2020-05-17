@@ -5,6 +5,7 @@ postgresql_db_host: 127.0.0.1
 
 repository_path: "{{ application_directory }}/moodytunes"
 virtualenv_dir: "{{ application_directory }}/mtdj_env"
+database_backup_path: /var/mtdj/backups
 env_file_var: MTDJ_ENV_FILE
 logging_dir: /var/log/mtdj
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
@@ -38,6 +39,7 @@ environment_extend:
   MTDJ_DATABASE_NAME: "{{ postgres_db_name }}"
   MTDJ_DATABASE_USER: "{{ postgresql_db_user }}"
   MTDJ_DATABASE_PASSWORD: "{{ postgresql_db_password }}"
+  MTDJ_DATABASE_BACKUPS_PATH: "{{ database_backup_path }}"
   MTDJ_CACHE_BACKEND: "{{ cache_backend }}"
   MTDJ_CACHE_LOCATION: "{{ cache_location }}"
   MTDJ_CACHE_CLIENT: "{{ cache_client }}"
