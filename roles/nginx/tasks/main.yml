@@ -6,6 +6,17 @@
 
   template:
     src: templates/nginx.j2
-    dest: /etc/nginx/conf.d/{{ app_name }}.conf
+    dest: /etc/nginx/sites-available/{{ app_name }}.conf
+
+  notify: restart nginx
+
+- name: Create symlink to nginx conf
+  become: true
+  become_user: root
+
+  file:
+    src: /etc/nginx/sites-available/{{ app_name }}.conf
+    dest: /etc/nginx/sites-enabled/default
+    state: link
 
   notify: restart nginx

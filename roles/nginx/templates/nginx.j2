@@ -1,5 +1,3 @@
-server_tokens off;
-
 upstream app_server {
     server 127.0.0.1:{{ wsgi_server_port }} fail_timeout=0;
 }
