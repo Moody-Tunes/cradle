@@ -7,4 +7,4 @@
     - "{{ django_commands }}"
 
 - name: Clear compiled python files
-  shell: find {{ repository_path }} -type d -name "__pycache__" -exec rm -rf {} +
+  shell: find {{ repository_path }} -type d -name "__pycache__" -exec rm -rf {} +   # noqa: 301
