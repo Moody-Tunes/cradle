@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ] # Disable logging for virtual machine
     vb.memory = 2048
-    vb.cpus = 4
+    vb.cpus = 1
   end
 
   # Create ssh config file for Vagrant managed machines and add to
