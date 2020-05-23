@@ -8,7 +8,6 @@ WorkingDirectory={{ repository_path }}
 Environment={{ env_file_var }}={{ repository_path }}/.env
 ExecStart={{ virtualenv_dir }}/bin/gunicorn \
 --name={{ app_name }} \
---worker-class=gevent \
 --pythonpath={{ virtualenv_dir}}/bin/python \
 --bind 127.0.0.1:{{ wsgi_server_port }} \
 --config /etc/gunicorn.d/gunicorn.py \
