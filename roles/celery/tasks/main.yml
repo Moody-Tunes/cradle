@@ -6,7 +6,7 @@
 
   lineinfile:
     path: /usr/lib/tmpfiles.d/celery.conf
-    create: yes
+    create: true
     line: d {{ celery_pid_directory }} 755 celery root - -
 
 - name: Create celery PID directory if it does not exist
