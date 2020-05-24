@@ -15,7 +15,7 @@
   user:
     name: "{{ provisioning_user }}"
     groups: "{{ system_group }}"
-    append: yes
+    append: true
 
 - name: Create celery user
   become: true

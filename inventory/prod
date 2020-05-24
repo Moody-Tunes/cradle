@@ -1,9 +1,10 @@
-moodytunes ansible_host=134.209.211.57
+moodytunes
 
 [mtdj_prod]
 moodytunes
 
 [mtdj_prod:vars]
+ansible_host=134.209.211.57
 ansible_connection=ssh
 ansible_ssh_private_key_file=~/.ssh/id_ansible
 ansible_user=ansible
