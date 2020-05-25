@@ -5,7 +5,7 @@ node_use_development: yes
 
 # TLS Certificate generation variables
 ssl_path: /etc/ssl
-cert_path: "{{ ssl_path }}/certs/ansible.com.crt"
-privatekey_path: "{{ ssl_path }}/private/ansible.com.pem"
-csr_path: "{{ ssl_path }}/csr/ansible.com.csr"
+cert_path: "{{ ssl_path }}/certs/{{ app_hostname }}.crt"
+privatekey_path: "{{ ssl_path }}/private/{{ app_hostname }}.pem"
+csr_path: "{{ ssl_path }}/csr/{{ app_hostname }}.csr"
 ssl_config_path: "{{ ssl_path }}/self-signed.conf"
