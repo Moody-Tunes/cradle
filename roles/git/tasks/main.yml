@@ -11,7 +11,12 @@
 
 - name: Add Github public key to known_hosts if it is not present
 
-  shell: ssh-keyscan -H -T 10 github.com >> {{ known_hosts_file }}
+  lineinfile:
+    path: "{{ known_hosts_file }}"
+    create: true
+    state: present
+    regexp: "^github\\.com"
+    line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
 
   when: github_known_host_result.failed
 
