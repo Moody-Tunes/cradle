@@ -2,11 +2,12 @@
 
 - name: Check if Github is in known_hosts file
 
-  shell: ssh-keygen -f {{ known_hosts_file }} -F github.com
+  command: ssh-keygen -f {{ known_hosts_file }} -F github.com
 
   register: github_known_host_result
   ignore_errors: true
   no_log: true
+  changed_when: github_known_host_result.failed
 
 - name: Add Github public key to known_hosts if it is not present
 
