@@ -54,7 +54,7 @@ server {
 
 server {
     listen 80;
-    server_name {{ app_hostname }} www.{{ app_hostname }} admin.{{ app_hostname }} www.admin.{{ app_hostname }};
+    server_name {{ app_hostname }} www.{{ app_hostname }} admin.{{ app_hostname }};
 
     if ($request_method !~ ^(GET|POST|DELETE|HEAD)$) {
         return 405;
