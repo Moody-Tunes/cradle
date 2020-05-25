@@ -54,19 +54,11 @@ server {
 
 server {
     listen 80;
-    server_name {{ app_hostname }} www.{{ app_hostname }};
+    server_name {{ app_hostname }} www.{{ app_hostname }} admin.{{ app_hostname }} www.admin.{{ app_hostname }};
 
     if ($request_method !~ ^(GET|POST|DELETE|HEAD)$) {
         return 405;
     }
 
-    if ($host = www.{{ app_hostname }}) {
-        return 301 https://{{ app_hostname }}$request_uri;
-    }
-
-    if ($host = {{ app_hostname }}) {
-        return 301 https://$host$request_uri;
-    }
-
-    return 404;
+    return 301 https://$host$request_uri;
 }
