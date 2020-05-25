@@ -1,13 +1,18 @@
 ---
 
-- name: Add Github to known hosts
+- name: Check if Github is in known_hosts file
 
-  lineinfile:
-    path: "{{ home_directory }}/.ssh/known_hosts"
-    create: true
-    state: present
-    regexp: "^github\\.com"
-    line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+  shell: ssh-keygen -f {{ known_hosts_file }} -F github.com
+
+  register: github_known_host_result
+  ignore_errors: true
+  no_log: true
+
+- name: Add Github public key to known_hosts if it is not present
+
+  shell: ssh-keyscan -H -T 10 github.com >> {{ known_hosts_file }}
+
+  when: github_known_host_result.failed
 
 - name: Clone repository
 

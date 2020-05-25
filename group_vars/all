@@ -1,5 +1,6 @@
 home_directory: /home/{{ provisioning_user }}
 application_directory: /srv/mtdj
+known_hosts_file: "{{ home_directory }}/.ssh/known_hosts"
 
 python_path: /usr/bin/python3.6
 ansible_python_interpreter: /usr/bin/python3
