@@ -23,7 +23,7 @@
   openssl_csr:
     path: "{{ csr_path }}"
     privatekey_path: "{{ privatekey_path }}"
-    common_name: www.{{ app_hostname }}
+    common_name: "{{ app_hostname }}"
 
 - name: Generate self signed certificate
   become: true
