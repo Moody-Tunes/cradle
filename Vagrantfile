@@ -26,7 +26,6 @@ Vagrant.configure("2") do |config|
     config.hostsupdater.aliases = [
       "admin.moodytunes.vm",
       "www.moodytunes.vm",
-      "www.admin.moodytunes.vm"
     ]
 
     mtdj.ssh.forward_agent = true
