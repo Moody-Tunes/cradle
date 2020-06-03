@@ -5,6 +5,11 @@
 INVENTORY="inventory/prod"
 VAULT_PASSWORD_FILE=".vault_password"
 
+if [ ! "$(command -v ansible-playbook)" ]; then
+	echo "ERROR: Could not find ansible-playbook command"
+	exit 1
+fi
+
 if [ ! -f "$VAULT_PASSWORD_FILE" ]; then
 	echo "ERROR: Missing vault password file"
 	exit 1
