@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ansible command to deploy production application
 
