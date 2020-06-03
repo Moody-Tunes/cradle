@@ -10,3 +10,4 @@ install:
 script:
   - yamllint -c .yaml_lint_config .
   - ansible-lint site.yml
+  - shellcheck scripts/deploy.sh
