@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # ansible command to deploy production application
 
 INVENTORY="inventory/prod"
