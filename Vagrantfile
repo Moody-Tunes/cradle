@@ -52,4 +52,12 @@ Vagrant.configure("2") do |config|
     mtdj.vm.synced_folder "../moodytunes", "/srv/mtdj/moodytunes"
   end
 
+  config.vm.define "elk" do |elk|
+    elk.vm.network "private_network", ip: "192.168.10.22"
+    elk.vm.hostname = "moodytunes-elk.vm"
+
+    elk.ssh.forward_agent = true
+
+  end
+
 end
