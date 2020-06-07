@@ -1,2 +1,3 @@
 # Aliases for easy SSH into Vagrant managed machines
 alias MTDJ='ssh -F ~/.ssh/vagrant_config moodytunes.vm'
+alias ELK='ssh -F ~/.ssh/vagrant_config moodytunes-elk.vm'
