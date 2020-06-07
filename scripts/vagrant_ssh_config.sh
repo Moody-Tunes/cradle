@@ -14,9 +14,9 @@ touch $VAGRANT_SSH_CONFIG
 echo "###This file is automatically managed by Vagrant###" >> $VAGRANT_SSH_CONFIG
 
 # mtdj
-vagrant ssh-config --host moodytunes.vm mtdj >> ~/.ssh/vagrant_config
+vagrant ssh-config --host moodytunes.vm mtdj >> ~/.ssh/vagrant_config 2>/dev/null
 
 # elk
-vagrant ssh-config --host moodytunes-elk.vm elk >> ~/.ssh/vagrant_config
+vagrant ssh-config --host moodytunes-elk.vm elk >> ~/.ssh/vagrant_config 2>/dev/null
 
 echo "###End Vagrant managed file###" >> $VAGRANT_SSH_CONFIG
