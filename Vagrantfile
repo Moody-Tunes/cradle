@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     mtdj.vm.hostname = "moodytunes.vm"
 
     # Set up subdomains and www. prefixed domain names as aliases to host
-    config.hostsupdater.aliases = [
+    mtdj.hostmanager.aliases = [
       "admin.moodytunes.vm",
       "www.moodytunes.vm",
     ]
