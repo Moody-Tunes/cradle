@@ -61,6 +61,13 @@ Vagrant.configure("2") do |config|
 
     elk.ssh.forward_agent = true
 
+    elk.vm.provision "ansible" do |ansible|
+      ansible.playbook = "elk.yml"
+      ansible.inventory_path = "inventory/local_elk"
+      ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
+      ansible.limit = "moodytunes-elk"
+    end
+
   end
 
 end
