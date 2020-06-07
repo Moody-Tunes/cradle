@@ -4,6 +4,9 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
 
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+
   config.vm.provider "virtualbox" do |vb|
     vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ] # Disable logging for virtual machine
     vb.memory = 2048
@@ -23,7 +26,7 @@ Vagrant.configure("2") do |config|
     mtdj.vm.hostname = "moodytunes.vm"
 
     # Set up subdomains and www. prefixed domain names as aliases to host
-    config.hostsupdater.aliases = [
+    mtdj.hostmanager.aliases = [
       "admin.moodytunes.vm",
       "www.moodytunes.vm",
     ]
@@ -50,6 +53,14 @@ Vagrant.configure("2") do |config|
     # in ansible to ensure that the changes made locally are synced to the correct
     # directory on the VM.
     mtdj.vm.synced_folder "../moodytunes", "/srv/mtdj/moodytunes"
+  end
+
+  config.vm.define "elk" do |elk|
+    elk.vm.network "private_network", ip: "192.168.10.22"
+    elk.vm.hostname = "moodytunes-elk.vm"
+
+    elk.ssh.forward_agent = true
+
   end
 
 end
