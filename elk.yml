@@ -3,7 +3,7 @@
 - name: Configure Application
   hosts: all
   become: true
-  become_user: "{{ provisioning_user }}"
+  become_user: root
 
   roles:
     - elastisearch

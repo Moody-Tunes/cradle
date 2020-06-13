@@ -1,16 +1,12 @@
 ---
 
 - name: Update repositories cache and install Nginx
-  become: true
-  become_user: root
 
   apt:
     name: nginx
     update_cache: yes
 
 - name: Create nginx directory structure
-  become: true
-  become_user: root
 
   file:
     path: /etc/nginx/conf.d/
@@ -18,8 +14,6 @@
     mode: 0755
 
 - name: Setup Nginx reverse proxy for kibana
-  become: true
-  become_user: root
 
   template:
     src: kibana.conf.j2
@@ -29,16 +23,12 @@
     mode: 0644
 
 - name: Enable Nginx service
-  become: true
-  become_user: root
 
   systemd:
     name: nginx
     enabled: yes
 
 - name: Start Nginx service
-  become: true
-  become_user: root
 
   systemd:
     name: nginx
@@ -46,16 +36,12 @@
     daemon_reload: yes
 
 - name: Install Python Pexpect
-  become: true
-  become_user: root
 
   apt:
     name: python3-pexpect
     update_cache: yes
 
 - name: Add create kibana admin user script
-  become: true
-  become_user: root
 
   template:
     src: kibanaAdmin.j2
@@ -65,8 +51,6 @@
     mode: 0744
 
 - name: Create Kibana admin user
-  become: true
-  become_user: root
 
   expect:
     command: /tmp/createUser
@@ -74,8 +58,6 @@
       'Password:' : "{{ kibana_password }}"
 
 - name: Restart Nginx service
-  become: true
-  become_user: root
 
   systemd:
     name: nginx

@@ -1,8 +1,6 @@
 ---
 
 - name: Install kibana
-  become: true
-  become_user: root
 
   apt:
     name: kibana
@@ -10,8 +8,6 @@
     update_cache: yes
 
 - name: Enable Kibana service
-  become: true
-  become_user: root
 
   systemd:
     name: kibana
@@ -19,8 +15,6 @@
     daemon_reload: yes
 
 - name: Start Kibana service
-  become: true
-  become_user: root
 
   systemd:
     name: kibana
