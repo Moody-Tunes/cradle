@@ -61,6 +61,11 @@ Vagrant.configure("2") do |config|
 
     elk.ssh.forward_agent = true
 
+    elk.vm.provider "virtualbox" do |vb|
+      vb.memory = 4096
+      vb.cpus = 1
+    end
+
     elk.vm.provision "ansible" do |ansible|
       ansible.playbook = "elk.yml"
       ansible.inventory_path = "inventory/local_elk"
