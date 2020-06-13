@@ -24,6 +24,15 @@
     group: root
     mode: 0644
 
+- name: Configure application filter
+
+  template:
+    src: application-filter.conf.j2
+    dest: /etc/logstash/conf.d/12-application-filter.conf
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Configure Elasticsearch output file
 
   template:
