@@ -8,3 +8,4 @@
   roles:
     - elastisearch
     - kibana
+    - nginx-elk

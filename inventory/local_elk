@@ -1,9 +1,9 @@
 moodytunes-elk
 
-[mtdj_local]
+[elk_local]
 moodytunes-elk
 
-[mtdj_local:vars]
+[elk_local:vars]
 ansible_host=127.0.0.1
 ansible_port=2200
 ansible_connection=ssh
@@ -12,4 +12,4 @@ ansible_ssh_common_args=-o StrictHostKeyChecking=no -o ForwardAgent=yes -o Contr
 ansible_user=vagrant
 
 [local:children]
-mtdj_local
+elk_local
