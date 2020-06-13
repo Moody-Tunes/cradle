@@ -4,7 +4,19 @@ filebeat.inputs:
     enabled: true
 
     paths:
-      - {{ logging_dir }}/*.log
+      - {{ logging_dir }}/application.log
+      - {{ logging_dir }}/error.log
+
+    tags: ["application"]
+
+  - type: log
+    enabled: true
+
+    paths:
+      - {{ logging_dir }}/celery.log
+      - {{ logging_dir }}/gunicorn.log
+
+    tags: ["system"]
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
