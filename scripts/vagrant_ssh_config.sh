@@ -11,12 +11,15 @@ if [ -f "$VAGRANT_SSH_CONFIG" ]; then
 fi
 
 touch "$VAGRANT_SSH_CONFIG"
-echo "###This file is automatically managed by Vagrant###" >> "$VAGRANT_SSH_CONFIG"
 
-# mtdj
-vagrant ssh-config --host moodytunes.vm mtdj >> "$VAGRANT_SSH_CONFIG" 2>/dev/null
+{
+	echo "###This file is automatically managed by Vagrant###"
 
-# elk
-vagrant ssh-config --host moodytunes-elk.vm elk >> "$VAGRANT_SSH_CONFIG" 2>/dev/null
+	# mtdj
+	vagrant ssh-config --host moodytunes.vm mtdj 2>/dev/null
 
-echo "###End Vagrant managed file###" >> "$VAGRANT_SSH_CONFIG"
+	# elk
+	vagrant ssh-config --host moodytunes-elk.vm elk 2>/dev/null
+
+	echo "###End Vagrant managed file###"
+} >> "$VAGRANT_SSH_CONFIG"
