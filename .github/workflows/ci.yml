@@ -50,4 +50,4 @@ jobs:
       - uses: ludeeus/action-shellcheck@master
 
         with:
-          ignore: bash_templates
+          ignore: templates/bash_templates
