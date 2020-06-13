@@ -1,0 +1,25 @@
+---
+
+- name: Add apt signing keys for packages
+  become: true
+  become_user: root
+
+  apt_key:
+    url: "{{ item }}"
+    state: present
+
+  with_items:
+    - "{{ apt_key_urls }}"
+
+- name: Install Elastisearch apt repo
+  become: true
+  become_user: root
+
+  apt_repository:
+    repo: deb {{ item.repository }} stable main
+    state: present
+    filename: "{{ item.filename }}"
+    update_cache: true
+
+  with_items:
+    - "{{ apt_repositories }}"
