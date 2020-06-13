@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
   # local ~/.ssh directory
   config.trigger.after :up do |trigger|
     trigger.info = "Adding Vagrant managed machines SSH config to ~/.ssh/vagrant_config"
-    trigger.run = {path: "scripts/vagrant_ssh_config.sh"}
+    trigger.run = {path: "scripts/vagrant_ssh_config.bash"}
   end
 
   config.vm.define "mtdj" do |mtdj|
