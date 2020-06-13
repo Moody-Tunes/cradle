@@ -1,12 +1,12 @@
 ---
 
-- name: Update repositories cache and install Logstash
+- name: Install Logstash
 
   apt:
     name: logstash
     update_cache: true
 
-- name: Configure Beats configuration file
+- name: Add beats configuration file
 
   template:
     src: beats-input.conf.j2
