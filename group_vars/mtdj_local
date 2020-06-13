@@ -12,3 +12,6 @@ encrypted_fields_key: cN7wJtpSaaPAxREILzI679UYbLwiVfh5FOTu0IEyB7s=
 django_commands_extend:
   - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
   - python manage.py loaddata apps/base/fixtures/Flags.json
+
+extra_site_packages:
+  - filebeat

@@ -5,7 +5,7 @@
   become_user: root
 
   apt:
-    pkg: "{{ site_packages }}"
+    pkg: "{{ packages }}"
     state: latest  # noqa: 403
     update_cache: true
 
