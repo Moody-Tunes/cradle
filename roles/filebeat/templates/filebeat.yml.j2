@@ -1,0 +1,31 @@
+filebeat.inputs:
+
+  - type: log
+    enabled: true
+
+    paths:
+      - {{ logging_dir }}/application.log
+      - {{ logging_dir }}/error.log
+
+    tags: ["application"]
+
+  - type: log
+    enabled: true
+
+    paths:
+      - {{ logging_dir }}/celery.log
+      - {{ logging_dir }}/gunicorn.log
+
+    tags: ["system"]
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+
+output.logstash:
+  hosts: ["{{ elk_hostname }}:5044"]
+
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
+  - add_docker_metadata: ~
+  - add_kubernetes_metadata: ~
