@@ -9,5 +9,5 @@ install:
 
 script:
   - yamllint -c .yaml_lint_config .
-  - ansible-lint site.yml
+  - ansible-lint site.yml elk.yml
   - shellcheck scripts/deploy.sh

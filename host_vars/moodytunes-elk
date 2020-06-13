@@ -1,0 +1,11 @@
+site_packages:
+  - openjdk-8-jre
+  - nginx
+  - python3-pexpect
+
+apt_key_urls:
+  - https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+apt_repositories:
+  - repository: https://artifacts.elastic.co/packages/7.x/apt
+    filename: elastic-7.x.list

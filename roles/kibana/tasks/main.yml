@@ -1,0 +1,21 @@
+---
+
+- name: Install kibana
+
+  apt:
+    name: kibana
+    state: present
+    update_cache: true
+
+- name: Enable Kibana service
+
+  systemd:
+    name: kibana
+    enabled: true
+    daemon_reload: true
+
+- name: Start Kibana service
+
+  systemd:
+    name: kibana
+    state: started

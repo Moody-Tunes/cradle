@@ -1,0 +1,14 @@
+---
+
+- name: Configure Application
+  hosts: all
+  become: true
+  become_user: root
+
+  roles:
+    - apt
+    - apt-keys
+    - elastisearch
+    - kibana
+    - nginx-elk
+    - logstash

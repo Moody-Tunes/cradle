@@ -16,6 +16,21 @@ postgres_db_name: mtdj_database
 postgresql_db_user: mtdj
 wsgi_server_port: 8000
 
+site_packages:
+  - bash-completion
+  - git
+  - nginx
+  - python-pip
+  - python3-dev
+  - virtualenv
+  - postgresql
+  - libpq-dev
+  - python3-psycopg2
+  - python-openssl
+  - redis-server
+  - nodejs
+  - npm
+
 users:
   - name: ndibari
     home: /home/ndibari

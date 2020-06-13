@@ -1,0 +1,5 @@
+server_name: moodytunes-elk.vm
+nginx_kibana_port: 80
+
+kibana_user: admin
+kibana_password: admin

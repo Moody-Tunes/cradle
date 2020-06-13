@@ -1,0 +1,46 @@
+---
+
+- name: Setup Nginx reverse proxy for kibana
+
+  template:
+    src: kibana.conf.j2
+    dest: /etc/nginx/sites-available/default
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Enable Nginx service
+
+  systemd:
+    name: nginx
+    enabled: true
+
+- name: Start Nginx service
+
+  systemd:
+    name: nginx
+    state: started
+    daemon_reload: true
+
+- name: Add create kibana admin user script
+
+  template:
+    src: kibanaAdmin.j2
+    dest: /tmp/createUser
+    owner: root
+    group: root
+    mode: 0744
+
+- name: Create Kibana admin user
+
+  expect:
+    command: /tmp/createUser
+    responses:
+      'Password:': "{{ kibana_password }}"
+
+- name: Restart Nginx service
+
+  systemd:
+    name: nginx
+    state: reloaded
+    daemon_reload: true
