@@ -47,7 +47,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ludeeus/action-shellcheck@master
-
-        with:
-          ignore: templates/bash_templates
+      - name: Install shellcheck
+        run: sudo apt-get install -y shellcheck
+      - name: Run shellcheck
+        run: |
+          find . -name '*.sh' -o -name '*.bash' -exec shellcheck {} +
