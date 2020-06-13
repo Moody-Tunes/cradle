@@ -1,12 +1,5 @@
 ---
 
-- name: Create nginx directory structure
-
-  file:
-    path: /etc/nginx/conf.d/
-    state: directory
-    mode: 0755
-
 - name: Setup Nginx reverse proxy for kibana
 
   template:
