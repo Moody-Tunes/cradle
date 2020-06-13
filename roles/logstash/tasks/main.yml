@@ -4,7 +4,7 @@
 
   apt:
     name: logstash
-    update_cache: yes
+    update_cache: true
 
 - name: Configure Beats configuration file
 
@@ -38,10 +38,10 @@
   systemd:
     name: logstash
     state: started
-    daemon_reload: yes
+    daemon_reload: true
 
 - name: Enable Logstash service
 
   systemd:
     name: logstash
-    enabled: yes
+    enabled: true

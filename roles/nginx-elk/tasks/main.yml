@@ -4,7 +4,7 @@
 
   apt:
     name: nginx
-    update_cache: yes
+    update_cache: true
 
 - name: Create nginx directory structure
 
@@ -26,20 +26,20 @@
 
   systemd:
     name: nginx
-    enabled: yes
+    enabled: true
 
 - name: Start Nginx service
 
   systemd:
     name: nginx
     state: started
-    daemon_reload: yes
+    daemon_reload: true
 
 - name: Install Python Pexpect
 
   apt:
     name: python3-pexpect
-    update_cache: yes
+    update_cache: true
 
 - name: Add create kibana admin user script
 
@@ -55,11 +55,11 @@
   expect:
     command: /tmp/createUser
     responses:
-      'Password:' : "{{ kibana_password }}"
+      'Password:': "{{ kibana_password }}"
 
 - name: Restart Nginx service
 
   systemd:
     name: nginx
     state: reloaded
-    daemon_reload: yes
+    daemon_reload: true

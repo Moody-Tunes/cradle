@@ -5,18 +5,17 @@
   apt:
     name: kibana
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Enable Kibana service
 
   systemd:
     name: kibana
-    enabled: yes
-    daemon_reload: yes
+    enabled: true
+    daemon_reload: true
 
 - name: Start Kibana service
 
   systemd:
     name: kibana
     state: started
-
