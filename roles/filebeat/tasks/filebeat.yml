@@ -1,0 +1,17 @@
+---
+
+- name: Set up filebeat config
+  become: true
+  become_user: root
+
+  template:
+    src: templates/filebeat.yml.j2
+    dest: /etc/filebeat/filebeat.yml
+
+- name: Enable filebeat service
+  become: true
+  become_user: root
+
+  service:
+    name: filebeat
+    state: restarted

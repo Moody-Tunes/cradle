@@ -21,4 +21,5 @@
     - celery
     - node
     - django
+    - filebeat
     - services

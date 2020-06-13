@@ -1,0 +1,6 @@
+---
+
+- name: Set up Filebeat on local moodytunes
+
+  include_tasks: filebeat.yml
+  when: playbook_env == 'local'
