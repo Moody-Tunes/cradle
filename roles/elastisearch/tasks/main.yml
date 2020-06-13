@@ -14,13 +14,6 @@
     filename: elastic-7.x.list
     update_cache: true
 
-- name: Install java
-
-  apt:
-    name: openjdk-8-jre
-    state: present
-    update_cache: true
-
 - name: Install Elastisearch
 
   apt:

@@ -1,11 +1,5 @@
 ---
 
-- name: Update repositories cache and install Nginx
-
-  apt:
-    name: nginx
-    update_cache: true
-
 - name: Create nginx directory structure
 
   file:
@@ -34,12 +28,6 @@
     name: nginx
     state: started
     daemon_reload: true
-
-- name: Install Python Pexpect
-
-  apt:
-    name: python3-pexpect
-    update_cache: true
 
 - name: Add create kibana admin user script
 
