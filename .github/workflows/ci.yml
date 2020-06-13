@@ -40,3 +40,11 @@ jobs:
           grep ansible-lint requirements.txt | xargs pip install
       - name: Run ansible-lint
         run: ansible-lint site.yml elk.yml
+
+  shellcheck:
+    name: Run shellcheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ludeeus/action-shellcheck@v0.2.1
