@@ -11,3 +11,10 @@
   service:
     name: elasticsearch
     state: restarted
+
+- name: Enable Elasticsearch service
+
+  systemd:
+    name: elasticsearch
+    enabled: true
+    daemon_reload: true
