@@ -7,3 +7,19 @@
     state: restarted
     enabled: true
     daemon_reload: true
+
+- name: Add create kibana admin user script
+
+  template:
+    src: templates/kibanaAdmin.j2
+    dest: /tmp/createUser
+    owner: root
+    group: root
+    mode: 0744
+
+- name: Create Kibana admin user
+
+  expect:
+    command: /tmp/createUser
+    responses:
+      'Password:': "{{ kibana_password }}"

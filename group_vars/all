@@ -16,7 +16,6 @@ celery_pid_file: "{{ celery_pid_directory}}/%n.pid"
 celery_beat_pid_file: "{{ celery_pid_directory }}/beat.pid"
 
 startup_commands: |
-  . {{ home_directory }}/.systemctl-complete.bash
   . {{ home_directory }}/.application-startup
 
 apt_key_urls:

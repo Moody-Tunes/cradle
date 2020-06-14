@@ -1,3 +1,5 @@
+app_name: elk
+
 site_packages:
   - openjdk-8-jre
   - nginx

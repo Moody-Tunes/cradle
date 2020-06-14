@@ -74,12 +74,6 @@
     src: bash_templates/application-startup
     dest: "{{ home_directory }}/.application-startup"
 
-- name: Add systemd auto complete source file
-
-  template:
-    src: bash_templates/systemctl-complete
-    dest: "{{ home_directory }}/.systemctl-complete.bash"
-
 - name: Add startup commands to profile
 
   blockinfile:

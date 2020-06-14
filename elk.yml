@@ -10,5 +10,7 @@
     - apt
     - elasticsearch
     - kibana
-    - nginx-elk
+    - openssl
+    - ufw
+    - nginx
     - logstash

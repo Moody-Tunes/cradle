@@ -45,17 +45,6 @@
   with_items:
     - "{{ users }}"
 
-- name: Add systemd auto complete source file to user home directories
-  become: true
-  become_user: root
-
-  template:
-    src: bash_templates/systemctl-complete
-    dest: "{{ item.home }}/.systemctl-complete.bash"
-
-  with_items:
-    - "{{ users }}"
-
 - name: Add startup commands to profile
   become: true
   become_user: root
