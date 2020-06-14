@@ -40,7 +40,7 @@
 
   systemd:
     name: logstash
-    state: started
+    state: restarted
     daemon_reload: true
 
 - name: Enable Logstash service
