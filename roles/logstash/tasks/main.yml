@@ -1,5 +1,11 @@
 ---
 
+- name: Install Logstash
+
+  apt:
+    name: logstash
+    update_cache: true
+
 - name: Add beats configuration file
 
   template:
