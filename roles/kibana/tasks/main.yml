@@ -1,12 +1,5 @@
 ---
 
-- name: Install kibana
-
-  apt:
-    name: kibana
-    state: present
-    update_cache: true
-
 - name: Enable Kibana service
 
   systemd:

@@ -1,12 +1,5 @@
 ---
 
-- name: Install Elastisearch
-
-  apt:
-    pkg: elasticsearch
-    state: present
-    update_cache: true
-
 - name: Set Elastisearch network host to local
 
   lineinfile:
