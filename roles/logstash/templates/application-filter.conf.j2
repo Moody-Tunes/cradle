@@ -1,6 +1,8 @@
 filter {
-	json {
-		source => "message"
-		target => "data"
+	if [fields][type] == "application" {
+		json {
+			source => "message"
+			target => "data"
+		}
 	}
 }

@@ -7,6 +7,9 @@ filebeat.inputs:
       - {{ logging_dir }}/application.log
       - {{ logging_dir }}/error.log
 
+    fields:
+      type: application
+
     tags: ["application"]
 
   - type: log
@@ -15,6 +18,9 @@ filebeat.inputs:
     paths:
       - {{ logging_dir }}/celery.log
       - {{ logging_dir }}/gunicorn.log
+
+    fields:
+      type: system
 
     tags: ["system"]
 
