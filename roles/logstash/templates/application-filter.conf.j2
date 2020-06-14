@@ -2,9 +2,8 @@ filter {
 	mutate { replace => { "type" => "%{[fields][type]}" } }
 
 	if [fields][type] == "application" {
-		json {
-			source => "message"
-			target => "log_data"
-		}
+		json { source => "message" }
 	}
+
+	mutate { rename => {"data" => "request_data"} }
 }
