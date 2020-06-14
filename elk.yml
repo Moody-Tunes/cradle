@@ -10,5 +10,5 @@
     - apt
     - elasticsearch
     - kibana
-    - nginx-elk
+    - nginx
     - logstash

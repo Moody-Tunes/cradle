@@ -4,3 +4,6 @@ site_packages:
   - python3-pexpect
   - elasticsearch
   - kibana
+
+nginx_config: kibana.conf.j2
+app_name: elk

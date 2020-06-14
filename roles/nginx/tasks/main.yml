@@ -5,7 +5,7 @@
   become_user: root
 
   template:
-    src: templates/conf.j2
+    src: templates/{{ app_name}}-conf.j2
     dest: /etc/nginx/conf.d/{{ app_name }}.conf
 
   notify: restart nginx
@@ -15,7 +15,7 @@
   become_user: root
 
   template:
-    src: templates/nginx.j2
+    src: templates/{{ nginx_config }}
     dest: /etc/nginx/sites-available/{{ app_hostname }}
 
   notify: restart nginx

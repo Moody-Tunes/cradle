@@ -16,6 +16,8 @@ postgres_db_name: mtdj_database
 postgresql_db_user: mtdj
 wsgi_server_port: 8000
 
+nginx_config: nginx.j2
+
 site_packages:
   - bash-completion
   - git

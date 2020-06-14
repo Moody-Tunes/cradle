@@ -1,4 +1,5 @@
 server_name: moodytunes-elk.vm
+app_hostname: "{{ server_name }}"
 nginx_kibana_port: 80
 
 kibana_user: admin
