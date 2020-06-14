@@ -33,15 +33,10 @@
     group: root
     mode: 0644
 
-- name: Start Logstash service
+- name: Enable and start Logstash service
 
   systemd:
     name: logstash
     state: restarted
     daemon_reload: true
-
-- name: Enable Logstash service
-
-  systemd:
-    name: logstash
     enabled: true
