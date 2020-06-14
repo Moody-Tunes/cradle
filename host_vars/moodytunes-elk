@@ -1,9 +1,8 @@
+app_name: elk
+
 site_packages:
   - openjdk-8-jre
   - nginx
   - python3-pexpect
   - elasticsearch
   - kibana
-
-nginx_config: kibana.conf.j2
-app_name: elk
