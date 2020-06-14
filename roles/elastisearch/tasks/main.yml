@@ -1,13 +1,12 @@
 ---
 
-- name: Set Elastisearch network host to local
+- name: Set up Elasticsearch config
 
-  lineinfile:
-    path: /etc/elasticsearch/elasticsearch.yml
-    regexp: "^network.host"
-    line: "network.host: localhost"
+  template:
+    src: templates/elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
 
-- name: Start Elastisearch
+- name: Start Elasticsearch
 
   service:
     name: elasticsearch
