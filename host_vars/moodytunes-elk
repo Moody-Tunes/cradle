@@ -3,5 +3,4 @@ site_packages:
   - nginx
   - python3-pexpect
   - elasticsearch
-  - logstash
   - kibana

@@ -11,7 +11,7 @@
   with_items:
     - "{{ apt_key_urls }}"
 
-- name: Install Elastisearch apt repo
+- name: Add apt repositories to sources list
   become: true
   become_user: root
 

@@ -8,7 +8,7 @@
   roles:
     - apt-keys
     - apt
-    - elastisearch
+    - elasticsearch
     - kibana
     - nginx-elk
     - logstash
