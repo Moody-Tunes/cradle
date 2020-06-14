@@ -1,4 +1,6 @@
 filter {
+	mutate { replace => { "type" => "%{[fields][type]}" } }
+
 	if [fields][type] == "application" {
 		json {
 			source => "message"
