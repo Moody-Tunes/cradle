@@ -14,6 +14,10 @@ Vagrant.configure("2") do |config|
     trigger.run = {path: "scripts/vagrant_ssh_config.bash"}
   end
 
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]  # Disable virtualbox logging
+  end
+
   config.vm.define "mtdj" do |mtdj|
     # Configure private network definitions
     mtdj.vm.network "private_network", ip: "192.168.10.21"
