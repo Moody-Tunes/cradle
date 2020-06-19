@@ -10,8 +10,6 @@ filebeat.inputs:
     fields:
       type: application
 
-    tags: ["application"]
-
   - type: log
     enabled: true
 
@@ -21,8 +19,6 @@ filebeat.inputs:
 
     fields:
       type: system
-
-    tags: ["system"]
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
