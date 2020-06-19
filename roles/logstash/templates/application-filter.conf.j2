@@ -1,9 +1,14 @@
 filter {
-	mutate { replace => { "type" => "%{[fields][type]}" } }
 
-	if [fields][type] == "application" {
+	# Parse JSON data from message for application logs
+	if [type] == "application" {
 		json { source => "message" }
 	}
 
-	mutate { rename => {"data" => "request_data"} }
+	# Logs from bad requests include the request data as a `data` field.
+	# This clashes with the payload sent to Elasticsearch so we need to
+	# rename this field to allow the log data to be sent to Elasticsearch.
+	mutate {
+		rename => { "data" => "request_data" }
+	}
 }
