@@ -36,3 +36,16 @@
     state: enabled
 
   when: playbook_env == 'local' and app_name == 'mtdj'
+
+- name: Enable Logstash on elk
+  become: true
+  become_user: root
+
+  ufw:
+    rule: allow
+    port: 5044
+    proto: tcp
+    state: enabled
+    from_ip: "{{ mtdj_ip_address }}"
+
+  when: app_name == 'elk'

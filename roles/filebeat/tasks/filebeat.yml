@@ -8,10 +8,12 @@
     src: templates/filebeat.yml.j2
     dest: /etc/filebeat/filebeat.yml
 
-- name: Start filebeat service
+- name: Enable and start filebeat service
   become: true
   become_user: root
 
-  service:
+  systemd:
     name: filebeat
     state: restarted
+    daemon_reload: true
+    enabled: true

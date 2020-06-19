@@ -7,17 +7,15 @@ Vagrant.configure("2") do |config|
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ] # Disable logging for virtual machine
-    vb.memory = 2048
-    vb.cpus = 1
-  end
-
   # Create ssh config file for Vagrant managed machines and add to
   # local ~/.ssh directory
   config.trigger.after :up do |trigger|
     trigger.info = "Adding Vagrant managed machines SSH config to ~/.ssh/vagrant_config"
     trigger.run = {path: "scripts/vagrant_ssh_config.bash"}
+  end
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]  # Disable virtualbox logging
   end
 
   config.vm.define "mtdj" do |mtdj|
@@ -30,6 +28,11 @@ Vagrant.configure("2") do |config|
       "admin.moodytunes.vm",
       "www.moodytunes.vm",
     ]
+
+    mtdj.vm.provider "virtualbox" do |vb|
+      vb.memory = 2048
+      vb.cpus = 1
+    end
 
     mtdj.ssh.forward_agent = true
 
