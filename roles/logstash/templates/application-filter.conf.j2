@@ -11,4 +11,12 @@ filter {
 	mutate {
 		rename => { "data" => "request_data" }
 	}
+
+	# Parse the request_data field as JSON to ensure that form-encoded data
+	# is saved consistently as an object in Kibana.
+	json {
+		source => "request_data"
+		target => "request_data"
+		skip_on_invalid_json => true
+	}
 }
