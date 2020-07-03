@@ -1,8 +1,10 @@
 filter {
 
-	# Parse JSON data from message for application logs
-	if [type] == "application" {
-		json { source => "message" }
+	# Parse JSON data from message for logs written in JSON format
+	# Ignore errors from non-JSON formatted logs (like gunicorn)
+	json {
+		source => "message"
+		skip_on_invalid_json => true
 	}
 
 	# Logs from bad requests include the request data as a `data` field.
