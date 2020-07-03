@@ -10,7 +10,7 @@ filebeat.inputs:
     fields:
       type: application
 
-    tags: ["application"]
+    fields_under_root: true
 
   - type: log
     enabled: true
@@ -22,7 +22,7 @@ filebeat.inputs:
     fields:
       type: system
 
-    tags: ["system"]
+    fields_under_root: true
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
@@ -33,5 +33,3 @@ output.logstash:
 processors:
   - add_host_metadata: ~
   - add_cloud_metadata: ~
-  - add_docker_metadata: ~
-  - add_kubernetes_metadata: ~
