@@ -1,33 +1,33 @@
-app_name: mtdj
-redis_url: redis://127.0.0.1:6379
-cache_db: 1
-broker_db: 2
-cache_location: "{{ redis_url }}/{{ cache_db }}"
-celery_broker_url: "{{ redis_url }}/{{ broker_db }}"
-postgresql_db_host: 127.0.0.1
 application_directory: /srv/mtdj
-repository_path: "{{ application_directory }}/moodytunes"
-virtualenv_dir: "{{ application_directory }}/mtdj_env"
-database_backup_path: /var/mtdj/backups
-env_file_var: MTDJ_ENV_FILE
-logging_dir: /var/log/mtdj
-repository_url: git@github.com:Moody-Tunes/moodytunes.git
-virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
+app_name: mtdj
+broker_db: 2
 cache_backend: django_redis.cache.RedisCache
 cache_client: django_redis.client.DefaultClient
-postgres_db_name: mtdj_database
-postgresql_db_user: mtdj
-wsgi_server_port: 8000
-system_group: workers
-staff_group: staff
-celery_user: celery
-gunicorn_user: gunicorn
+cache_db: 1
+cache_location: "{{ redis_url }}/{{ cache_db }}"
+celery_beat_pid_file: "{{ celery_pid_directory }}/beat.pid"
+celery_broker_url: "{{ redis_url }}/{{ broker_db }}"
 celery_pid_directory: /var/run/celery
 celery_pid_file: "{{ celery_pid_directory}}/%n.pid"
-celery_beat_pid_file: "{{ celery_pid_directory }}/beat.pid"
+celery_user: celery
+database_backup_path: /var/mtdj/backups
+env_file_var: MTDJ_ENV_FILE
+gunicorn_user: gunicorn
 home_directory: /home/{{ provisioning_user }}
 known_hosts_file: "{{ home_directory }}/.ssh/known_hosts"
+logging_dir: /var/log/mtdj
+postgres_db_name: mtdj_database
+postgresql_db_host: 127.0.0.1
+postgresql_db_user: mtdj
 python_path: /usr/bin/python3.6
+redis_url: redis://127.0.0.1:6379
+repository_path: "{{ application_directory }}/moodytunes"
+repository_url: git@github.com:Moody-Tunes/moodytunes.git
+staff_group: staff
+system_group: workers
+virtualenv_dir: "{{ application_directory }}/mtdj_env"
+virtualenv_source: "{{ virtualenv_dir }}/bin/activate"
+wsgi_server_port: 8000
 
 startup_commands: |
   . {{ home_directory }}/.application-startup
