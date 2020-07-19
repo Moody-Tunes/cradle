@@ -34,7 +34,6 @@
 
   lineinfile:
     path: /etc/postgresql/10/main/postgresql.conf
-    regexp: '^#listen_addresses'
     line: listen_addresses = '*'
 
   when: playbook_env == 'local'
