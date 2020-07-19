@@ -78,4 +78,5 @@ spotify_secret_key: !vault |
     3733336166646661626437616564616164616536396631343037
 
 django_commands_extend:
-  - python manage.py compress --force
+  - command: python manage.py compress --force
+    ignore: "false"

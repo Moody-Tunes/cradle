@@ -1,7 +1,9 @@
 ---
 
 base_commands:
-  - python manage.py migrate
-  - python manage.py collectstatic --noinput
+  - command: python manage.py migrate
+    ignore: "No migrations to apply."
+  - command: python manage.py collectstatic --noinput
+    ignore: "0 static files copied"
 
 django_commands: "{{ base_commands }} + {{ django_commands_extend | default([]) }}"
