@@ -6,6 +6,7 @@ django_secret_key: zgt(m7!mg^!ln011u3rvgg^9a1rv+ebff&!*t@ntf@k-iipm^9
 elk_hostname: moodytunes-elk.vm
 env: dev
 postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
+postgresql_user_attributes: NOSUPERUSER,CREATEDB
 requirements_file: "{{ repository_path }}/requirements/dev.txt"
 encrypted_fields_key: cN7wJtpSaaPAxREILzI679UYbLwiVfh5FOTu0IEyB7s=
 

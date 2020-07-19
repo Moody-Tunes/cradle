@@ -14,7 +14,7 @@
 
   notify: restart postgresql
 
-- name: Create application database user to access the database
+- name: Create application database user
   become: true
   become_user: postgres
 
@@ -22,32 +22,10 @@
     db: "{{ postgres_db_name }}"
     name: "{{ postgresql_db_user }}"
     password: "{{ postgresql_db_password }}"
+    role_attr_flags: "{{ postgresql_user_attributes }}"
     priv: ALL
     state: present
 
-  notify: restart postgresql
-
-- name: Ensure user does not have unnecessary privileges
-  become: true
-  become_user: postgres
-
-  postgresql_user:
-    name: "{{ postgresql_db_user }}"
-    role_attr_flags: NOSUPERUSER,NOCREATEDB
-    state: present
-
-  notify: restart postgresql
-
-- name: Grant user permission to create test database on local
-  become: true
-  become_user: postgres
-
-  postgresql_user:
-    name: "{{ postgresql_db_user }}"
-    role_attr_flags: CREATEDB
-    state: present
-
-  when: playbook_env == 'local'
   notify: restart postgresql
 
 - name: Allow connections from all hosts on local
