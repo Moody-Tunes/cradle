@@ -19,7 +19,7 @@ logging_dir: /var/log/mtdj
 postgres_db_name: mtdj_database
 postgresql_db_host: 127.0.0.1
 postgresql_db_user: mtdj
-python_path: /usr/bin/python3.6
+python_path: /usr/bin/python3.8
 redis_url: redis://127.0.0.1:6379
 repository_path: "{{ application_directory }}/moodytunes"
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
