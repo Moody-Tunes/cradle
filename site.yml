@@ -8,6 +8,7 @@
   roles:
     - apt-keys
     - apt
+    - python
     - system
     - logrotate
     - users
