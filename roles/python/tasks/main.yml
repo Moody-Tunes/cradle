@@ -12,6 +12,6 @@
   become_user: root
 
   apt:
-    pkg: python3.8
+    pkg: python3.8-dev
     state: latest  # noqa: 403
     update_cache: true
