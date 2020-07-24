@@ -45,7 +45,6 @@ site_packages:
   - redis-server
   - nodejs
   - npm
-  - software-properties-common
 
 users:
   - name: ndibari
