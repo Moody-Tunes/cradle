@@ -10,6 +10,8 @@ spotify_categories: hiphop, rock, chill, party, mood, sleep, indie_alt, edm_danc
 spotify_max_songs_from_category: 40
 spotify_redirect_uri: https://moodytunes.us/moodytunes/spotify/callback/
 
+postgresql_user_attributes: NOSUPERUSER,NOCREATEDB
+
 # LetsEncrypt certificate variables
 ssl_path: /etc/letsencrypt/live
 cert_path: "{{ ssl_path }}/{{ app_hostname }}/fullchain.pem"
@@ -78,4 +80,5 @@ spotify_secret_key: !vault |
     3733336166646661626437616564616164616536396631343037
 
 django_commands_extend:
-  - python manage.py compress --force
+  - command: python manage.py compress --force
+    ignore: "false"

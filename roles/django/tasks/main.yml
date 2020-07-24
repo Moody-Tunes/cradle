@@ -1,10 +1,14 @@
 ---
 
 - name: Setup Django project
-  shell: . {{ home_directory }}/.application-startup && {{ item }}  # noqa: 301
+  shell: . {{ home_directory }}/.application-startup && {{ item.command }}  # noqa: 301
+  register: result
 
   with_items:
     - "{{ django_commands }}"
+
+  changed_when: "item.ignore not in result.stdout"
+
 
 - name: Clear compiled python files
   become: true

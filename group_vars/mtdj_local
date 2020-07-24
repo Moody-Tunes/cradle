@@ -6,12 +6,15 @@ django_secret_key: zgt(m7!mg^!ln011u3rvgg^9a1rv+ebff&!*t@ntf@k-iipm^9
 elk_hostname: moodytunes-elk.vm
 env: dev
 postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
+postgresql_user_attributes: NOSUPERUSER,CREATEDB
 requirements_file: "{{ repository_path }}/requirements/dev.txt"
 encrypted_fields_key: cN7wJtpSaaPAxREILzI679UYbLwiVfh5FOTu0IEyB7s=
 
 django_commands_extend:
-  - python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
-  - python manage.py loaddata apps/base/fixtures/Flags.json
+  - command: python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
+    ignore: "false"
+  - command: python manage.py loaddata apps/base/fixtures/Flags.json
+    ignore: "false"
 
 extra_site_packages:
   - filebeat
