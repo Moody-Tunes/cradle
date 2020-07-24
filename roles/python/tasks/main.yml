@@ -1,0 +1,17 @@
+---
+
+- name: Add deadsnakes PPA to sources
+  become: true
+  become_user: root
+
+  apt_repository:
+    repo: ppa:deadsnakes/ppa
+
+- name: Install Python3.8
+  become: true
+  become_user: root
+
+  apt:
+    pkg: python3.8-dev
+    state: latest  # noqa: 403
+    update_cache: true
