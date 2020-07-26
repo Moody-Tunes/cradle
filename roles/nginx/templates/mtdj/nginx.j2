@@ -11,7 +11,7 @@ server {
         return 444;
     }
 
-    if ($request_method !~ ^(GET|POST|DELETE|HEAD)$) {
+    if ($request_method !~ ^(GET|POST|DELETE|HEAD|PATCH)$) {
         return 405;
     }
 
