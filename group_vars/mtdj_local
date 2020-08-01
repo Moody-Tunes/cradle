@@ -15,6 +15,8 @@ django_commands_extend:
     ignore: "false"
   - command: python manage.py loaddata apps/base/fixtures/Flags.json
     ignore: "false"
+  - command: python manage.py loaddata apps/base/fixtures/Switches.json
+    ignore: "false"
 
 extra_site_packages:
   - filebeat
