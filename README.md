@@ -1,12 +1,12 @@
 # Cradle
-Infastructure definitions for MoodyTunes
+Infrastructure definitions for MoodyTunes
 
 
 ## Getting Started
 
 - Create a directory on your computer to hold the MoodyTunes repositories
 
-`mdkir MoodyTunes && cd MoodyTunes`
+`mkdir MoodyTunes && cd MoodyTunes`
 
 - Clone this repository and the moodytunes repository
 
