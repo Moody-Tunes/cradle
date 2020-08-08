@@ -20,7 +20,12 @@
     requirements: "{{ requirements_file }}"
 
 - name: Create environment variables list
+  become: true
+  become_user: root
 
   template:
     src: templates/env
-    dest: "{{ repository_path }}/.env"
+    dest: /etc/mtdj.env
+    owner: "{{ provisioning_user }}"
+    group: "{{ system_group }}"
+    mode: 0440
