@@ -1,3 +1,3 @@
 . {{ virtualenv_source }}
-export {{ env_file_var }}="{{ repository_path }}/.env"
+export {{ env_file_var }}="{{ env_file_path }}"
 cd {{ repository_path }}

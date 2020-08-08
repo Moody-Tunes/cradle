@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User={{ celery_user }}
-Environment={{ env_file_var }}={{ repository_path }}/.env
+Environment={{ env_file_var }}={{ env_file_path }}
 WorkingDirectory={{ repository_path }}
 ExecStart={{ virtualenv_dir }}/bin/celery beat \
 -A mtdj.celery \
