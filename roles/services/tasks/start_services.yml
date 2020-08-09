@@ -11,7 +11,7 @@
   become: true
   become_user: root
 
-  service:
+  systemd:
     name: gunicorn
     state: restarted
 
@@ -21,7 +21,7 @@
   become: true
   become_user: root
 
-  service:
+  systemd:
     name: celery
     state: restarted
 
@@ -29,6 +29,6 @@
   become: true
   become_user: root
 
-  service:
+  systemd:
     name: celery_beat
     state: restarted
