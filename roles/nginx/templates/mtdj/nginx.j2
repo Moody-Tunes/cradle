@@ -3,7 +3,7 @@ upstream app_server {
 }
 
 server {
-    listen 443 ssl;
+    listen 443 ssl http2;
     server_name {{ app_hostname }} admin.{{ app_hostname }};
 
     # Deny invalid Host headers
