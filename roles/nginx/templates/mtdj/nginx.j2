@@ -1,9 +1,9 @@
 upstream app_server {
-    server 127.0.0.1:{{ wsgi_server_port }} fail_timeout=0;
+    server 127.0.0.1:{{ wsgi_server_port }};
 }
 
 server {
-    listen 443 ssl;
+    listen 443 ssl http2;
     server_name {{ app_hostname }} admin.{{ app_hostname }};
 
     # Deny invalid Host headers
@@ -34,6 +34,8 @@ server {
         proxy_set_header Host $http_host;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_redirect off;
+        proxy_connect_timeout 5s;
+        proxy_read_timeout 30s;
 
         proxy_pass http://app_server;
     }
