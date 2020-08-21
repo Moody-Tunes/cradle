@@ -24,6 +24,8 @@ python_path: /usr/bin/python3.8
 redis_url: redis://127.0.0.1:6379
 repository_path: "{{ application_directory }}/moodytunes"
 repository_url: git@github.com:Moody-Tunes/moodytunes.git
+session_db: 3
+session_cache_location: "{{ redis_url }}/{{ session_db }}"
 staff_group: staff
 system_group: workers
 virtualenv_dir: "{{ application_directory }}/mtdj_env"
@@ -73,6 +75,7 @@ environment_extend:
   MTDJ_DATABASE_BACKUPS_PATH: "{{ database_backup_path }}"
   MTDJ_CACHE_BACKEND: "{{ cache_backend }}"
   MTDJ_CACHE_LOCATION: "{{ cache_location }}"
+  MTDJ_SESSION_CACHE_LOCATION: "{{ session_cache_location }}"
   MTDJ_CACHE_CLIENT: "{{ cache_client }}"
   MTDJ_CELERY_TASK_ALWAYS_EAGER: "{{ celery_always_eager }}"
   MTDJ_CELERY_BROKER_URL: "{{ celery_broker_url }}"
