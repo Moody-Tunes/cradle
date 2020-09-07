@@ -10,7 +10,9 @@ celery_broker_url: "{{ redis_url }}/{{ broker_db }}"
 celery_pid_directory: /var/run/celery
 celery_pid_file: "{{ celery_pid_directory}}/%n.pid"
 celery_user: celery
-database_backup_path: /var/mtdj/backups
+data_path: /var/mtdj
+database_backup_path: "{{ data_path }}/backups"
+image_file_upload_path: "{{ data_path }}/images"
 env_file_path: /etc/mtdj.env
 env_file_var: MTDJ_ENV_FILE
 gunicorn_user: gunicorn
@@ -88,3 +90,4 @@ environment_extend:
   MTDJ_WEBMASTER_EMAIL: "{{ webmaster_email | default(None) }}"
   MTDJ_SYSTEM_EMAIL_ADDRESS: "{{ system_email | default(None) }}"
   MTDJ_ENCRYPTED_FIELDS_KEY: "{{ encrypted_fields_key }}"
+  MTDJ_IMAGE_FILE_UPLOAD_PATH: "{{ image_file_upload_path }}"
