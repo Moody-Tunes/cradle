@@ -6,7 +6,7 @@
   become_user: "{{ provisioning_user }}"
 
   roles:
-    - apt-keys
+    - apt_keys
     - apt
     - python
     - system
