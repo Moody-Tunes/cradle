@@ -7,6 +7,9 @@
   file:
     path: /etc/gunicorn.d
     state: directory
+    owner: root
+    group: root
+    mode: 0755
 
 - name: Create gunicorn config file
   become: true
@@ -15,6 +18,9 @@
   template:
     src: templates/gunicorn.py
     dest: /etc/gunicorn.d/gunicorn.py
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Create gunicorn systemd file
   become: true
@@ -23,3 +29,6 @@
   template:
     src: templates/gunicorn.service
     dest: /etc/systemd/system/gunicorn.service
+    owner: root
+    group: root
+    mode: 0644
