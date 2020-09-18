@@ -42,7 +42,7 @@
     src: bash_templates/application-startup
     dest: "{{ item.home }}/.application-startup"
     owner: "{{ item.name }}"
-    group: "{{ item.group }}"
+    group: "{{ item.name }}"
     mode: 0644
 
   with_items:
