@@ -6,7 +6,7 @@
   become_user: root
 
   roles:
-    - apt-keys
+    - apt_keys
     - apt
     - elasticsearch
     - kibana

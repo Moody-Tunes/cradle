@@ -95,6 +95,9 @@
   template:
     src: bash_templates/application-startup
     dest: "{{ home_directory }}/.application-startup"
+    owner: "{{ provisioning_user }}"
+    group: "{{ provisioning_user }}"
+    mode: 0664
 
 - name: Add startup commands to profile
 

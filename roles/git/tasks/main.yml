@@ -17,6 +17,9 @@
     state: present
     regexp: "^github\\.com"
     line: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+    owner: "{{ provisioning_user }}"
+    group: "{{ provisioning_user }}"
+    mode: 0664
 
   when: github_known_host_result.failed
 

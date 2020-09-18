@@ -6,7 +6,7 @@
 
   apt:
     pkg: "{{ packages }}"
-    state: latest  # noqa: 403
+    state: latest  # noqa 403
     update_cache: true
 
 - name: Update system packages
