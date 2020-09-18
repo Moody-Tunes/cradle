@@ -7,6 +7,9 @@
   template:
     src: templates/filebeat.yml.j2
     dest: /etc/filebeat/filebeat.yml
+    owner: root
+    group: root
+    mode: 0600
 
 - name: Enable and start filebeat service
   become: true
