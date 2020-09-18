@@ -14,6 +14,7 @@
   systemd:
     name: gunicorn
     state: restarted
+    enabled: true
 
   notify: restart nginx
 
@@ -24,6 +25,7 @@
   systemd:
     name: celery
     state: restarted
+    enabled: true
 
 - name: Start celery_beat service
   become: true
@@ -32,3 +34,4 @@
   systemd:
     name: celery_beat
     state: restarted
+    enabled: true
