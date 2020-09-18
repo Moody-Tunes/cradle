@@ -1,2 +1,2 @@
-group_vars/* linguist-language=YAML
+group_vars/all linguist-language=YAML
 host_vars/* linguist-language=YAML
