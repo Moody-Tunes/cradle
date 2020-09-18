@@ -7,3 +7,6 @@
   template:
     src: templates/application.conf
     dest: /etc/logrotate.d/application
+    owner: root
+    group: root
+    mode: 0644
