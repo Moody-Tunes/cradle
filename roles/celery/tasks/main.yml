@@ -8,6 +8,9 @@
     path: /usr/lib/tmpfiles.d/celery.conf
     create: true
     line: d {{ celery_pid_directory }} 755 celery root - -
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Create celery PID directory if it does not exist
   become: true
@@ -17,6 +20,8 @@
     path: "{{ celery_pid_directory }}"
     state: directory
     owner: "{{ celery_user }}"
+    group: root
+    mode: 0755
 
 - name: Create celery systemd file
   become: true
@@ -25,6 +30,9 @@
   template:
     src: templates/celery.service
     dest: /etc/systemd/system/celery.service
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Create celery-beat systemd file
   become: true
@@ -33,3 +41,6 @@
   template:
     src: templates/celery_beat.service
     dest: /etc/systemd/system/celery_beat.service
+    owner: root
+    group: root
+    mode: 0644
