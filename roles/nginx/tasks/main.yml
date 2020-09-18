@@ -7,6 +7,9 @@
   template:
     src: templates/conf.j2
     dest: /etc/nginx/conf.d/{{ app_name }}.conf
+    owner: root
+    group: root
+    mode: 0644
 
   notify: restart nginx
 
@@ -17,6 +20,9 @@
   template:
     src: templates/{{ app_name }}/nginx.j2
     dest: /etc/nginx/sites-available/{{ app_hostname }}
+    owner: root
+    group: root
+    mode: 0644
 
   notify: restart nginx
 
