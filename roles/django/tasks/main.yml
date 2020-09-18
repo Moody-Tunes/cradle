@@ -1,7 +1,7 @@
 ---
 
 - name: Setup Django project
-  shell: . {{ home_directory }}/.application-startup && {{ item.command }}  # noqa: 301
+  shell: . {{ home_directory }}/.application-startup && {{ item.command }}
   register: result
 
   with_items:
@@ -14,4 +14,4 @@
   become: true
   become_user: root
 
-  shell: find {{ repository_path }} -type d -name "__pycache__" -exec rm -rf {} +   # noqa: 301
+  shell: find {{ repository_path }} -type d -name "__pycache__" -exec rm -rf {} +   # noqa 301
