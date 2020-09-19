@@ -40,7 +40,8 @@
   become: true
   become_user: root
 
-  shell: systemctl list-units --all --failed
+  command: systemctl list-units --all --failed  # noqa 303
   register: result
 
   failed_when: "'0 loaded units listed.' not in result.stdout"
+  changed_when: False
