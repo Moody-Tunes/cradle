@@ -35,3 +35,12 @@
     name: celery_beat
     state: restarted
     enabled: true
+
+- name: Ensure all systemd unit have started successfully
+  become: true
+  become_user: root
+
+  shell: systemctl list-units --all --failed
+  register: result
+
+  failed_when: "'0 loaded units listed.' not in result.stdout"
