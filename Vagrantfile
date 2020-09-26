@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     ]
 
     mtdj.vm.provider "virtualbox" do |vb|
-      vb.memory = 2048
+      vb.memory = 1024
       vb.cpus = 1
     end
 
