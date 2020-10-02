@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
     elk.ssh.forward_agent = true
 
     elk.vm.provider "virtualbox" do |vb|
-      vb.memory = 4096
+      vb.memory = 2048
       vb.cpus = 1
     end
 
