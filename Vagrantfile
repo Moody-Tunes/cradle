@@ -88,11 +88,11 @@ Vagrant.configure("2") do |config|
       vb.cpus = 1
     end
 
-    #db.vm.provision "ansible" do |ansible|
-    #  db.playbook = "db.yml"
-    #  ansible.inventory_path = "inventory/local_db"
-    #  ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
-    #  ansible.limit = "moodytunes-db"
-    #end
+    db.vm.provision "ansible" do |ansible|
+      ansible.playbook = "db.yml"
+      ansible.inventory_path = "inventory/local_db"
+      ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
+      ansible.limit = "moodytunes-db"
+    end
   end
 end
