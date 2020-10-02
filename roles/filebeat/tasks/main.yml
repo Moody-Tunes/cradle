@@ -1,6 +1,22 @@
 ---
 
-- name: Set up Filebeat on local moodytunes
+- name: Set up filebeat config
+  become: true
+  become_user: root
 
-  include_tasks: filebeat.yml
-  when: playbook_env == 'local'
+  template:
+    src: templates/filebeat.yml.j2
+    dest: /etc/filebeat/filebeat.yml
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Enable and start filebeat service
+  become: true
+  become_user: root
+
+  systemd:
+    name: filebeat
+    state: restarted
+    daemon_reload: true
+    enabled: true
