@@ -9,6 +9,15 @@
     group: elasticsearch
     mode: 0660
 
+- name: Set up Elasticsearch Java config
+
+  template:
+    src: templates/meminfo.options
+    dest: /etc/elasticsearch/jvm.options.d
+    owner: root
+    group: elasticsearch
+    mode: 0660
+
 - name: Enable and start Elasticsearch service
 
   systemd:
