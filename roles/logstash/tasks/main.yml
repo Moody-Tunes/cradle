@@ -33,6 +33,14 @@
     group: root
     mode: 0644
 
+- name: Configure Logstash Java config
+  template:
+    src: jvm.options
+    dest: /etc/logstash/jvm.options
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Enable and start Logstash service
 
   systemd:
