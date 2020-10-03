@@ -75,7 +75,24 @@ Vagrant.configure("2") do |config|
       ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
       ansible.limit = "moodytunes-elk"
     end
-
   end
 
+  config.vm.define "db" do |db|
+    db.vm.network "private_network", ip: "192.168.10.23"
+    db.vm.hostname = "moodytunes-db.vm"
+
+    db.ssh.forward_agent = true
+
+    db.vm.provider "virtualbox" do |vb|
+      vb.memory = 1024
+      vb.cpus = 1
+    end
+
+    db.vm.provision "ansible" do |ansible|
+      ansible.playbook = "db.yml"
+      ansible.inventory_path = "inventory/local_db"
+      ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
+      ansible.limit = "moodytunes-db"
+    end
+  end
 end

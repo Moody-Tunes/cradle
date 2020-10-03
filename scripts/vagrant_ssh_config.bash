@@ -21,5 +21,8 @@ touch "$VAGRANT_SSH_CONFIG"
 	# elk
 	vagrant ssh-config --host moodytunes-elk.vm elk 2>/dev/null
 
+	# db
+	vagrant ssh-config --host moodytunes-db.vm db 2>/dev/null
+
 	echo "###End Vagrant managed file###"
 } >> "$VAGRANT_SSH_CONFIG"
