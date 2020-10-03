@@ -1,73 +1,16 @@
 ---
 
-- name: Ensure database is created
-  become: true
-  become_user: postgres
+- name: Create database on db hosts and local mtdj
 
-  postgresql_db:
-    name: "{{ postgres_db_name }}"
-    encoding: 'UTF-8'
-    lc_collate: 'en_US.UTF-8'
-    lc_ctype: 'en_US.UTF-8'
-    template: 'template0'
-    state: present
+  include_tasks: create_db.yml
+  when: app_name == 'db' or (app_name == 'mtdj' and playbook_env == 'local')
 
-  notify: restart postgresql
+- name: Configure local database
 
-- name: Create application database user
-  become: true
-  become_user: postgres
-
-  postgresql_user:
-    db: "{{ postgres_db_name }}"
-    name: "{{ postgresql_db_user }}"
-    password: "{{ postgresql_db_password }}"
-    role_attr_flags: "{{ postgresql_user_attributes }}"
-    priv: ALL
-    state: present
-
-  notify: restart postgresql
-
-- name: Listen on all addresses for local mtdj databases
-  become: true
-  become_user: root
-
-  lineinfile:
-    path: /etc/postgresql/10/main/postgresql.conf
-    line: listen_addresses = '*'
-
+  include_tasks: setup_local_db.yml
   when: playbook_env == 'local' and app_name == 'mtdj'
-  notify: restart postgresql
 
-- name: Allow access to all databases on local mtdj databases
-  become: true
-  become_user: root
+- name: Configure database host
 
-  lineinfile:
-    path: /etc/postgresql/10/main/pg_hba.conf
-    line: host all all all md5
-
-  when: playbook_env == 'local' and app_name == 'mtdj'
-  notify: restart postgresql
-
-- name: Listen on public IP address for database hosts
-  become: true
-  become_user: root
-
-  lineinfile:
-    path: /etc/postgresql/10/main/postgresql.conf
-    line: listen_addresses = '{{ postgresql_ip_address }}, 127.0.0.1'
-
+  include_tasks: setup_db_host.yml
   when: app_name == 'db'
-  notify: restart postgresql
-
-- name: Allow database access for mtdj server on database hosts
-  become: true
-  become_user: root
-
-  lineinfile:
-    path: /etc/postgresql/10/main/pg_hba.conf
-    line: host {{ postgres_db_name }} {{ postgresql_db_user }} {{ moodytunes_hostname }} md5
-
-  when: app_name == 'db'
-  notify: restart postgresql
