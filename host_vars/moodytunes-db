@@ -5,5 +5,4 @@ site_packages:
   - python3-psycopg2
 
 postgres_db_name: mtdj_database
-postgresql_db_host: 127.0.0.1
 postgresql_db_user: mtdj
