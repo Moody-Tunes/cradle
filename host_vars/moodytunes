@@ -20,7 +20,6 @@ home_directory: /home/{{ provisioning_user }}
 known_hosts_file: "{{ home_directory }}/.ssh/known_hosts"
 logging_dir: /var/log/mtdj
 postgres_db_name: mtdj_database
-postgresql_db_host: 127.0.0.1
 postgresql_db_user: mtdj
 python_path: /usr/bin/python3.8
 redis_url: redis://127.0.0.1:6379
@@ -73,6 +72,7 @@ environment_extend:
   MTDJ_SITE_HOSTNAME: "{{ app_hostname }}"
   MTDJ_DATABASE_NAME: "{{ postgres_db_name }}"
   MTDJ_DATABASE_USER: "{{ postgresql_db_user }}"
+  MTDJ_DATABASE_HOST: "{{ postgresql_db_host }}"
   MTDJ_DATABASE_PASSWORD: "{{ postgresql_db_password }}"
   MTDJ_DATABASE_BACKUPS_PATH: "{{ database_backup_path }}"
   MTDJ_CACHE_BACKEND: "{{ cache_backend }}"
