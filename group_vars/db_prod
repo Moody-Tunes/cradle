@@ -10,5 +10,3 @@ postgresql_db_password: !vault |
 
 postgresql_user_attributes: NOSUPERUSER,NOCREATEDB
 postgresql_ip_address: 10.116.16.3
-
-moodytunes_hostname: moodytunes.us
