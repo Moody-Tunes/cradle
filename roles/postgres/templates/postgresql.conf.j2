@@ -661,3 +661,9 @@ include_dir = 'conf.d'			# include files ending in '.conf' from
 
 # Add settings for extensions here
 listen_addresses = '{{ postgresql_ip_address }}, 127.0.0.1'
+
+log_destination = 'csvlog'
+logging_collector = on
+log_directory = '/var/log/postgresql/'
+log_filename = 'postgresql_queries-%Y-%m-%d_%H%M%S.log'
+log_statement = 'all'
