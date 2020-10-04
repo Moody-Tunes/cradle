@@ -22,6 +22,6 @@
     dest: /etc/postgresql/10/main/pg_hba.conf
     owner: postgres
     group: postgres
-    mode: 0644
+    mode: 0640
 
   notify: restart postgresql
