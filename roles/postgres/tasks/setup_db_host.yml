@@ -5,7 +5,7 @@
   become_user: root
 
   template:
-    src: templates/prod_postgresql.conf.j2
+    src: templates/postgresql.conf.j2
     dest: /etc/postgresql/10/main/postgresql.conf
     owner: postgres
     group: postgres
@@ -18,7 +18,7 @@
   become_user: root
 
   template:
-    src: templates/prod_pg_hba.conf.j2
+    src: templates/{{ playbook_env }}_pg_hba.conf.j2
     dest: /etc/postgresql/10/main/pg_hba.conf
     owner: postgres
     group: postgres
@@ -26,7 +26,7 @@
 
   notify: restart postgresql
 
-- name: Create personal users
+- name: Create personal users on prod hosts
   become: true
   become_user: root
 
@@ -41,7 +41,10 @@
   with_items:
     - "{{ users }}"
 
-- name: Add user SSH keys
+  when: playbook_env == 'prod'
+
+
+- name: Add user SSH keys on prod hosts
   become: true
   become_user: root
 
@@ -52,3 +55,5 @@
 
   with_items:
     - "{{ users }}"
+
+  when: playbook_env == 'prod'
