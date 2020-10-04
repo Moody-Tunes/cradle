@@ -25,3 +25,30 @@
     mode: 0640
 
   notify: restart postgresql
+
+- name: Create personal users
+  become: true
+  become_user: root
+
+  user:
+    name: "{{ item.name }}"
+    password: ""  # Set using `passwd` on first login
+    shell: "{{ item.shell }}"
+    groups: "{{ item.groups }}"
+    home: "{{ item.home }}"
+    update_password: on_create
+
+  with_items:
+    - "{{ users }}"
+
+- name: Add user SSH keys
+  become: true
+  become_user: root
+
+  authorized_key:
+    user: "{{ item.name }}"
+    state: present
+    key: "{{ item.key }}"
+
+  with_items:
+    - "{{ users }}"
