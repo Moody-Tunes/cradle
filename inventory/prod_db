@@ -4,7 +4,7 @@ moodytunes-db
 moodytunes-db
 
 [db_prod:vars]
-ansible_host=159.89.233.147
+ansible_host=67.207.83.95
 ansible_connection=ssh
 ansible_ssh_private_key_file=~/.ssh/id_ansible
 ansible_user=ansible

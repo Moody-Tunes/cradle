@@ -6,3 +6,11 @@ site_packages:
 
 postgres_db_name: mtdj_database
 postgresql_db_user: mtdj
+
+users:
+  - name: ndibari
+    home: /home/ndibari
+    shell: /bin/bash
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCigJs9sw3MCYJkopmchKqt7mkG5qwORN3nsVg2mcW34Ak8bEPXYD7NNoZTHcJFBl4VtvmDBhFEyQmR806QQErwkoWOLTSGNvBCzMlKNnKGHeCYly3nJjiiarDcfPDhEWQIKp2sRhtTlYn2KDdB3OMSdAWZlSIQfL64uLD6WiBkSf/gWxtl205ub+XoBltOzl60nwQjxOumH3px9MSUs6yhdL70MiXhzENJyzzEhKwJhpJh8isdPiQvjpuVE6Fq7Ln6JOcsPmgVhYvYCt/SFMieRhKZnDP/k95aqvY9twA6brp3w+G9efqAnV+cXaUTCtUBRLRosnuG+ON7xmlHsSx ndibari@crown-jewl
+    groups:
+      - sudo

@@ -11,7 +11,7 @@ spotify_max_songs_from_category: 40
 spotify_redirect_uri: https://moodytunes.us/moodytunes/spotify/callback/
 
 postgresql_user_attributes: NOSUPERUSER,NOCREATEDB
-postgresql_db_host: db.moodytunes.us
+postgresql_db_host: 10.116.16.3
 
 # LetsEncrypt certificate variables
 ssl_path: /etc/letsencrypt/live
