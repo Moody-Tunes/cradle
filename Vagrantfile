@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "mtdj" do |mtdj|
     # Configure private network definitions
     mtdj.vm.network "private_network", ip: "192.168.10.21"
+    mtdj.vm.network "forwarded_port", id: "ssh", host: 2222, guest: 22
     mtdj.vm.hostname = "moodytunes.vm"
 
     # Set up subdomains and www. prefixed domain names as aliases to host
@@ -60,6 +61,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "elk" do |elk|
     elk.vm.network "private_network", ip: "192.168.10.22"
+    elk.vm.network "forwarded_port", id: "ssh", host: 2200, guest: 22
     elk.vm.hostname = "moodytunes-elk.vm"
 
     elk.ssh.forward_agent = true
@@ -79,6 +81,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "db" do |db|
     db.vm.network "private_network", ip: "192.168.10.23"
+    db.vm.network "forwarded_port", id: "ssh", host: 2220, guest: 22
     db.vm.hostname = "moodytunes-db.vm"
 
     db.ssh.forward_agent = true
