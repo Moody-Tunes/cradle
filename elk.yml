@@ -1,7 +1,7 @@
 ---
 
-- name: Configure Application
-  hosts: all
+- name: Provision ELK Hosts
+  hosts: moodytunes-elk
   become: true
   become_user: root
 
