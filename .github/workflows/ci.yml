@@ -44,7 +44,7 @@ jobs:
           python -m pip install --upgrade pip
           grep ansible-lint requirements.txt | xargs pip install
       - name: Run ansible-lint
-        run: ansible-lint site.yml elk.yml
+        run: ansible-lint mtdj.yml elk.yml db.yml
 
   shellcheck:
     name: Run shellcheck
