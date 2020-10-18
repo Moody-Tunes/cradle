@@ -2,7 +2,7 @@
 
 # ansible command to deploy production application
 
-INVENTORY="inventory/prod"
+INVENTORY="inventory/prod_mtdj"
 VAULT_PASSWORD_FILE=".vault_password"
 
 if [ ! "$(command -v ansible-playbook)" ]; then
@@ -19,4 +19,4 @@ ansible-playbook \
 -i "$INVENTORY" \
 --ask-become-pass \
 --vault-password-file="$VAULT_PASSWORD_FILE" \
-site.yml
+mtdj.yml
