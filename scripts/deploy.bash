@@ -19,4 +19,4 @@ ansible-playbook \
 -i "$INVENTORY" \
 --ask-become-pass \
 --vault-password-file="$VAULT_PASSWORD_FILE" \
-site.yml
+mtdj.yml

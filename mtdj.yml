@@ -1,7 +1,7 @@
 ---
 
-- name: Configure Application
-  hosts: all
+- name: Configure Moodytunes Application
+  hosts: moodytunes
   become: true
   become_user: "{{ provisioning_user }}"
 
