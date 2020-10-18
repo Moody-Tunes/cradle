@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
 
     mtdj.vm.provision "ansible" do |ansible|
       ansible.playbook = "mtdj.yml"
-      ansible.inventory_path = "inventory/local"
+      ansible.inventory_path = "inventory/local_mtdj"
       ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
       ansible.limit = "moodytunes"
     end
