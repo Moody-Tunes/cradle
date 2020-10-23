@@ -47,6 +47,8 @@ if [ ! -f "$PLAYBOOK" ]; then
 	exit 1
 fi
 
+echo "Deploying $INVENTORY with playbook $PLAYBOOK"
+
 ansible-playbook \
 -i "$INVENTORY" \
 --ask-become-pass \
