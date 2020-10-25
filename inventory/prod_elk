@@ -1,0 +1,13 @@
+moodytunes-elk
+
+[elk_prod]
+moodytunes-elk
+
+[elk_prod:vars]
+ansible_host=157.230.189.120
+ansible_connection=ssh
+ansible_ssh_private_key_file=~/.ssh/id_ansible
+ansible_user=ansible
+
+[prod:children]
+elk_prod

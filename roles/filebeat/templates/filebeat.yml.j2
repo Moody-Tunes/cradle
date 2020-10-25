@@ -28,7 +28,7 @@ filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
 
 output.logstash:
-  hosts: ["{{ elk_hostname }}:5044"]
+  hosts: ["{{ elk_ip_address }}:5044"]
 
 processors:
   - add_host_metadata: ~

@@ -45,6 +45,7 @@ site_packages:
   - redis-server
   - nodejs
   - npm
+  - filebeat
 
 users:
   - name: ndibari

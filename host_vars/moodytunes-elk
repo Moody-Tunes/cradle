@@ -6,3 +6,4 @@ site_packages:
   - python3-pexpect
   - elasticsearch
   - kibana
+  - logstash

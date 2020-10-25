@@ -14,13 +14,13 @@
 #
 # Use a descriptive name for your cluster:
 #
-#cluster.name: my-application
+#cluster.name: moodytunes-elk
 #
 # ------------------------------------ Node ------------------------------------
 #
 # Use a descriptive name for the node:
 #
-#node.name: node-1
+#node.name: moodytunes-elk-1
 #
 # Add custom attributes to the node:
 #
@@ -48,6 +48,7 @@ path.logs: /var/log/elasticsearch
 #
 # Elasticsearch performs poorly when the system is swapping the memory.
 #
+#indices.fielddata.cache.size: 40%
 # ---------------------------------- Network -----------------------------------
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):

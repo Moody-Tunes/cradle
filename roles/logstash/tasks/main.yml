@@ -1,11 +1,5 @@
 ---
 
-- name: Install Logstash
-
-  apt:
-    name: logstash
-    update_cache: true
-
 - name: Add beats configuration file
 
   template:
@@ -29,6 +23,14 @@
   template:
     src: elasticsearch-output.conf.j2
     dest: /etc/logstash/conf.d/30-elasticsearch-output.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Configure Logstash Java config
+  template:
+    src: jvm.options
+    dest: /etc/logstash/jvm.options
     owner: root
     group: root
     mode: 0644
