@@ -14,11 +14,6 @@ spotify_redirect_uri: https://moodytunes.us/moodytunes/spotify/callback/
 postgresql_user_attributes: NOSUPERUSER,NOCREATEDB
 postgresql_db_host: 10.116.16.3
 
-# LetsEncrypt certificate variables
-ssl_path: /etc/letsencrypt/live
-cert_path: "{{ ssl_path }}/{{ app_hostname }}/fullchain.pem"
-privatekey_path: "{{ ssl_path }}/{{ app_hostname }}/privkey.pem"
-
 app_debug: False
 celery_always_eager: False
 encrypted_fields_key: !vault |

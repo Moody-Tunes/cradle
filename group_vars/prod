@@ -3,3 +3,8 @@ provisioning_user: ansible
 git_version: production
 node_use_development: no
 vpc_range: 10.116.16.0/20
+
+# LetsEncrypt certificate variables
+ssl_path: /etc/letsencrypt/live
+cert_path: "{{ ssl_path }}/{{ app_hostname }}/fullchain.pem"
+privatekey_path: "{{ ssl_path }}/{{ app_hostname }}/privkey.pem"
