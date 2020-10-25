@@ -3,9 +3,9 @@
 # Xms represents the initial size of total heap space
 # Xmx represents the maximum size of total heap space
 
-# Set heap size to 512 MB
--Xms512m
--Xmx512m
+# Set heap size to 256 MB
+-Xms256m
+-Xmx256m
 
 ################################################################
 ## Expert settings

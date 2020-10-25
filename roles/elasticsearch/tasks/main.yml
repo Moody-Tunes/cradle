@@ -12,8 +12,8 @@
 - name: Set up Elasticsearch Java config
 
   template:
-    src: templates/meminfo.options
-    dest: /etc/elasticsearch/jvm.options.d
+    src: templates/jvm.options
+    dest: /etc/elasticsearch/jvm.options
     owner: root
     group: elasticsearch
     mode: 0660
