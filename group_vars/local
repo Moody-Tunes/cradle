@@ -1,7 +1,9 @@
+elk_ip_address: 192.168.10.22
 playbook_env: local
 provisioning_user: vagrant
 git_version: HEAD
 node_use_development: yes
+vpc_range: 192.168.10.0/20
 
 # TLS Certificate generation variables
 ssl_path: /etc/ssl

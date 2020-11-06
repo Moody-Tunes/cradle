@@ -37,7 +37,7 @@
 
   when: playbook_env == 'local' and app_name == 'mtdj'
 
-- name: Enable Logstash on elk
+- name: Enable Logstash on ELK from hosts inside VPC
   become: true
   become_user: root
 
@@ -46,6 +46,6 @@
     port: 5044
     proto: tcp
     state: enabled
-    from_ip: "{{ mtdj_ip_address }}"
+    from_ip: "{{ vpc_range }}"
 
   when: app_name == 'elk'

@@ -1,0 +1,15 @@
+filebeat.inputs:
+
+  - type: log
+    enabled: true
+
+    paths:
+      - /var/log/postgresql/*.csv
+
+    fields:
+      type: postgres
+
+    fields_under_root: true
+
+output.logstash:
+  hosts: ["{{ elk_ip_address }}:5044"]
