@@ -1,0 +1,11 @@
+filter {
+	if "gunicorn" in [log][file][path] {
+		if "127.0.0.1" in [message] {
+			dissect {
+				mapping => {
+					"message" => '%{} %{date} "%{method} %{path} %{}" %{status} %{size} "%{referer}" %{time} "%{user_agent}"'
+				}
+			}
+		}
+	}
+}

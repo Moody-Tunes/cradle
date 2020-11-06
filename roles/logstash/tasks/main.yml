@@ -18,6 +18,15 @@
     group: root
     mode: 0644
 
+- name: Configure gunicorn filter
+
+  template:
+    src: gunicorn-filter.conf.j2
+    dest: /etc/logstash/conf.d/13-gunicorn-filter.conf
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Configure Elasticsearch output file
 
   template:
