@@ -1,6 +1,6 @@
 filter {
 
-	if [type] in ["application", "celery"] {
+	if "json" in [tags] {
 		# Parse JSON data from message for logs written in JSON format
 		json {
 			source => "message"
