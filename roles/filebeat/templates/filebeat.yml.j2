@@ -17,10 +17,20 @@ filebeat.inputs:
 
     paths:
       - {{ logging_dir }}/celery.log
+
+    fields:
+      type: celery
+
+    fields_under_root: true
+
+  - type: log
+    enabled: true
+
+    paths:
       - {{ logging_dir }}/gunicorn.log
 
     fields:
-      type: system
+      type: gunicorn
 
     fields_under_root: true
 
