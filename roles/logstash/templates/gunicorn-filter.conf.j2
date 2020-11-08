@@ -1,5 +1,8 @@
 filter {
 	if "gunicorn" in [log][file][path] {
+
+		# Only perform transformation on gunicorn access logs for requests
+		# Ignore status logs, like ones emitted on gunicorn restart
 		if "127.0.0.1" in [message] {
 			dissect {
 				mapping => {
