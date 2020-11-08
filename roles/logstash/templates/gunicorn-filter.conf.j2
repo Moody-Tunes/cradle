@@ -1,5 +1,5 @@
 filter {
-	if "gunicorn" in [log][file][path] {
+	if [type] == "gunicorn" {
 
 		# Only perform transformation on gunicorn access logs for requests
 		# Ignore status logs, like ones emitted on gunicorn restart
