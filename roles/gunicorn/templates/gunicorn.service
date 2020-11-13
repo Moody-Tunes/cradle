@@ -12,6 +12,7 @@ ExecStart={{ virtualenv_dir }}/bin/gunicorn \
 --bind 127.0.0.1:{{ wsgi_server_port }} \
 --config /etc/gunicorn.d/gunicorn.py \
 --access-logfile=- \
+--access-logformat='%(h)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" %(L)s "%(a)s"' \
 --error-logfile=- \
 {{ app_name }}.wsgi:application
 
