@@ -27,6 +27,15 @@
     group: root
     mode: 0644
 
+- name: Configure nginx filter
+
+  template:
+    src: nginx-filter.conf.j2
+    dest: /etc/logstash/conf.d/14-nginx-filter.conf
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Configure Elasticsearch output file
 
   template:
