@@ -5,6 +5,7 @@ upstream app_server {
 server {
     listen 443 ssl http2;
     server_name {{ app_hostname }} admin.{{ app_hostname }};
+    access_log /var/log/nginx/access.log access;
 
     # Deny invalid Host headers
     if ($host !~* ^({{ app_hostname }}|admin.{{ app_hostname }})$) {
