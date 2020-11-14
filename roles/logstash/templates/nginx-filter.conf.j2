@@ -5,5 +5,9 @@ filter {
 				"message" => '%{remote_ip} - %{} [%{request_timestamp}] "%{method} %{path} %{http_version}" %{status} %{response_size_bytes} "%{referer}" "%{user_agent}" %{request_time}'
 			}
 		}
+
+		# Convert request time from seconds to milliseconds
+		mutate { convert => [ "request_time", "float" ] }
+		ruby { code => "event.set('request_time', event.get('request_time').to_f * 1000)" }
 	}
 }
