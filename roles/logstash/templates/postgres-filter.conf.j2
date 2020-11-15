@@ -5,5 +5,8 @@ filter {
 				"message" => '%{+query_timestamp} %{+query_timestamp} %{+query_timestamp} [%{process_id}] %{user}@%{database} LOG:  duration: %{duration} ms  statement: %{query}'
 			}
 		}
+
+		# Convert duration to float
+		mutate { convert => [ "duration", "float" ] }
 	}
 }
