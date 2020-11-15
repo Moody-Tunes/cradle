@@ -1,16 +1,8 @@
 filter {
 	if [type] == "postgres" {
-		if "duration" in [message] {
-			dissect {
-				mapping => {
-					"message" => '%{+query_timestamp} %{+query_timestamp} %{+query_timestamp} [%{process_id}] %{user}@%{database} %{}:  duration: %{duration}'
-				}
-			}
-		} else {
-			dissect {
-				mapping => {
-					"message" => '%{+query_timestamp} %{+query_timestamp} %{+query_timestamp} [%{process_id}] %{user}@%{database} %{}:  statement: %{query}'
-				}
+		dissect {
+			mapping => {
+				"message" => '%{+query_timestamp} %{+query_timestamp} %{+query_timestamp} [%{process_id}] %{user}@%{database} LOG:  duration: %{duration} ms  statement: %{query}'
 			}
 		}
 	}
