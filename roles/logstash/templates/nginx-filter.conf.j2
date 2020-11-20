@@ -2,7 +2,7 @@ filter {
 	if [type] == "nginx" {
 		dissect {
 			mapping => {
-				"message" => '%{remote_ip} - %{} [%{request_timestamp}] "%{method} %{path} %{http_version}" %{status} %{response_size_bytes} "%{referer}" "%{user_agent}" %{request_time}'
+				"message" => '%{remote_ip} - - %{app_host} [%{request_timestamp}] "%{method} %{path} %{http_version}" %{status} %{response_size_bytes} "%{referer}" "%{user_agent}" %{request_time}'
 			}
 		}
 
