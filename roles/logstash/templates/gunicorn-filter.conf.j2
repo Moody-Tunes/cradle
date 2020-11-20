@@ -2,7 +2,7 @@ filter {
 	if [type] == "gunicorn" {
 		dissect {
 			mapping => {
-				"message" => '%{} [%{date}] "%{method} %{path} %{}" %{status} %{size} "%{referer}" %{time} "%{user_agent}"'
+				"message" => '%{} %{app_host} [%{date}] "%{method} %{path} %{}" %{status} %{size} "%{referer}" %{time} "%{user_agent}"'
 			}
 		}
 
