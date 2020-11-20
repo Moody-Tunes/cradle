@@ -3,9 +3,7 @@ app_debug: True
 app_hostname: moodytunes.vm
 celery_always_eager: True
 django_secret_key: zgt(m7!mg^!ln011u3rvgg^9a1rv+ebff&!*t@ntf@k-iipm^9
-elk_ip_address: 192.168.10.22
 env: dev
-postgresql_db_password: scyy#n9f!hn=)3k5zzd*u76)n=n)%-)c9t%^%o3=9n-)qfgeck
 postgresql_db_host: 127.0.0.1
 postgresql_user_attributes: NOSUPERUSER,CREATEDB
 requirements_file: "{{ repository_path }}/requirements/dev.txt"

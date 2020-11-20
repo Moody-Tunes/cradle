@@ -6,3 +6,6 @@ apt_key_urls:
 apt_repositories:
   - repository: https://artifacts.elastic.co/packages/7.x/apt
     filename: elastic-7.x.list
+
+postgresql_db_name: mtdj_database
+postgresql_db_user: mtdj

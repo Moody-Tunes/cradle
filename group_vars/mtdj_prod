@@ -1,7 +1,6 @@
 app_hostname: moodytunes.us
 allowed_hosts: moodytunes.us, www.moodytunes.us, admin.moodytunes.us
 admins_list: "Nicholas DiBari, ndibari@fordham.edu; Ops, moody.tunes.infrastructure@gmail.com"
-elk_ip_address: 10.116.16.4
 
 compress_offline: true  # We don't want to compress files during request/response loop in prod
 
@@ -11,7 +10,6 @@ spotify_categories: hiphop, rock, chill, party, mood, sleep, indie_alt, edm_danc
 spotify_max_songs_from_category: 40
 spotify_redirect_uri: https://moodytunes.us/moodytunes/spotify/callback/
 
-postgresql_user_attributes: NOSUPERUSER,NOCREATEDB
 postgresql_db_host: 10.116.16.3
 
 app_debug: False
@@ -49,15 +47,6 @@ email_password: !vault |
     34643036633332346436
 email_port: 587
 email_use_tls: True
-postgresql_db_password: !vault |
-    $ANSIBLE_VAULT;1.1;AES256
-    65646363363936666333613531653864373732356533613333613163613062343030353030633463
-    3965383139313032646433353239316661653161656466380a656466663063633830653830373964
-    31303233653063363663313064616237353037666562636163653062613138343139343730363238
-    3064383632653036660a313235353961383639323933626534376138663266633361663332643034
-    30623333633466303961363261666661313761313936643464613132636636643961636162626563
-    66666235376334353663363438356439646363366235373763383033343937323330353833346264
-    393234316631323139663838303531623333
 requirements_file: "{{ repository_path }}/requirements/common.txt"
 spotify_client_id: !vault |
     $ANSIBLE_VAULT;1.1;AES256
