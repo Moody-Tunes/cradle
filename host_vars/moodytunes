@@ -19,8 +19,6 @@ gunicorn_user: gunicorn
 home_directory: /home/{{ provisioning_user }}
 known_hosts_file: "{{ home_directory }}/.ssh/known_hosts"
 logging_dir: /var/log/mtdj
-postgres_db_name: mtdj_database
-postgresql_db_user: mtdj
 python_path: /usr/bin/python3.8
 redis_url: redis://127.0.0.1:6379
 repository_path: "{{ application_directory }}/moodytunes"
@@ -67,7 +65,7 @@ environment_extend:
   DJANGO_EMAIL_PASSWORD: "{{ email_password | default(None) }}"
   DJANGO_EMAIL_USE_TLS: "{{ email_use_tls | default(None) }}"
   MTDJ_SITE_HOSTNAME: "{{ app_hostname }}"
-  MTDJ_DATABASE_NAME: "{{ postgres_db_name }}"
+  MTDJ_DATABASE_NAME: "{{ postgresql_db_name }}"
   MTDJ_DATABASE_USER: "{{ postgresql_db_user }}"
   MTDJ_DATABASE_HOST: "{{ postgresql_db_host }}"
   MTDJ_DATABASE_PASSWORD: "{{ postgresql_db_password }}"

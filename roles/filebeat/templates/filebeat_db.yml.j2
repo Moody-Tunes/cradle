@@ -7,7 +7,7 @@ filebeat.inputs:
       - /var/log/postgresql/postgresql_queries_log*.log
 
     # Only ship logs for queries from the application (exclude postgres system logs)
-    include_lines: ['{{ postgresql_db_user }}@{{ postgres_db_name }}']
+    include_lines: ['{{ postgresql_db_user }}@{{ postgresql_db_name }}']
 
     fields:
       type: postgres

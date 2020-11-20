@@ -5,9 +5,6 @@ site_packages:
   - python3-psycopg2
   - filebeat
 
-postgres_db_name: mtdj_database
-postgresql_db_user: mtdj
-
 users:
   - name: ndibari
     home: /home/ndibari
