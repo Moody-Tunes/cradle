@@ -5,5 +5,10 @@ filter {
 				"message" => '%{} [%{date}] "%{method} %{path} %{}" %{status} %{size} "%{referer}" %{time} "%{user_agent}"'
 			}
 		}
+
+		# Convert request time from seconds to milliseconds
+		mutate { rename => [ "time", "request_time" ] }
+		mutate { convert => [ "request_time", "float" ] }
+		ruby { code => "event.set('request_time', event.get('request_time').to_f * 1000)" }
 	}
 }
