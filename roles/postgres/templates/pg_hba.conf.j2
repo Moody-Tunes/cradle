@@ -15,5 +15,5 @@ local   replication     all                                     peer
 host    replication     all             127.0.0.1/32            md5
 host    replication     all             ::1/128                 md5
 
-# Allow connections from local moodytunes VM
-host 	{{ postgres_db_name }} {{ postgresql_db_user }} {{ moodytunes_hostname }} md5
+# Allow connections to the database from within the private network
+host 	{{ postgres_db_name }} {{ postgresql_db_user }} {{ vpc_range }} md5
