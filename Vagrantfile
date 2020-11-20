@@ -41,7 +41,6 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "mtdj.yml"
       ansible.inventory_path = "inventory/local_mtdj"
       ansible.raw_arguments = Shellwords.shellsplit(ENV['ANSIBLE_ARGS']) if ENV['ANSIBLE_ARGS']
-      ansible.limit = "moodytunes"
     end
 
     # Share an additional directory to the VM. This will sync changes made on the
