@@ -7,11 +7,6 @@ server {
     server_name {{ app_hostname }} admin.{{ app_hostname }};
     access_log /var/log/nginx/access.log access;
 
-    # Deny invalid Host headers
-    if ($host !~* ^({{ app_hostname }}|admin.{{ app_hostname }})$) {
-        return 444;
-    }
-
     if ($request_method !~ ^(GET|POST|DELETE|HEAD|PATCH)$) {
         return 405;
     }
