@@ -7,10 +7,6 @@ server {
     server_name {{ app_hostname }} admin.{{ app_hostname }};
     access_log /var/log/nginx/access.log access;
 
-    if ($request_method !~ ^(GET|POST|DELETE|HEAD|PATCH)$) {
-        return 405;
-    }
-
     keepalive_timeout 5;
 
     location /static {
