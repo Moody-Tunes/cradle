@@ -24,5 +24,8 @@ touch "$VAGRANT_SSH_CONFIG"
 	# db
 	vagrant ssh-config --host moodytunes-db.vm db 2>/dev/null
 
+	# dagger
+	vagrant ssh-config --host dagger.vm dagger 2>/dev/null
+
 	echo "###End Vagrant managed file###"
 } >> "$VAGRANT_SSH_CONFIG"

@@ -98,4 +98,18 @@ Vagrant.configure("2") do |config|
       ansible.limit = "moodytunes-db"
     end
   end
+
+  config.vm.define "dagger" do |dagger|
+    dagger.vm.box = "kalilinux/rolling"
+
+    dagger.vm.provider "virtualbox" do |vb|
+      vb.gui = false
+    end
+
+    dagger.vm.network "private_network", ip: "192.168.10.111"
+    dagger.vm.network "forwarded_port", id: "ssh", host: 3000, guest: 22
+    dagger.vm.hostname = "dagger.vm"
+
+    dagger.ssh.forward_agent = true
+  end
 end

@@ -2,3 +2,4 @@
 alias MTDJ='ssh -F ~/.ssh/vagrant_config moodytunes.vm'
 alias ELK='ssh -F ~/.ssh/vagrant_config moodytunes-elk.vm'
 alias DB='ssh -F ~/.ssh/vagrant_config moodytunes-db.vm'
+alias DAGGER='ssh -F ~/.ssh/vagrant_config dagger.vm'
