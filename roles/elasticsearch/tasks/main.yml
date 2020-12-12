@@ -18,6 +18,15 @@
     group: elasticsearch
     mode: 0660
 
+- name: Set up Elasticsearch systemd unit
+
+  template:
+    src: templates/elasticsearch.service
+    dest: /lib/systemd/system/elasticsearch.service
+    owner: root
+    group: root
+    mode: 0644
+
 - name: Enable and start Elasticsearch service
 
   systemd:
