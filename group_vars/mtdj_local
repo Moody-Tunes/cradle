@@ -18,7 +18,6 @@ django_commands_extend:
     ignore: "false"
 
 extra_site_packages:
-  - filebeat
   - postgresql
   - python3-psycopg2
   - python-openssl
