@@ -9,4 +9,5 @@
     - apt_keys
     - apt
     - postgres
+    - users
     - filebeat
