@@ -1,11 +1,13 @@
 ---
 
-- name: Create staff users group
+- name: Create staff group on moodytunes hosts
   become: true
   become_user: root
 
   group:
     name: "{{ staff_group }}"
+
+  when: app_name == 'mtdj'
 
 - name: Create defined users
   become: true
@@ -34,7 +36,7 @@
   with_items:
     - "{{ users }}"
 
-- name: Add application startup script to user home directories
+- name: Add application startup script to user home directories on moodytunes hosts
   become: true
   become_user: root
 
@@ -48,7 +50,9 @@
   with_items:
     - "{{ users }}"
 
-- name: Add startup commands to profile
+  when: app_name == 'mtdj'
+
+- name: Add startup commands to profile on moodytunes hosts
   become: true
   become_user: root
 
@@ -58,3 +62,5 @@
 
   with_items:
     - "{{ users }}"
+
+  when: app_name == 'mtdj'
