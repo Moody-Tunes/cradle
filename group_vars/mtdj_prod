@@ -8,7 +8,7 @@ webmaster_email: ndibari@fordham.edu
 
 spotify_categories: hiphop, rock, chill, party, mood, sleep, indie_alt, edm_dance, rnb, kpop
 spotify_max_songs_from_category: 40
-spotify_redirect_uri: https://moodytunes.us/moodytunes/spotify/callback/
+spotify_redirect_uri: https://moodytunes.us/spotify/callback/
 
 postgresql_db_host: 10.116.16.3
 
