@@ -84,5 +84,4 @@ environment_extend:
   MTDJ_SPOTIFY_REDIRECT_URI: "{{ spotify_redirect_uri | default(None) }}"
   MTDJ_WEBMASTER_EMAIL: "{{ webmaster_email | default(None) }}"
   MTDJ_SYSTEM_EMAIL_ADDRESS: "{{ system_email | default(None) }}"
-  MTDJ_ENCRYPTED_FIELDS_KEY: "{{ encrypted_fields_key }}"
   MTDJ_IMAGE_FILE_UPLOAD_PATH: "{{ image_file_upload_path }}"
