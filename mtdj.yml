@@ -8,16 +8,16 @@
   roles:
     - apt_keys
     - apt
-    - python
     - system
     - logrotate
     - users
     - ufw
     - openssl
     - nginx
-    - git
-    - env
     - postgres
+    - git
+    - python
+    - env
     - gunicorn
     - celery
     - node
