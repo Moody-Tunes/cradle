@@ -1,4 +1,4 @@
-elk_ip_address: 10.116.16.5
+elk_ip_address: 10.116.16.4
 playbook_env: prod
 provisioning_user: ansible
 git_version: production
