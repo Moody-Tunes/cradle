@@ -1,0 +1,10 @@
+---
+
+- name: restart sshd
+  become: true
+  become_user: root
+  no_log: true
+
+  service:
+    name: sshd
+    state: restarted

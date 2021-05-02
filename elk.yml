@@ -11,6 +11,7 @@
     - elasticsearch
     - kibana
     - openssl
+    - sshd
     - ufw
     - nginx
     - logstash
