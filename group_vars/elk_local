@@ -1,4 +1,6 @@
 app_hostname: moodytunes-elk.vm
 
+elk_nodename: elk-localhost
+
 kibana_user: admin
 kibana_password: admin
