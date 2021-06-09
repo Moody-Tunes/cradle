@@ -4,7 +4,7 @@ moodytunes-elk
 moodytunes-elk
 
 [elk_prod:vars]
-ansible_host=142.93.15.31
+ansible_host=161.35.61.67
 ansible_connection=ssh
 ansible_ssh_private_key_file=~/.ssh/id_ansible
 ansible_user=ansible

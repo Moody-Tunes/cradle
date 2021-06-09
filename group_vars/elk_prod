@@ -1,6 +1,6 @@
 app_hostname: elk.moodytunes.us
 
-elk_nodename: moodytunes-elk-3
+elk_nodename: moodytunes-elk-4
 
 kibana_user: ndibari
 kibana_password: !vault |

@@ -1,9 +1,11 @@
-elk_ip_address: 10.116.16.4
 playbook_env: prod
 provisioning_user: ansible
 git_version: production
 node_use_development: no
+
+elk_ip_address: 10.116.16.5
 vpc_range: 10.116.16.0/20
+
 postgresql_db_password: !vault |
     $ANSIBLE_VAULT;1.1;AES256
     65646363363936666333613531653864373732356533613333613163613062343030353030633463
