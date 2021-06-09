@@ -7,3 +7,8 @@ site_packages:
   - elasticsearch
   - kibana
   - logstash
+
+services:
+  - name: elasticsearch
+  - name: kibana
+  - name: logstash

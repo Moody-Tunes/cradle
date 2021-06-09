@@ -45,6 +45,11 @@ site_packages:
   - npm
   - filebeat
 
+services:
+  - name: gunicorn
+  - name: celery
+  - name: celery_beat
+
 users:
   - name: ndibari
     home: /home/ndibari

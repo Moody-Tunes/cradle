@@ -7,34 +7,17 @@
   systemd:
     daemon-reload: true
 
-- name: Start gunicorn service
+- name: Start services
   become: true
   become_user: root
 
   systemd:
-    name: gunicorn
+    name: "{{ item.name }}"
     state: restarted
     enabled: true
 
-  notify: restart nginx
-
-- name: Start celery service
-  become: true
-  become_user: root
-
-  systemd:
-    name: celery
-    state: restarted
-    enabled: true
-
-- name: Start celery_beat service
-  become: true
-  become_user: root
-
-  systemd:
-    name: celery_beat
-    state: restarted
-    enabled: true
+  with_items:
+    - "{{ services }}"
 
 - name: Ensure all systemd unit have started successfully
   become: true

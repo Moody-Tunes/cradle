@@ -1,13 +1,5 @@
 ---
 
-- name: Enable and start Kibana service
-
-  systemd:
-    name: kibana
-    state: restarted
-    enabled: true
-    daemon_reload: true
-
 - name: Add create kibana admin user script
 
   template:
