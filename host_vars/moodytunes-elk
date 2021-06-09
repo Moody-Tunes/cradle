@@ -1,5 +1,7 @@
 app_name: elk
 
+elk_clustername: moodytunes-elk
+
 site_packages:
   - openjdk-8-jre
   - nginx
@@ -7,3 +9,8 @@ site_packages:
   - elasticsearch
   - kibana
   - logstash
+
+services:
+  - name: elasticsearch
+  - name: kibana
+  - name: logstash

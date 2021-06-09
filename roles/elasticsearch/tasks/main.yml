@@ -26,11 +26,3 @@
     owner: root
     group: root
     mode: 0644
-
-- name: Enable and start Elasticsearch service
-
-  systemd:
-    name: elasticsearch
-    state: restarted
-    enabled: true
-    daemon_reload: true

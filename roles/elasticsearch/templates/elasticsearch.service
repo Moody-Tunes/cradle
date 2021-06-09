@@ -23,10 +23,6 @@ WorkingDirectory=/usr/share/elasticsearch
 User=elasticsearch
 Group=elasticsearch
 
-# Restart service on failure (non-zero exit code)
-Restart=on-failure
-RestartSec=5s
-
 ExecStart=/usr/share/elasticsearch/bin/systemd-entrypoint -p ${PID_DIR}/elasticsearch.pid --quiet
 
 # StandardOutput is configured to redirect to journalctl since

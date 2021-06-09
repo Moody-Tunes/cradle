@@ -1,6 +1,6 @@
 ---
 
-- name: Start services on non-local environments
+- name: Start services on prod moodytunes or ELK environments
 
   include_tasks: start_services.yml
-  when: playbook_env != 'local'
+  when: (app_name == 'mtdj' and playbook_env == 'prod') or app_name == 'elk'
