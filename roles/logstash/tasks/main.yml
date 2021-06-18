@@ -61,11 +61,3 @@
     owner: root
     group: root
     mode: 0644
-
-- name: Enable and start Logstash service
-
-  systemd:
-    name: logstash
-    state: restarted
-    daemon_reload: true
-    enabled: true

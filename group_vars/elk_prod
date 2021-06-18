@@ -1,5 +1,7 @@
 app_hostname: elk.moodytunes.us
 
+elk_nodename: moodytunes-elk-4
+
 kibana_user: ndibari
 kibana_password: !vault |
     $ANSIBLE_VAULT;1.1;AES256

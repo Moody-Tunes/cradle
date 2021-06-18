@@ -7,7 +7,6 @@ env: dev
 postgresql_db_host: 127.0.0.1
 postgresql_user_attributes: NOSUPERUSER,CREATEDB
 requirements_file: "{{ repository_path }}/requirements/dev.txt"
-encrypted_fields_key: cN7wJtpSaaPAxREILzI679UYbLwiVfh5FOTu0IEyB7s=
 
 django_commands_extend:
   - command: python manage.py loaddata apps/tunes/fixtures/Initial_Songs.json
@@ -18,7 +17,6 @@ django_commands_extend:
     ignore: "false"
 
 extra_site_packages:
-  - filebeat
   - postgresql
   - python3-psycopg2
   - python-openssl

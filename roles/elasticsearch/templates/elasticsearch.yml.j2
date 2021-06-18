@@ -14,13 +14,13 @@
 #
 # Use a descriptive name for your cluster:
 #
-#cluster.name: moodytunes-elk
+cluster.name: {{ elk_clustername }}
 #
 # ------------------------------------ Node ------------------------------------
 #
 # Use a descriptive name for the node:
 #
-#node.name: moodytunes-elk-1
+node.name: {{ elk_nodename }}
 #
 # Add custom attributes to the node:
 #
@@ -74,6 +74,7 @@ network.host: localhost
 #
 # For more information, consult the discovery and cluster formation module documentation.
 #
+discovery.type: single-node
 # ---------------------------------- Gateway -----------------------------------
 #
 # Block initial recovery after a full cluster restart until N nodes are started:

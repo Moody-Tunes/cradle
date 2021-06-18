@@ -5,13 +5,14 @@ set -euo pipefail
 # By default will provision the moodytunes host
 
 usage () {
-	echo <<HELP "usage: bash scripts/deploy.bash [inventory] [playbook]
+	cat << EOF
+usage: bash scripts/deploy.bash [inventory] [playbook]
 
 Run ansible against a specified host. By default will provision the moodytunes host.
 
 inventory: Path to inventory file used in ansible run
-playbook: Playbook file to run with ansible"
-HELP
+playbook: Playbook file to run with ansible
+EOF
 }
 
 for arg in "$@"

@@ -18,10 +18,11 @@
     group: elasticsearch
     mode: 0660
 
-- name: Enable and start Elasticsearch service
+- name: Set up Elasticsearch systemd unit
 
-  systemd:
-    name: elasticsearch
-    state: restarted
-    enabled: true
-    daemon_reload: true
+  template:
+    src: templates/elasticsearch.service
+    dest: /lib/systemd/system/elasticsearch.service
+    owner: root
+    group: root
+    mode: 0644
