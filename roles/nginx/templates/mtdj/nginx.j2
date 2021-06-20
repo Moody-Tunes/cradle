@@ -3,18 +3,17 @@ upstream app_server {
 }
 
 server {
+    listen 443 default_server ssl;
+    server_name _ "" default_server;
+    access_log /var/log/nginx/access.log access;
+
+    return 444;
+}
+
+server {
     listen 443 ssl http2;
     server_name {{ app_hostname }} admin.{{ app_hostname }};
     access_log /var/log/nginx/access.log access;
-
-    # Deny invalid Host headers
-    if ($host !~* ^({{ app_hostname }}|admin.{{ app_hostname }})$) {
-        return 444;
-    }
-
-    if ($request_method !~ ^(GET|POST|DELETE|HEAD|PATCH)$) {
-        return 405;
-    }
 
     keepalive_timeout 5;
 
