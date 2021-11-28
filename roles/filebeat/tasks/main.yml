@@ -11,12 +11,11 @@
     group: root
     mode: 0600
 
-- name: Enable and start filebeat service
+- name: Disable filebeat service
   become: true
   become_user: root
 
   systemd:
     name: filebeat
-    state: restarted
+    state: stopped
     daemon_reload: true
-    enabled: true
