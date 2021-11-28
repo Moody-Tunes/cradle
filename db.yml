@@ -11,4 +11,3 @@
     - sshd
     - postgres
     - users
-    - filebeat
